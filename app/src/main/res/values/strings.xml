@@ -1,4 +1,70 @@
 <resources>
     <string name="app_name">Dota2Dict</string>
 
+    <!--Home Page Contents-->
+    <string name="heading1">Gameplay Update</string>
+    <string name="update_version">7.32b</string>
+
+    <string name="heading2">General Updates</string>
+    <string name="text1">Fixed Specialists Array sometimes granting an extra attack target.</string>
+    <string name="text2">Fixed Arc Warden\'s Tempest Double gaining the Fountain Invulnerability buff when spawned.</string>
+    <string name="text3">Fixed Brewmaster Level 20 Talent +1200 Health to Brewlings not affecting Brewlings created with Primal Companion.</string>
+    <string name="text4">Fixed Centaur\'s Hitch a Ride allied unit being unaffected by Chronosphere.</string>
+    <string name="text5">Fixed Centaur\'s Hitch a Ride being able to cast on non-hero units.</string>
+    <string name="text6">Fixed Doom\'s Doom ability going on cooldown if target becomes invulnerable during cast point.</string>
+    <string name="text7">Fixed Earth Spirit\'s Boulder Smash sometimes pushing the furthest target instead of the closest one.</string>
+    <string name="text8">Fixed Earth Spirit\'s Stone Remnant Remnants granting vision without shard.</string>
+    <string name="text9">Fixed Elder Titan\'s Natural Order radius talent not affecting the magic resistance aura radius.</string>
+    <string name="text10">Fixed Io\'s Tether not allowing leveling up of the ability while Tethered to another unit.</string>
+    <string name="text11">Fixed Mars\'s Arena of Blood allowing some flying abilities to take enemies over the wall.</string>
+    <string name="text12">Fixed Primal Beast\'s Pulverize cancelled if target is taunted by allies.</string>
+    <string name="text13">Fixed Shadow Demon\'s Disseminate Fixed being able to cast on magic immune units.</string>
+    <string name="text14">Fixed Silencer\'s Arcane Curse undispellable talent interaction with Black King Bar.</string>
+    <string name="text15">Fixed Silencer\'s Arcane Curse undispellable talent interaction with Black King Bar.</string>
+    <string name="text16">Fixed Spirit Breaker\'s Planar Pocket effect triggering when spells are cancelled during cast point.</string>
+    <string name="text17">Fixed Venomancer\'s Latent Toxicity interaction with Stormcrafter, Heavenly Grace, Black King Bar.</string>
+    <string name="text18">Fixed Venomancer\'s Poison Sting talent applying only to Plague Wards.</string>
+    <string name="text19">Fixed Warlock\'s Chaotic Offering missing the 0.5s stun delay on cast.</string>
+
+    <string name="heading3">Item Updates</string>
+    <string name="item1">Bracer</string>
+    <string name="item_description1">Bonus Attack Damage reduced from 3 to 2</string>
+    <string name="item2">Soul Ring</string>
+    <string name="item_description2">Recipe cost increased from 245 to 400</string>
+    <string name="item3">Spirit Vessel</string>
+    <string name="item_description3">Soul Release Cast Range decreased from 950 to 750</string>
+    <string name="item4">Urn of Shadow</string>
+    <string name="item_description4">Soul Release Cast Range decreased from 950 to 750</string>
+    <string name="item5">Wraith Band</string>
+    <string name="item_description5">Attack Speed increased from 5 to 6</string>
+
+    <string name="heading4">Neutral Item Updates</string>
+    <string name="neutral_item1">Occult Bracelet</string>
+    <string name="neutral_item_description1">All Attributes decreased from +5 to +3</string>
+    <string name="neutral_item2">Ogre Seal Totem</string>
+    <string name="neutral_item_description3">Strength decreased from +12 to +10</string>
+    <string name="neutral_item3">Specialist/s Array</string>
+    <string name="neutral_item_description2">All Attributes decreased from +8 to +5</string>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 </resources>
