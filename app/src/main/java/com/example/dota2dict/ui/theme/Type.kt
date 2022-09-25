@@ -21,31 +21,27 @@ val Typography = Typography(
     h1 = TextStyle(
         fontFamily = Poppins,
         fontWeight = FontWeight.Black,
-        fontSize = 32.sp
+        fontSize = 4.sp
     ),
 
     h2 = TextStyle(
         fontFamily = Poppins,
         fontWeight = FontWeight.Bold,
-        fontSize = 24.sp
     ),
 
     h3 = TextStyle(
         fontFamily = Poppins,
         fontWeight = FontWeight.Normal,
-        fontSize = 16.sp
     ),
 
     h4 = TextStyle(
         fontFamily = Poppins,
         fontWeight = FontWeight.Light,
-        fontSize = 16.sp
     ),
 
     h5 = TextStyle(
         fontFamily = Poppins,
         fontWeight = FontWeight.Thin,
-        fontSize = 16.sp
     )
 )
 
