@@ -1,10 +1,11 @@
 <resources>
     <string name="app_name">Dota2Dict</string>
 
-    <!--Home Page Contents-->
+<!--    HOME PAGE STRINGS -->
     <string name="heading1">Gameplay Update</string>
     <string name="update_version">7.32b</string>
 
+<!--    GENERAL UPDATE STRINGS-->
     <string name="heading2">General Updates</string>
     <string name="text1">Fixed Specialists Array sometimes granting an extra attack target.</string>
     <string name="text2">Fixed Arc Warden\'s Tempest Double gaining the Fountain Invulnerability buff when spawned.</string>
@@ -26,6 +27,7 @@
     <string name="text18">Fixed Venomancer\'s Poison Sting talent applying only to Plague Wards.</string>
     <string name="text19">Fixed Warlock\'s Chaotic Offering missing the 0.5s stun delay on cast.</string>
 
+<!--    ITEMS UPDATE STRINGS-->
     <string name="heading3">Item Updates</string>
     <string name="item1">Bracer</string>
     <string name="item_description1">Bonus Attack Damage reduced from 3 to 2</string>
@@ -38,6 +40,7 @@
     <string name="item5">Wraith Band</string>
     <string name="item_description5">Attack Speed increased from 5 to 6</string>
 
+<!--    NEUTRAL ITEMS UPDATE STRINGS-->
     <string name="heading4">Neutral Item Updates</string>
     <string name="neutral_item1">Occult Bracelet</string>
     <string name="neutral_item_description1">All Attributes decreased from +5 to +3</string>
@@ -46,6 +49,20 @@
     <string name="neutral_item3">Specialist/s Array</string>
     <string name="neutral_item_description2">All Attributes decreased from +8 to +5</string>
 
+<!--    ITEMS PAGE STRINGS-->
+    <string name="consumable1">Observer Ward</string>
+    <string name="consumable2">Clarity</string>
+    <string name="consumable3">Sentry Ward</string>
+    <string name="consumable4">Smoke of Deceit</string>
+    <string name="consumable5">Enchanted Mango</string>
+    <string name="consumable6">Faerie Fire</string>
+    <string name="consumable7">Tome of Knowledge</string>
+    <string name="consumable8">Dust of Appearance</string>
+    <string name="consumable9">Tango</string>
+    <string name="consumable10">Healing Salve</string>
+    <string name="consumable11">Town Portal Scroll</string>
+    <string name="consumable12">Bottle</string>
+    <string name="consumable13">Aghanim\'s Shard</string>
 
 
 
