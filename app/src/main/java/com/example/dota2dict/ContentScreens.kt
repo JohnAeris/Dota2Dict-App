@@ -1,13 +1,18 @@
 package com.example.dota2dict
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
+import android.widget.GridLayout
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.*
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Card
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
@@ -19,7 +24,7 @@ import com.example.dota2dict.ui.theme.Poppins
 
 @Composable
 fun HomePageScreen() {
-    LazyColumn(
+    /*LazyColumn(
         horizontalAlignment = Alignment.Start,
         verticalArrangement = Arrangement.spacedBy(10.dp),
         modifier = Modifier
@@ -974,12 +979,7 @@ fun HomePageScreen() {
         item { 
             Spacer(modifier = Modifier.height(20.dp))
         }
-
-
-
-
-
-    }
+    }*/
 }
 
 @Preview(name = "Home Screen", showBackground = true, showSystemUi = true)
@@ -1008,19 +1008,31 @@ fun HeroesPageScreenPreview() {
     HeroesPageScreen()
 }
 
+
+
+@OptIn(ExperimentalFoundationApi::class)
 @Composable
 fun ItemsPageScreen() {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
         modifier = Modifier
-            .fillMaxSize()
-            .background(colorResource(R.color.black))
-            .wrapContentSize(Alignment.Center))
-    {
-        Text(text = "Items Screen", color = colorResource(R.color.white), fontSize = 40.sp)
-    }
+            .verticalScroll(state = ScrollState(1))
+            .background(Color.Black)
+            .padding(
+                start = 20.dp,
+                end = 20.dp,
+                top = 20.dp,
+                bottom = 10.dp
+            )
+            )
+        {
+              listOfItems().forEach { itemsData ->
+                 ItemCard(itemsData = itemsData) }
+        }
 }
+
+
 
 @Preview(name = "Items Screen", showBackground = true, showSystemUi = true)
 @Composable
