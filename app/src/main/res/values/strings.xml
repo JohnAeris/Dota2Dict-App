@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Dota2Dict</string>
 
-<!--    HOME PAGE STRINGS -->
+<!--    HOME PAGE | START  -->
     <string name="heading1">Gameplay Update</string>
     <string name="update_version">7.32b</string>
 
-<!--    GENERAL UPDATE STRINGS-->
+<!--    GENERAL UPDATE -->
     <string name="heading2">General Updates</string>
     <string name="text1">Fixed Specialists Array sometimes granting an extra attack target.</string>
     <string name="text2">Fixed Arc Warden\'s Tempest Double gaining the Fountain Invulnerability buff when spawned.</string>
@@ -27,7 +27,7 @@
     <string name="text18">Fixed Venomancer\'s Poison Sting talent applying only to Plague Wards.</string>
     <string name="text19">Fixed Warlock\'s Chaotic Offering missing the 0.5s stun delay on cast.</string>
 
-<!--    ITEMS UPDATE STRINGS-->
+<!--    ITEMS UPDATE -->
     <string name="heading3">Item Updates</string>
     <string name="item1">Bracer</string>
     <string name="item_description1">Bonus Attack Damage reduced from 3 to 2</string>
@@ -40,7 +40,7 @@
     <string name="item5">Wraith Band</string>
     <string name="item_description5">Attack Speed increased from 5 to 6</string>
 
-<!--    NEUTRAL ITEMS UPDATE STRINGS-->
+<!--    NEUTRAL ITEMS UPDATE -->
     <string name="heading4">Neutral Item Updates</string>
     <string name="neutral_item1">Occult Bracelet</string>
     <string name="neutral_item_description1">All Attributes decreased from +5 to +3</string>
@@ -48,6 +48,9 @@
     <string name="neutral_item_description3">Strength decreased from +12 to +10</string>
     <string name="neutral_item3">Specialist/s Array</string>
     <string name="neutral_item_description2">All Attributes decreased from +8 to +5</string>
+
+<!--HOME PAGE | END -->
+
 
 <!--    ITEMS PAGE STRINGS-->
     <string name="consumable1">Observer Ward</string>

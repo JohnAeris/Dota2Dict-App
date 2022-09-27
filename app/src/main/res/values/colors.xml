@@ -9,6 +9,7 @@
     <!--color palette-->
     <color name="white">#FFFFFFFF</color>
     <color name="platinum">#E3E3E3</color>
+    <color name="yellow">#FFCD38</color>
     <color name="violet">#9A6AFF</color>
     <color name="dark_gunmetal">#1E2029</color>
     <color name="black">#FF000000</color>
