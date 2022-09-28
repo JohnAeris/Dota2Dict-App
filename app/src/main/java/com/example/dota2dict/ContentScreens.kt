@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalFoundationApi::class)
+
 package com.example.dota2dict
 
 import androidx.compose.foundation.*
@@ -5,16 +7,21 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.*
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.State
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.dota2dict.ui.theme.Poppins
+import javax.sql.DataSource
+import androidx.compose.foundation.lazy.items
+import androidx.compose.ui.unit.Density
 
 //HOME PAGE SCREEN | START
 
@@ -121,19 +128,6 @@ fun HomePageScreenPreview() {
 //HOME PAGE SCREEN | END
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 @Composable
 fun HeroesPageScreen() {
     Column(
@@ -154,18 +148,33 @@ fun HeroesPageScreenPreview() {
     HeroesPageScreen()
 }
 
+
+//ITEMS PAGE SCREEN | START
+
+@Composable
+fun ItemsList(
+    modifier: Modifier = Modifier) {
+    
+    LazyVerticalGrid(
+        cells = GridCells.Fixed(2),
+        modifier = Modifier.background(Color.Black).padding(start = 20.dp, end = 20.dp, top = 20.dp),
+        verticalArrangement = Arrangement.spacedBy(20.dp),
+        horizontalArrangement = Arrangement.spacedBy(20.dp),
+        content = {
+
+            items(AccessoriesDataSource.accessories) { accessoriesItem ->
+                AccessoriesItemCard(accessoriesItem = accessoriesItem)
+            }
+
+        })
+
+
+}
+
+
 @Composable
 fun ItemsPageScreen() {
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center,
-        modifier = Modifier
-            .fillMaxSize()
-            .background(colorResource(R.color.black))
-            .wrapContentSize(Alignment.Center))
-    {
-        Text(text = "Items Screen", color = colorResource(R.color.white), fontSize = 40.sp)
-    }
+    ItemsList()
 }
 
 
@@ -175,6 +184,8 @@ fun ItemsPageScreen() {
 fun ItemsPageScreenPreview() {
     ItemsPageScreen()
 }
+
+//ITEMS PAGE SCREEN | END
 
 @Composable
 fun SettingsPageScreen() {
