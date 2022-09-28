@@ -163,3 +163,64 @@ fun UpdatesNeutralItemCard(neutralItemUpdate: NeutralItemUpdatesData, modifier: 
 fun NeutralUpdatesItemCardPreview() {
     UpdatesNeutralItemCard(NeutralItemUpdatesData(R.string.neutral_item1, R.string.neutral_item_description1, R.drawable.occult_bracelet_icon))
 }
+
+//ITEM PAGE | ACCESSORIES CARD
+@Composable
+fun AccessoriesItemCard(accessoriesItem: ItemsAccessoriesData) {
+    Card(
+        elevation = 4.dp,
+        backgroundColor = Color.Black,) {
+
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .background(Color.Black)
+        )
+
+        {
+            Image(
+                painter = painterResource(id = accessoriesItem.itemImage),
+                contentDescription = stringResource(id = accessoriesItem.itemName),
+                modifier = Modifier.size(80.dp)
+            )
+
+            Spacer(modifier = Modifier.width(20.dp))
+
+            Column(
+                horizontalAlignment = Alignment.Start
+            ) {
+                Text(
+                    text = stringResource(id = accessoriesItem.itemName),
+                    fontFamily = Poppins,
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    color = Color.White
+                )
+
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        text = accessoriesItem.itemCost,
+                        fontFamily = Poppins,
+                        fontSize = 14.sp,
+                        fontWeight = FontWeight.Normal,
+                        color = Color.White
+                    )
+                    
+                    Spacer(modifier = Modifier.width(5.dp))
+                    
+                    Image(
+                        painter = painterResource(R.drawable.gold_icon),
+                        contentDescription = null,
+                        modifier = Modifier.size(20.dp)
+                    )
+                }
+            }
+        }
+    }
+}
+
+@Preview (showBackground = true)
+@Composable
+fun AccessoriesItemCardPreview() {
+    AccessoriesItemCard(ItemsAccessoriesData(R.string.accessories_boots_of_travel, "2,500", R.drawable.boots_of_travel_1_icon))
+}
