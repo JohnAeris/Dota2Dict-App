@@ -1,5 +1,6 @@
 package com.example.dota2dict
 
+import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -10,6 +11,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
@@ -168,8 +170,11 @@ fun NeutralUpdatesItemCardPreview() {
 @Composable
 fun AccessoriesItemCard(accessoriesItem: ItemsAccessoriesData) {
     Card(
+        modifier = Modifier.size(height = 60.dp, width = 200.dp),
+        border = BorderStroke(2.dp, colorResource(R.color.yellow)),
         elevation = 4.dp,
-        backgroundColor = Color.Black,) {
+        backgroundColor = Color.Black,
+    ) {
 
         Row(
             verticalAlignment = Alignment.CenterVertically,
@@ -181,18 +186,18 @@ fun AccessoriesItemCard(accessoriesItem: ItemsAccessoriesData) {
             Image(
                 painter = painterResource(id = accessoriesItem.itemImage),
                 contentDescription = stringResource(id = accessoriesItem.itemName),
-                modifier = Modifier.size(80.dp)
+                modifier = Modifier.size(60.dp).aspectRatio(1f).padding(start = 10.dp)
             )
 
-            Spacer(modifier = Modifier.width(20.dp))
+            Spacer(modifier = Modifier.width(10.dp))
 
-            Column(
+            Column(modifier = Modifier.padding(end = 10.dp),
                 horizontalAlignment = Alignment.Start
             ) {
                 Text(
                     text = stringResource(id = accessoriesItem.itemName),
                     fontFamily = Poppins,
-                    fontSize = 16.sp,
+                    fontSize = 12.sp,
                     fontWeight = FontWeight.SemiBold,
                     color = Color.White
                 )
@@ -201,7 +206,7 @@ fun AccessoriesItemCard(accessoriesItem: ItemsAccessoriesData) {
                     Text(
                         text = accessoriesItem.itemCost,
                         fontFamily = Poppins,
-                        fontSize = 14.sp,
+                        fontSize = 12.sp,
                         fontWeight = FontWeight.Normal,
                         color = Color.White
                     )
