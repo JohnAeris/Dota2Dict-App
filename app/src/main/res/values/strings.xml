@@ -87,6 +87,43 @@
     <string name="accessories_moon_shard">Moon Shard</string>
     <string name="accessories_helm_of_the_overload">Helm of the Overload</string>
 
+<!--    SUPPORT ITEM NAMES-->
+    <string name="support_buckler">Buckler</string>
+    <string name="support_headdress">Headdress</string>
+    <string name="support_ring_of_basilius">Ring of Basilius</string>
+    <string name="support_urn_of_shadows">Urn of Shadows</string>
+    <string name="support_tranquil_boots">Tranquil Boots</string>
+    <string name="support_medallion_of_courage">Medallion of Courage</string>
+    <string name="support_arcane_boots">Arcane Boots</string>
+    <string name="support_drum_of_endurance">Drum of Endurance</string>
+    <string name="support_mekansm">Mekansm</string>
+    <string name="support_holy_locket">Holy Locket</string>
+    <string name="support_vladimrs_offering">Vladimir\s Offering</string>
+    <string name="support_spirit_vessel">Spirit Vessel</string>
+    <string name="support_pipe_of_insight">Pipe of Insight</string>
+    <string name="support_wraith_pact">Wraith Pack</string>
+    <string name="support_boots_of_bearing">Boots of Bearing</string>
+    <string name="support_guardian_greaves">Guardian Greaves</string>
+
+<!--    MAGICAL ITEM NAMES-->
+    <string name="magical_veil_of_discord">Veil of Discord</string>
+    <string name="magical_glimmer_cape">Glimmer Cape</string>
+    <string name="magical_force_staff">Force Staff</string>
+    <string name="magical_aether_lens">Aether Lens</string>
+    <string name="magical_witch_blade">Witch Blade</string>
+    <string name="magical_solar_crest">Solar Crest</string>
+    <string name="magical_dagon">Dagon</string>
+    <string name="magical_euls_scepter_of_divinity">Eul\s Scepter</string>
+    <string name="magical_rod_of_atos">Rod of Atos</string>
+    <string name="magical_orchid_malevolence">Orchid Malevolence</string>
+    <string name="magical_aghanims_scpeter">Aghanim\s Scepter</string>
+    <string name="magical_refresher_orb">Refresher Orb</string>
+    <string name="magical_octarine_core">Octarine Core</string>
+    <string name="magical_scythe_of_vsye">Scythe of Vsye</string>
+    <string name="magical_aghanims_blessing">Aghanim\s Blessing</string>
+    <string name="magical_gleipnir">Gleipnir</string>
+    <string name="magical_revenants_brooch">Revenant\s Brooch</string>
+    <string name="magical_wind_waker">Wind Waker</string>
 
 
 
