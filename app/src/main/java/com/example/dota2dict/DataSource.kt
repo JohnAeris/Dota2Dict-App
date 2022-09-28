@@ -47,3 +47,49 @@ class NeutralItemUpdateDataSource {
                 )
     }
 }
+
+class AccessoriesItemDataSource {
+    fun loadAccessoriesItemDataSource(): List<ItemsAccessoriesData> {
+        return listOf<ItemsAccessoriesData> (
+            ItemsAccessoriesData(R.string.accessories_boots_of_travel, "2,500", R.drawable.boots_of_travel_1_icon),
+            ItemsAccessoriesData(R.string.accessories_bracer, "505", R.drawable.bracer_icon),
+            ItemsAccessoriesData(R.string.accessories_falcon_blade, "1,125", R.drawable.falcon_blade_icon),
+            ItemsAccessoriesData(R.string.accessories_hand_of_midas, "2,200", R.drawable.hand_of_midas_icon),
+            ItemsAccessoriesData(R.string.accessories_helm_of_dominator, "2,400", R.drawable.helm_of_the_dominator_icon),
+            ItemsAccessoriesData(R.string.accessories_helm_of_the_overload, "6,175", R.drawable.helm_of_the_overlord_icon),
+            ItemsAccessoriesData(R.string.accessories_magic_wand, "450", R.drawable.magic_wand_icon),
+            ItemsAccessoriesData(R.string.accessories_mask_of_madness, "1,775", R.drawable.mask_of_madness_icon),
+            ItemsAccessoriesData(R.string.accessories_moon_shard, "4,000", R.drawable.moon_shard_icon),
+            ItemsAccessoriesData(R.string.accessories_null_talisman, "505", R.drawable.null_talisman_icon),
+            ItemsAccessoriesData(R.string.accessories_oblivion_staff, "1,500", R.drawable.oblivion_staff_icon),
+            ItemsAccessoriesData(R.string.accessories_orb_of_corrosion, "925", R.drawable.orb_of_corrosion_icon),
+            ItemsAccessoriesData(R.string.accessories_perseverance, "1,650", R.drawable.perseverance_icon),
+            ItemsAccessoriesData(R.string.accessories_phase_boots, "1,500", R.drawable.phase_boots_icon),
+            ItemsAccessoriesData(R.string.accessories_power_threads, "1,400", R.drawable.power_treads_icon),
+            ItemsAccessoriesData(R.string.accessories_soul_ring, "855", R.drawable.soul_ring_icon),
+            ItemsAccessoriesData(R.string.accessories_wraith_band, "505", R.drawable.wraith_band_icon)
+        )
+    }
+}
+
+object AccessoriesDataSource {
+    val accessories = listOf (
+        ItemsAccessoriesData(R.string.accessories_boots_of_travel, "2,500", R.drawable.boots_of_travel_1_icon),
+        ItemsAccessoriesData(R.string.accessories_bracer, "505", R.drawable.bracer_icon),
+        ItemsAccessoriesData(R.string.accessories_falcon_blade, "1,125", R.drawable.falcon_blade_icon),
+        ItemsAccessoriesData(R.string.accessories_hand_of_midas, "2,200", R.drawable.hand_of_midas_icon),
+        ItemsAccessoriesData(R.string.accessories_helm_of_dominator, "2,400", R.drawable.helm_of_the_dominator_icon),
+        ItemsAccessoriesData(R.string.accessories_helm_of_the_overload, "6,175", R.drawable.helm_of_the_overlord_icon),
+        ItemsAccessoriesData(R.string.accessories_magic_wand, "450", R.drawable.magic_wand_icon),
+        ItemsAccessoriesData(R.string.accessories_mask_of_madness, "1,775", R.drawable.mask_of_madness_icon),
+        ItemsAccessoriesData(R.string.accessories_moon_shard, "4,000", R.drawable.moon_shard_icon),
+        ItemsAccessoriesData(R.string.accessories_null_talisman, "505", R.drawable.null_talisman_icon),
+        ItemsAccessoriesData(R.string.accessories_oblivion_staff, "1,500", R.drawable.oblivion_staff_icon),
+        ItemsAccessoriesData(R.string.accessories_orb_of_corrosion, "925", R.drawable.orb_of_corrosion_icon),
+        ItemsAccessoriesData(R.string.accessories_perseverance, "1,650", R.drawable.perseverance_icon),
+        ItemsAccessoriesData(R.string.accessories_phase_boots, "1,500", R.drawable.phase_boots_icon),
+        ItemsAccessoriesData(R.string.accessories_power_threads, "1,400", R.drawable.power_treads_icon),
+        ItemsAccessoriesData(R.string.accessories_soul_ring, "855", R.drawable.soul_ring_icon),
+        ItemsAccessoriesData(R.string.accessories_wraith_band, "505", R.drawable.wraith_band_icon)
+        )
+}

@@ -16,6 +16,12 @@ data class NeutralItemUpdatesData(
     @DrawableRes val neutralItemImage: Int
 )
 
+data class ItemsAccessoriesData(
+    @StringRes val itemName: Int,
+    val itemCost: String,
+    @DrawableRes val itemImage: Int
+)
+
 
 
 
