@@ -5,6 +5,10 @@ package com.example.dota2dict
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.*
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.GridItemSpan
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.State
@@ -22,6 +26,7 @@ import com.example.dota2dict.ui.theme.Poppins
 import javax.sql.DataSource
 import androidx.compose.foundation.lazy.items
 import androidx.compose.ui.unit.Density
+
 
 //HOME PAGE SCREEN | START
 
@@ -154,22 +159,100 @@ fun HeroesPageScreenPreview() {
 @Composable
 fun ItemsList(
     modifier: Modifier = Modifier) {
-    
+
     LazyVerticalGrid(
-        cells = GridCells.Fixed(2),
-        modifier = Modifier.background(Color.Black).padding(start = 20.dp, end = 20.dp, top = 20.dp),
+        columns = GridCells.Fixed(2),
+        modifier = Modifier
+            .background(Color.Black)
+            .padding(start = 20.dp, end = 20.dp, top = 20.dp),
         verticalArrangement = Arrangement.spacedBy(20.dp),
         horizontalArrangement = Arrangement.spacedBy(20.dp),
         content = {
+
+            item(span = { GridItemSpan(maxCurrentLineSpan) }) {
+                Column() {
+                    Box {
+                        Text(
+                            text = stringResource(R.string.heading1_items_page),
+                            fontFamily = Poppins,
+                            fontSize = 24.sp,
+                            fontWeight = FontWeight.Black,
+                            color = Color.White,
+                            letterSpacing = 5.sp,
+                        )
+
+                        Text(
+                            text = stringResource(R.string.heading2_items_page),
+                            fontFamily = Poppins,
+                            fontSize = 40.sp,
+                            fontWeight = FontWeight.SemiBold,
+                            color = colorResource(R.color.violet),
+                            modifier = Modifier.padding(top = 18.dp)
+                        )
+                    }
+                }
+            }
+
+            item(span = { GridItemSpan(maxCurrentLineSpan)}) {
+                Text(
+                    text = stringResource(R.string.heading3_items_page_description),
+                    textAlign = TextAlign.Justify,
+                    fontFamily = Poppins,
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight.Normal,
+                    color = Color.White
+                )
+            }
+
+            item(span = { GridItemSpan(maxCurrentLineSpan)}) {
+                Text(
+                    text = stringResource(R.string.heading3_items_accessories),
+                    fontFamily = Poppins,
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Black,
+                    color = colorResource(R.color.violet),
+                    letterSpacing = 3.sp
+                )
+            }
 
             items(AccessoriesDataSource.accessories) { accessoriesItem ->
                 AccessoriesItemCard(accessoriesItem = accessoriesItem)
             }
 
-        })
+            item(span = { GridItemSpan(currentLineSpan = 3)}) {
+                Text(
+                    text = stringResource(R.string.heading3_items_support),
+                    fontFamily = Poppins,
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Black,
+                    color = colorResource(R.color.violet),
+                    letterSpacing = 3.sp
+                )
+            }
 
+            items(SupportDataSource.support) { supportItem ->
+                SupportItemCard(supportItem = supportItem)
+            }
 
+            item(span = { GridItemSpan(currentLineSpan = 2)}) {
+                Text(
+                    text = stringResource(R.string.heading3_items_magical),
+                    fontFamily = Poppins,
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Black,
+                    color = colorResource(R.color.violet),
+                    letterSpacing = 3.sp
+                )
+            }
+
+            items(MagicalDataSource.magical) { magicalItem ->
+                MagicalItemCard(magicalItem = magicalItem)
+            }
+
+        }
+    )
 }
+
 
 
 @Composable
