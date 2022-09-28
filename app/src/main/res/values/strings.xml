@@ -52,20 +52,42 @@
 <!--HOME PAGE | END -->
 
 
-<!--    ITEMS PAGE STRINGS-->
-    <string name="consumable1">Observer Ward</string>
-    <string name="consumable2">Clarity</string>
-    <string name="consumable3">Sentry Ward</string>
-    <string name="consumable4">Smoke of Deceit</string>
-    <string name="consumable5">Enchanted Mango</string>
-    <string name="consumable6">Faerie Fire</string>
-    <string name="consumable7">Tome of Knowledge</string>
-    <string name="consumable8">Dust of Appearance</string>
-    <string name="consumable9">Tango</string>
-    <string name="consumable10">Healing Salve</string>
-    <string name="consumable11">Town Portal Scroll</string>
-    <string name="consumable12">Bottle</string>
-    <string name="consumable13">Aghanim\'s Shard</string>
+<!--    ITEM PAGE | START-->
+    <string name="heading1_items_page">In-Game Items</string>
+    <string name="heading2_items_page">Upgraded Items</string>
+    <string name="heading3_items_page_description">
+        Items are in-game equipment that provide heroes with bonus attributes and
+        special abilities. Most items can be purchased from several shops on the game
+        map, while others are dropped by creeps.  Heroes have six item slots in their
+        inventory, three in their backpack, and six more in their stash. Items can be
+        picked up and delivered to their owner with a courier. </string>
+    <string name="heading3_items_accessories">Accessories</string>
+    <string name="heading3_items_support">Support</string>
+    <string name="heading3_items_magical">Magical</string>
+    <string name="heading3_items_armor">Armor</string>
+    <string name="heading3_items_weapons">Weapons</string>
+    <string name="heading3_items_artifacts">Artifacts</string>
+
+<!--    ACCESSORIES ITEM NAMES-->
+    <string name="accessories_magic_wand">Magic Wand</string>
+    <string name="accessories_bracer">Bracer</string>
+    <string name="accessories_null_talisman">Null Talisman</string>
+    <string name="accessories_wraith_band">Wraith Band</string>
+    <string name="accessories_soul_ring">Soul Ring</string>
+    <string name="accessories_orb_of_corrosion">Orb of Corrosion</string>
+    <string name="accessories_falcon_blade">Falcon Blade</string>
+    <string name="accessories_power_threads">Power Threads</string>
+    <string name="accessories_oblivion_staff">Oblivion Staff</string>
+    <string name="accessories_phase_boots">Phase Boots</string>
+    <string name="accessories_perseverance">Perseverance</string>
+    <string name="accessories_mask_of_madness">Mask of Madness</string>
+    <string name="accessories_hand_of_midas">Hand of Midas</string>
+    <string name="accessories_helm_of_dominator">Helm of Dominator</string>
+    <string name="accessories_boots_of_travel">Boots of Travel</string>
+    <string name="accessories_moon_shard">Moon Shard</string>
+    <string name="accessories_helm_of_the_overload">Helm of the Overload</string>
+
+
 
 
 
