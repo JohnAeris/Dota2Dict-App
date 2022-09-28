@@ -229,3 +229,119 @@ fun AccessoriesItemCard(accessoriesItem: ItemsAccessoriesData) {
 fun AccessoriesItemCardPreview() {
     AccessoriesItemCard(ItemsAccessoriesData(R.string.accessories_boots_of_travel, "2,500", R.drawable.boots_of_travel_1_icon))
 }
+
+//ITEM PAGE | SUPPORT CARD
+@Composable
+fun SupportItemCard(supportItem: ItemsSupportData) {
+    Card(
+        modifier = Modifier.size(height = 60.dp, width = 200.dp),
+        border = BorderStroke(2.dp, colorResource(R.color.yellow)),
+        elevation = 4.dp,
+        backgroundColor = Color.Black,
+    ) {
+
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .background(Color.Black)
+        )
+
+        {
+            Image(
+                painter = painterResource(id = supportItem.itemImage),
+                contentDescription = stringResource(id = supportItem.itemName),
+                modifier = Modifier.size(60.dp).aspectRatio(1f).padding(start = 10.dp)
+            )
+
+            Spacer(modifier = Modifier.width(10.dp))
+
+            Column(modifier = Modifier.padding(end = 10.dp),
+                horizontalAlignment = Alignment.Start
+            ) {
+                Text(
+                    text = stringResource(id = supportItem.itemName),
+                    fontFamily = Poppins,
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    color = Color.White
+                )
+
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        text = supportItem.itemCost,
+                        fontFamily = Poppins,
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Normal,
+                        color = Color.White
+                    )
+
+                    Spacer(modifier = Modifier.width(5.dp))
+
+                    Image(
+                        painter = painterResource(R.drawable.gold_icon),
+                        contentDescription = null,
+                        modifier = Modifier.size(20.dp)
+                    )
+                }
+            }
+        }
+    }
+}
+
+//ITEM PAGE | MAGICAL CARD
+@Composable
+fun MagicalItemCard(magicalItem: ItemsMagicalData) {
+    Card(
+        modifier = Modifier.size(height = 60.dp, width = 200.dp),
+        border = BorderStroke(2.dp, colorResource(R.color.yellow)),
+        elevation = 4.dp,
+        backgroundColor = Color.Black,
+    ) {
+
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .background(Color.Black)
+        )
+
+        {
+            Image(
+                painter = painterResource(id = magicalItem.itemImage),
+                contentDescription = stringResource(id = magicalItem.itemName),
+                modifier = Modifier.size(60.dp).aspectRatio(1f).padding(start = 10.dp)
+            )
+
+            Spacer(modifier = Modifier.width(10.dp))
+
+            Column(modifier = Modifier.padding(end = 10.dp),
+                horizontalAlignment = Alignment.Start
+            ) {
+                Text(
+                    text = stringResource(id = magicalItem.itemName),
+                    fontFamily = Poppins,
+                    fontSize = 12.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    color = Color.White
+                )
+
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        text = magicalItem.itemCost,
+                        fontFamily = Poppins,
+                        fontSize = 12.sp,
+                        fontWeight = FontWeight.Normal,
+                        color = Color.White
+                    )
+
+                    Spacer(modifier = Modifier.width(5.dp))
+
+                    Image(
+                        painter = painterResource(R.drawable.gold_icon),
+                        contentDescription = null,
+                        modifier = Modifier.size(20.dp)
+                    )
+                }
+            }
+        }
+    }
+}
