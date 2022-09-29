@@ -23,7 +23,7 @@ import com.example.dota2dict.ui.theme.Poppins
 //HOME PAGE | GENERAL UPDATE CARD
 
 @Composable
-fun UpdatesGeneralCard(generalUpdate: GeneralUpdatesData, modifier: Modifier = Modifier) {
+fun UpdatesGeneralCard(generalUpdate: GeneralUpdatesData) {
     Card(elevation = 4.dp) {
         Box (modifier = Modifier.background(Color.Black)) {
             Row {
@@ -59,7 +59,7 @@ fun GeneralUpdatesCardPreview() {
 //HOME PAGE | ITEMS UPDATE CARD
 
 @Composable
-fun UpdatesItemCard(itemUpdate: ItemUpdatesData, modifier: Modifier = Modifier) {
+fun UpdatesItemCard(itemUpdate: ItemUpdatesData) {
     Card(
         elevation = 4.dp,
         backgroundColor = Color.Black,
@@ -114,7 +114,7 @@ fun UpdatesItemCardPreview() {
 
 //HOME PAGE | NEUTRAL ITEMS UPDATE CARD
 @Composable
-fun UpdatesNeutralItemCard(neutralItemUpdate: NeutralItemUpdatesData, modifier: Modifier = Modifier) {
+fun UpdatesNeutralItemCard(neutralItemUpdate: NeutralItemUpdatesData) {
     Card(
         elevation = 4.dp,
         backgroundColor = Color.Black,
@@ -197,7 +197,7 @@ fun AccessoriesItemCard(accessoriesItem: ItemsAccessoriesData) {
                 Text(
                     text = stringResource(id = accessoriesItem.itemName),
                     fontFamily = Poppins,
-                    fontSize = 12.sp,
+                    fontSize = 10.sp,
                     fontWeight = FontWeight.SemiBold,
                     color = Color.White
                 )
@@ -206,7 +206,7 @@ fun AccessoriesItemCard(accessoriesItem: ItemsAccessoriesData) {
                     Text(
                         text = accessoriesItem.itemCost,
                         fontFamily = Poppins,
-                        fontSize = 12.sp,
+                        fontSize = 10.sp,
                         fontWeight = FontWeight.Normal,
                         color = Color.White
                     )
@@ -261,7 +261,7 @@ fun SupportItemCard(supportItem: ItemsSupportData) {
                 Text(
                     text = stringResource(id = supportItem.itemName),
                     fontFamily = Poppins,
-                    fontSize = 12.sp,
+                    fontSize = 10.sp,
                     fontWeight = FontWeight.SemiBold,
                     color = Color.White
                 )
@@ -270,7 +270,7 @@ fun SupportItemCard(supportItem: ItemsSupportData) {
                     Text(
                         text = supportItem.itemCost,
                         fontFamily = Poppins,
-                        fontSize = 12.sp,
+                        fontSize = 10.sp,
                         fontWeight = FontWeight.Normal,
                         color = Color.White
                     )
@@ -319,7 +319,7 @@ fun MagicalItemCard(magicalItem: ItemsMagicalData) {
                 Text(
                     text = stringResource(id = magicalItem.itemName),
                     fontFamily = Poppins,
-                    fontSize = 12.sp,
+                    fontSize = 10.sp,
                     fontWeight = FontWeight.SemiBold,
                     color = Color.White
                 )
@@ -328,7 +328,181 @@ fun MagicalItemCard(magicalItem: ItemsMagicalData) {
                     Text(
                         text = magicalItem.itemCost,
                         fontFamily = Poppins,
-                        fontSize = 12.sp,
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Normal,
+                        color = Color.White
+                    )
+
+                    Spacer(modifier = Modifier.width(5.dp))
+
+                    Image(
+                        painter = painterResource(R.drawable.gold_icon),
+                        contentDescription = null,
+                        modifier = Modifier.size(20.dp)
+                    )
+                }
+            }
+        }
+    }
+}
+
+//ITEM PAGE | ARMOR CARD
+@Composable
+fun ArmorItemCard(armorItem: ItemsArmorData) {
+    Card(
+        modifier = Modifier.size(height = 60.dp, width = 200.dp),
+        border = BorderStroke(2.dp, colorResource(R.color.yellow)),
+        elevation = 4.dp,
+        backgroundColor = Color.Black,
+    ) {
+
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .background(Color.Black)
+        )
+
+        {
+            Image(
+                painter = painterResource(id = armorItem.itemImage),
+                contentDescription = stringResource(id = armorItem.itemName),
+                modifier = Modifier.size(60.dp).aspectRatio(1f).padding(start = 10.dp)
+            )
+
+            Spacer(modifier = Modifier.width(10.dp))
+
+            Column(modifier = Modifier.padding(end = 10.dp),
+                horizontalAlignment = Alignment.Start
+            ) {
+                Text(
+                    text = stringResource(id = armorItem.itemName),
+                    fontFamily = Poppins,
+                    fontSize = 10.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    color = Color.White
+                )
+
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        text = armorItem.itemCost,
+                        fontFamily = Poppins,
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Normal,
+                        color = Color.White
+                    )
+
+                    Spacer(modifier = Modifier.width(5.dp))
+
+                    Image(
+                        painter = painterResource(R.drawable.gold_icon),
+                        contentDescription = null,
+                        modifier = Modifier.size(20.dp)
+                    )
+                }
+            }
+        }
+    }
+}
+
+//ITEM PAGE | WEAPON CARD
+@Composable
+fun WeaponItemCard(weaponItem: ItemsWeaponData) {
+    Card(
+        modifier = Modifier.size(height = 60.dp, width = 200.dp),
+        border = BorderStroke(2.dp, colorResource(R.color.yellow)),
+        elevation = 4.dp,
+        backgroundColor = Color.Black,
+    ) {
+
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .background(Color.Black)
+        )
+
+        {
+            Image(
+                painter = painterResource(id = weaponItem.itemImage),
+                contentDescription = stringResource(id = weaponItem.itemName),
+                modifier = Modifier.size(60.dp).aspectRatio(1f).padding(start = 10.dp)
+            )
+
+            Spacer(modifier = Modifier.width(10.dp))
+
+            Column(modifier = Modifier.padding(end = 10.dp),
+                horizontalAlignment = Alignment.Start
+            ) {
+                Text(
+                    text = stringResource(id = weaponItem.itemName),
+                    fontFamily = Poppins,
+                    fontSize = 10.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    color = Color.White
+                )
+
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        text = weaponItem.itemCost,
+                        fontFamily = Poppins,
+                        fontSize = 10.sp,
+                        fontWeight = FontWeight.Normal,
+                        color = Color.White
+                    )
+
+                    Spacer(modifier = Modifier.width(5.dp))
+
+                    Image(
+                        painter = painterResource(R.drawable.gold_icon),
+                        contentDescription = null,
+                        modifier = Modifier.size(20.dp)
+                    )
+                }
+            }
+        }
+    }
+}
+
+//ITEM PAGE | ARTIFACT CARD
+@Composable
+fun ArtifactItemCard(artifactItem: ItemsArtifactData) {
+    Card(
+        modifier = Modifier.size(height = 60.dp, width = 200.dp),
+        border = BorderStroke(2.dp, colorResource(R.color.yellow)),
+        elevation = 4.dp,
+        backgroundColor = Color.Black,
+    ) {
+
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            modifier = Modifier
+                .background(Color.Black)
+        )
+
+        {
+            Image(
+                painter = painterResource(id = artifactItem.itemImage),
+                contentDescription = stringResource(id = artifactItem.itemName),
+                modifier = Modifier.size(60.dp).aspectRatio(1f).padding(start = 10.dp)
+            )
+
+            Spacer(modifier = Modifier.width(10.dp))
+
+            Column(modifier = Modifier.padding(end = 10.dp),
+                horizontalAlignment = Alignment.Start
+            ) {
+                Text(
+                    text = stringResource(id = artifactItem.itemName),
+                    fontFamily = Poppins,
+                    fontSize = 10.sp,
+                    fontWeight = FontWeight.SemiBold,
+                    color = Color.White
+                )
+
+                Row(verticalAlignment = Alignment.CenterVertically) {
+                    Text(
+                        text = artifactItem.itemCost,
+                        fontFamily = Poppins,
+                        fontSize = 10.sp,
                         fontWeight = FontWeight.Normal,
                         color = Color.White
                     )
