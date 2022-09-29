@@ -56,11 +56,11 @@
     <string name="heading1_items_page">In-Game Items</string>
     <string name="heading2_items_page">Upgraded Items</string>
     <string name="heading3_items_page_description">
-        Items are in-game equipment that provide heroes with bonus attributes and
-        special abilities. Most items can be purchased from several shops on the game
-        map, while others are dropped by creeps.  Heroes have six item slots in their
-        inventory, three in their backpack, and six more in their stash. Items can be
-        picked up and delivered to their owner with a courier. </string>
+        <T>Items are in-game equipment that provide heroes with
+        bonus attributes and special abilities. Most items can be purchased from several
+        shops on the game map, while others are dropped by creeps.  Heroes have six item
+        slots in their inventory, three in their backpack, and six more in their stash.
+        Items can be picked up and delivered to their owner with a courier. </T></string>
     <string name="heading3_items_accessories">Accessories</string>
     <string name="heading3_items_support">Support</string>
     <string name="heading3_items_magical">Magical</string>
@@ -124,6 +124,64 @@
     <string name="magical_gleipnir">Gleipnir</string>
     <string name="magical_revenants_brooch">Revenant\s Brooch</string>
     <string name="magical_wind_waker">Wind Waker</string>
+
+<!--    ARMOR ITEM NAMES-->
+    <string name="armor_aeon_disk">Aeon Disk</string>
+    <string name="armor_assualt_cuirass">Assault Cuirass</string>
+    <string name="armor_black_king_bar">Black King Bar</string>
+    <string name="armor_blade_mail">Blade Mail</string>
+    <string name="armor_bloodstone_icon">Bloodstone</string>
+    <string name="armor_crimson_guard">Crimson Guard</string>
+    <string name="armor_eternal_shroud">Eternal Shroud</string>
+    <string name="armor_heart_of_tarrasque">Heart of Tarrasque</string>
+    <string name="armor_hood_of_defiance">Hood of Defiance</string>
+    <string name="armor_hurricane_pike">Hurricane Pike</string>
+    <string name="armor_linken_sphere">Linken\s Sphere</string>
+    <string name="armor_lotus_orb">Lotus Orb</string>
+    <string name="armor_manta_style">Manta Style</string>
+    <string name="armor_shivas_guard">Shiva\s Guard</string>
+    <string name="armor_soul_booster">Soul Booster</string>
+    <string name="armor_vanguard">Vanguard</string>
+
+<!--    WEAPON ITEM NAMES-->
+    <string name="weapon_abyssal_blade">Abyssal Blade</string>
+    <string name="weapon_armlet_of_mordiggian">Armlet of Mordiggian</string>
+    <string name="weapon_battle_fury">Battle Fury</string>
+    <string name="weapon_bloodthorn">Bloodthorn</string>
+    <string name="weapon_butterfly">Butterfly</string>
+    <string name="weapon_crystalys">Crystalys</string>
+    <string name="weapon_daedalus">Daedalus</string>
+    <string name="weapon_desolator">Desolator</string>
+    <string name="weapon_divine_rapier">Divine Rapier</string>
+    <string name="weapon_ethereal_blade">Ethereal Blade</string>
+    <string name="weapon_meteor_hammer">Metoer Hammer</string>
+    <string name="weapon_monkey_king_bar">Monkey King Bar</string>
+    <string name="weapon_nullifier">Nullifier</string>
+    <string name="weapon_radiance">Radiance</string>
+    <string name="weapon_shadow_blade">Shadow Blade</string>
+    <string name="weapon_silver_edge">Silver Edge</string>
+    <string name="weapon_skull_basher">Skull Basher</string>
+
+<!--    ARTIFACT ITEM NAMES-->
+    <string name="artifact_arcane_blink">Arcan Blink</string>
+    <string name="artifact_diffusal_blade">Diffusal Blade</string>
+    <string name="artifact_dragon_lance">Dragon Lance</string>
+    <string name="artifact_echo_sabre">Echo Sabre</string>
+    <string name="artifact_eye_of_skadi">Eye of Skadi</string>
+    <string name="artifact_heavens_halberd">Heaven\s Halberd</string>
+    <string name="artifact_kaya_and_sange">Kaya and Sange</string>
+    <string name="artifact_kaya">Kaya</string>
+    <string name="artifact_maelstrom">Maelstrom</string>
+    <string name="artifact_mage_slayer">Mage Slayer</string>
+    <string name="artifact_mjollnir">Mjollnir</string>
+    <string name="artifact_overwhelming_blink">Overwhelming Blink</string>
+    <string name="artifact_sange_and_yasha">Sange annd Yasha</string>
+    <string name="artifact_sange">Sange</string>
+    <string name="artifact_satanic">Satanic</string>
+    <string name="artifact_swift_blink">Swift Blink</string>
+    <string name="artifact_yasha_and_kaya">Yasha and Kaya</string>
+    <string name="artifact_yasha">Yasha</string>
+
 
 
 
