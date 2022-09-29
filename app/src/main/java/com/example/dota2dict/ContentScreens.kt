@@ -1,5 +1,3 @@
-@file:OptIn(ExperimentalFoundationApi::class)
-
 package com.example.dota2dict
 
 import androidx.compose.foundation.*
@@ -11,7 +9,6 @@ import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.lazy.grid.items
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.State
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
@@ -23,9 +20,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.dota2dict.ui.theme.Poppins
-import javax.sql.DataSource
 import androidx.compose.foundation.lazy.items
-import androidx.compose.ui.unit.Density
 
 
 //HOME PAGE SCREEN | START
@@ -34,8 +29,7 @@ import androidx.compose.ui.unit.Density
 private fun UpdatesList(
     generalUpdatesList: List<GeneralUpdatesData>,
     itemUpdatesList: List<ItemUpdatesData>,
-    neutralUpdatesList: List<NeutralItemUpdatesData>,
-    modifier: Modifier = Modifier) {
+    neutralUpdatesList: List<NeutralItemUpdatesData>) {
     LazyColumn (
         modifier = Modifier.background(Color.Black))
 
@@ -157,9 +151,7 @@ fun HeroesPageScreenPreview() {
 //ITEMS PAGE SCREEN | START
 
 @Composable
-fun ItemsList(
-    modifier: Modifier = Modifier) {
-
+fun ItemsGrid() {
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
         modifier = Modifier
@@ -170,7 +162,7 @@ fun ItemsList(
         content = {
 
             item(span = { GridItemSpan(maxCurrentLineSpan) }) {
-                Column() {
+                Column {
                     Box {
                         Text(
                             text = stringResource(R.string.heading1_items_page),
@@ -184,7 +176,7 @@ fun ItemsList(
                         Text(
                             text = stringResource(R.string.heading2_items_page),
                             fontFamily = Poppins,
-                            fontSize = 40.sp,
+                            fontSize = 36.sp,
                             fontWeight = FontWeight.SemiBold,
                             color = colorResource(R.color.violet),
                             modifier = Modifier.padding(top = 18.dp)
@@ -249,6 +241,51 @@ fun ItemsList(
                 MagicalItemCard(magicalItem = magicalItem)
             }
 
+            item(span = { GridItemSpan(currentLineSpan = 2)}) {
+                Text(
+                    text = stringResource(R.string.heading3_items_armor),
+                    fontFamily = Poppins,
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Black,
+                    color = colorResource(R.color.violet),
+                    letterSpacing = 3.sp
+                )
+            }
+            
+            items(ArmorDataSource.armor) { armorItem ->
+                ArmorItemCard(armorItem = armorItem)
+            }
+
+            item(span = { GridItemSpan(currentLineSpan = 2)}) {
+                Text(
+                    text = stringResource(R.string.heading3_items_weapons),
+                    fontFamily = Poppins,
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Black,
+                    color = colorResource(R.color.violet),
+                    letterSpacing = 3.sp
+                )
+            }
+
+            items(WeaponDataSource.weapon) { weaponItem ->
+                WeaponItemCard(weaponItem = weaponItem)
+            }
+
+            item(span = { GridItemSpan(currentLineSpan = 2)}) {
+                Text(
+                    text = stringResource(R.string.heading3_items_artifacts),
+                    fontFamily = Poppins,
+                    fontSize = 24.sp,
+                    fontWeight = FontWeight.Black,
+                    color = colorResource(R.color.violet),
+                    letterSpacing = 3.sp
+                )
+            }
+
+            items(ArtifactDataSource.artifact) { artifactItem ->
+                ArtifactItemCard(artifactItem = artifactItem)
+            }
+
         }
     )
 }
@@ -257,7 +294,7 @@ fun ItemsList(
 
 @Composable
 fun ItemsPageScreen() {
-    ItemsList()
+    ItemsGrid()
 }
 
 
