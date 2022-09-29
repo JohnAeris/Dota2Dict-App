@@ -113,3 +113,69 @@ object MagicalDataSource {
         ItemsMagicalData(R.string.magical_witch_blade, "2,600", R.drawable.witch_blade_icon)
     )
 }
+
+object ArmorDataSource {
+    val armor = listOf (
+        ItemsArmorData(R.string.armor_aeon_disk, "3,000", R.drawable.aeon_disk_icon),
+        ItemsArmorData(R.string.armor_assualt_cuirass, "5,125", R.drawable.assault_cuirass_icon),
+        ItemsArmorData(R.string.armor_black_king_bar, "4,050", R.drawable.black_king_bar_icon),
+        ItemsArmorData(R.string.armor_blade_mail, "2,100", R.drawable.blade_mail_icon),
+        ItemsArmorData(R.string.armor_bloodstone_icon, "4,400", R.drawable.bloodstone_icon),
+        ItemsArmorData(R.string.armor_crimson_guard, "3,600", R.drawable.crimson_guard_icon),
+        ItemsArmorData(R.string.armor_eternal_shroud, "3,300", R.drawable.eternal_shroud_icon),
+        ItemsArmorData(R.string.armor_heart_of_tarrasque, "5,000", R.drawable.heart_of_tarrasque_icon),
+        ItemsArmorData(R.string.armor_hood_of_defiance, "1,500", R.drawable.hood_of_defiance_icon),
+        ItemsArmorData(R.string.armor_hurricane_pike, "4,450", R.drawable.hurricane_pike_icon),
+        ItemsArmorData(R.string.armor_linken_sphere, "4,600", R.drawable.linken_27s_sphere_icon),
+        ItemsArmorData(R.string.armor_lotus_orb, "3,850", R.drawable.lotus_orb_icon),
+        ItemsArmorData(R.string.armor_manta_style, "4,600", R.drawable.manta_style_icon),
+        ItemsArmorData(R.string.armor_shivas_guard, "4,850", R.drawable.shiva_27s_guard_icon),
+        ItemsArmorData(R.string.armor_soul_booster, "3,000", R.drawable.soul_booster_icon),
+        ItemsArmorData(R.string.armor_vanguard, "1,825", R.drawable.vanguard_icon)
+    )
+}
+
+object WeaponDataSource {
+    val weapon = listOf (
+        ItemsWeaponData(R.string.weapon_abyssal_blade, "6,250", R.drawable.abyssal_blade_icon),
+        ItemsWeaponData(R.string.weapon_armlet_of_mordiggian, "2,500", R.drawable.armlet_of_mordiggian_29_icon),
+        ItemsWeaponData(R.string.weapon_battle_fury, "4,100", R.drawable.battle_fury_icon),
+        ItemsWeaponData(R.string.weapon_bloodthorn, "6,800", R.drawable.bloodthorn_icon),
+        ItemsWeaponData(R.string.weapon_butterfly, "4,975", R.drawable.butterfly_icon),
+        ItemsWeaponData(R.string.weapon_crystalys, "1,950", R.drawable.crystalys_icon),
+        ItemsWeaponData(R.string.weapon_daedalus, "5,150", R.drawable.daedalus_icon),
+        ItemsWeaponData(R.string.weapon_desolator, "3,500", R.drawable.desolator_icon),
+        ItemsWeaponData(R.string.weapon_divine_rapier, "5,950", R.drawable.divine_rapier_icon),
+        ItemsWeaponData(R.string.weapon_ethereal_blade, "4,650", R.drawable.ethereal_blade_icon),
+        ItemsWeaponData(R.string.weapon_meteor_hammer, "2,350", R.drawable.meteor_hammer_icon),
+        ItemsWeaponData(R.string.weapon_monkey_king_bar, "4,975", R.drawable.monkey_king_bar_icon),
+        ItemsWeaponData(R.string.weapon_nullifier, "4,725", R.drawable.nullifier_icon),
+        ItemsWeaponData(R.string.weapon_radiance, "5,050", R.drawable.radiance_29_icon),
+        ItemsWeaponData(R.string.weapon_shadow_blade, "3,000", R.drawable.shadow_blade_icon),
+        ItemsWeaponData(R.string.weapon_silver_edge, "5,450", R.drawable.silver_edge_icon),
+        ItemsWeaponData(R.string.weapon_skull_basher, "2,875", R.drawable.skull_basher_icon)
+            )
+}
+
+object ArtifactDataSource {
+    val artifact = listOf (
+        ItemsArtifactData(R.string.artifact_arcane_blink, "6,800", R.drawable.arcane_blink_icon),
+        ItemsArtifactData(R.string.artifact_diffusal_blade, "2,500", R.drawable.diffusal_blade_1_icon),
+        ItemsArtifactData(R.string.artifact_dragon_lance, "1,900", R.drawable.dragon_lance_icon),
+        ItemsArtifactData(R.string.artifact_echo_sabre, "2,500", R.drawable.echo_sabre_icon),
+        ItemsArtifactData(R.string.artifact_eye_of_skadi, "5,300", R.drawable.eye_of_skadi_icon),
+        ItemsArtifactData(R.string.artifact_heavens_halberd, "3,550", R.drawable.heaven_27s_halberd_icon),
+        ItemsArtifactData(R.string.artifact_kaya_and_sange, "4,100", R.drawable.kaya_and_sange_icon),
+        ItemsArtifactData(R.string.artifact_kaya, "2,050", R.drawable.kaya_icon),
+        ItemsArtifactData(R.string.artifact_maelstrom, "2,700", R.drawable.maelstrom_icon),
+        ItemsArtifactData(R.string.artifact_mage_slayer, "2,400", R.drawable.mage_slayer_icon),
+        ItemsArtifactData(R.string.artifact_mjollnir, "2,700", R.drawable.mjollnir_icon),
+        ItemsArtifactData(R.string.artifact_overwhelming_blink, "6,800", R.drawable.overwhelming_blink_icon),
+        ItemsArtifactData(R.string.artifact_sange_and_yasha, "4,100", R.drawable.sange_and_yasha_icon),
+        ItemsArtifactData(R.string.artifact_sange, "2,050", R.drawable.sange_icon),
+        ItemsArtifactData(R.string.artifact_satanic, "5,050", R.drawable.satanic_icon),
+        ItemsArtifactData(R.string.artifact_swift_blink, "6,800", R.drawable.swift_blink_icon),
+        ItemsArtifactData(R.string.artifact_yasha_and_kaya, "4,100", R.drawable.yasha_and_kaya_icon),
+        ItemsArtifactData(R.string.artifact_yasha, "2,050", R.drawable.yasha_icon)
+            )
+}

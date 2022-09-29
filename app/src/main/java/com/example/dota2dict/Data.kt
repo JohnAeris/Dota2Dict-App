@@ -34,6 +34,25 @@ data class ItemsMagicalData(
     @DrawableRes val itemImage: Int
 )
 
+data class ItemsArmorData(
+    @StringRes val itemName: Int,
+    val itemCost: String,
+    @DrawableRes val itemImage: Int
+)
+
+data class ItemsWeaponData(
+    @StringRes val itemName: Int,
+    val itemCost: String,
+    @DrawableRes val itemImage: Int
+)
+
+data class ItemsArtifactData(
+    @StringRes val itemName: Int,
+    val itemCost: String,
+    @DrawableRes val itemImage: Int
+)
+
+
 
 
 
