@@ -132,13 +132,37 @@ fun HomePageScreenPreview() {
 fun HeroesPageScreen() {
 
     LazyVerticalGrid(
-        columns = GridCells.Adaptive(100.dp),
+        columns = GridCells.Adaptive(70.dp),
         verticalArrangement = Arrangement.spacedBy(10.dp),
         horizontalArrangement = Arrangement.spacedBy(10.dp),
         modifier = Modifier
             .background(Color.Black)
             .padding(start = 20.dp, end = 20.dp, top = 20.dp),
         content = {
+
+            item(span = { GridItemSpan(maxCurrentLineSpan) }) {
+                Column {
+                    Box {
+                        Text(
+                            text = stringResource(R.string.heading1_heroes_page),
+                            fontFamily = Poppins,
+                            fontSize = 24.sp,
+                            fontWeight = FontWeight.Black,
+                            color = Color.White,
+                            letterSpacing = 5.sp,
+                        )
+
+                        Text(
+                            text = stringResource(R.string.heading2_heroes_page),
+                            fontFamily = Poppins,
+                            fontSize = 36.sp,
+                            fontWeight = FontWeight.SemiBold,
+                            color = colorResource(R.color.violet),
+                            modifier = Modifier.padding(top = 18.dp)
+                        )
+                    }
+                }
+            }
 
             items(HeroProfilePictureDataSource.heroImage) { heroProfile ->
                 HeroProfileCard(heroProfile = heroProfile)
