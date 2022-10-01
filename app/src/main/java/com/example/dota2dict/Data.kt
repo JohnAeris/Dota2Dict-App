@@ -52,6 +52,11 @@ data class ItemsArtifactData(
     @DrawableRes val itemImage: Int
 )
 
+data class HeroesProfilePictureData(
+    val heroImage: Int,
+    @StringRes val heroName: Int
+)
+
 
 
 
