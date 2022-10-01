@@ -541,8 +541,8 @@ fun ArtifactItemCard(artifactItem: ItemsArtifactData) {
 @Composable
 fun HeroProfileCard(heroProfile: HeroesProfilePictureData) {
     Card(
-        modifier = Modifier.wrapContentSize(),
-        elevation = 10.dp,
+//        modifier = Modifier.wrapContentWidth(),
+        elevation = 4.dp,
         backgroundColor = Color.Black)
     {
         Box(
@@ -552,16 +552,15 @@ fun HeroProfileCard(heroProfile: HeroesProfilePictureData) {
             Image(
                 painter = painterResource(heroProfile.heroImage),
                 contentDescription = stringResource(heroProfile.heroName),
-                modifier = Modifier.size(width = 256.dp, height = 144.dp).fillMaxSize())
+                modifier = Modifier.fillMaxSize())
 
-            Text(
+            /*Text(
                 text = stringResource(heroProfile.heroName),
                 fontFamily = Poppins,
-                fontSize = 20.sp,
+                fontSize = 10.sp,
                 fontWeight = FontWeight.SemiBold,
                 color = Color.White,
-                modifier = Modifier.fillMaxWidth().padding()
-            )
+            )*/
 
         }
     }
