@@ -186,7 +186,10 @@ fun AccessoriesItemCard(accessoriesItem: ItemsAccessoriesData) {
             Image(
                 painter = painterResource(id = accessoriesItem.itemImage),
                 contentDescription = stringResource(id = accessoriesItem.itemName),
-                modifier = Modifier.size(60.dp).aspectRatio(1f).padding(start = 10.dp)
+                modifier = Modifier
+                    .size(60.dp)
+                    .aspectRatio(1f)
+                    .padding(start = 10.dp)
             )
 
             Spacer(modifier = Modifier.width(10.dp))
@@ -250,7 +253,10 @@ fun SupportItemCard(supportItem: ItemsSupportData) {
             Image(
                 painter = painterResource(id = supportItem.itemImage),
                 contentDescription = stringResource(id = supportItem.itemName),
-                modifier = Modifier.size(60.dp).aspectRatio(1f).padding(start = 10.dp)
+                modifier = Modifier
+                    .size(60.dp)
+                    .aspectRatio(1f)
+                    .padding(start = 10.dp)
             )
 
             Spacer(modifier = Modifier.width(10.dp))
@@ -308,7 +314,10 @@ fun MagicalItemCard(magicalItem: ItemsMagicalData) {
             Image(
                 painter = painterResource(id = magicalItem.itemImage),
                 contentDescription = stringResource(id = magicalItem.itemName),
-                modifier = Modifier.size(60.dp).aspectRatio(1f).padding(start = 10.dp)
+                modifier = Modifier
+                    .size(60.dp)
+                    .aspectRatio(1f)
+                    .padding(start = 10.dp)
             )
 
             Spacer(modifier = Modifier.width(10.dp))
@@ -366,7 +375,10 @@ fun ArmorItemCard(armorItem: ItemsArmorData) {
             Image(
                 painter = painterResource(id = armorItem.itemImage),
                 contentDescription = stringResource(id = armorItem.itemName),
-                modifier = Modifier.size(60.dp).aspectRatio(1f).padding(start = 10.dp)
+                modifier = Modifier
+                    .size(60.dp)
+                    .aspectRatio(1f)
+                    .padding(start = 10.dp)
             )
 
             Spacer(modifier = Modifier.width(10.dp))
@@ -424,7 +436,10 @@ fun WeaponItemCard(weaponItem: ItemsWeaponData) {
             Image(
                 painter = painterResource(id = weaponItem.itemImage),
                 contentDescription = stringResource(id = weaponItem.itemName),
-                modifier = Modifier.size(60.dp).aspectRatio(1f).padding(start = 10.dp)
+                modifier = Modifier
+                    .size(60.dp)
+                    .aspectRatio(1f)
+                    .padding(start = 10.dp)
             )
 
             Spacer(modifier = Modifier.width(10.dp))
@@ -469,7 +484,7 @@ fun ArtifactItemCard(artifactItem: ItemsArtifactData) {
         modifier = Modifier.size(height = 60.dp, width = 200.dp),
         border = BorderStroke(2.dp, colorResource(R.color.yellow)),
         elevation = 4.dp,
-        backgroundColor = Color.Black,
+        backgroundColor = Color.Black
     ) {
 
         Row(
@@ -482,7 +497,10 @@ fun ArtifactItemCard(artifactItem: ItemsArtifactData) {
             Image(
                 painter = painterResource(id = artifactItem.itemImage),
                 contentDescription = stringResource(id = artifactItem.itemName),
-                modifier = Modifier.size(60.dp).aspectRatio(1f).padding(start = 10.dp)
+                modifier = Modifier
+                    .size(60.dp)
+                    .aspectRatio(1f)
+                    .padding(start = 10.dp)
             )
 
             Spacer(modifier = Modifier.width(10.dp))
@@ -518,4 +536,39 @@ fun ArtifactItemCard(artifactItem: ItemsArtifactData) {
             }
         }
     }
+}
+
+@Composable
+fun HeroProfileCard(heroProfile: HeroesProfilePictureData) {
+    Card(
+        modifier = Modifier.wrapContentSize(),
+        elevation = 10.dp,
+        backgroundColor = Color.Black)
+    {
+        Box(
+            contentAlignment = Alignment.BottomCenter,
+            modifier = Modifier.background(Color.Black))
+        {
+            Image(
+                painter = painterResource(heroProfile.heroImage),
+                contentDescription = stringResource(heroProfile.heroName),
+                modifier = Modifier.size(width = 256.dp, height = 144.dp).fillMaxSize())
+
+            Text(
+                text = stringResource(heroProfile.heroName),
+                fontFamily = Poppins,
+                fontSize = 20.sp,
+                fontWeight = FontWeight.SemiBold,
+                color = Color.White,
+                modifier = Modifier.fillMaxWidth().padding()
+            )
+
+        }
+    }
+}
+
+@Preview (showBackground = true)
+@Composable
+fun HeroProfileCardPreview() {
+    HeroProfileCard(HeroesProfilePictureData(R.drawable.abaddon_1_ ,R.string.abaddon),)
 }
