@@ -184,6 +184,9 @@
 
 
 <!--    HEROES INFORMATION-->
+    <string name="heading1_heroes_page">Choose Your Hero</string>
+    <string name="heading2_heroes_page">Heroes</string>
+
     <string name="abaddon">ABADDON</string>
     <string name="abyssal_underlord">ABYSSAL UNDERLORD</string>
     <string name="alchemist">ALCHEMIST</string>
