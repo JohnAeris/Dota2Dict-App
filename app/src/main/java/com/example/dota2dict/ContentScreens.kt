@@ -126,19 +126,26 @@ fun HomePageScreenPreview() {
 
 //HOME PAGE SCREEN | END
 
+//HEROES PAGE SCREEN | START
 
 @Composable
 fun HeroesPageScreen() {
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center,
+
+    LazyVerticalGrid(
+        columns = GridCells.Adaptive(100.dp),
+        verticalArrangement = Arrangement.spacedBy(10.dp),
+        horizontalArrangement = Arrangement.spacedBy(10.dp),
         modifier = Modifier
-            .fillMaxSize()
-            .background(colorResource(R.color.black))
-            .wrapContentSize(Alignment.Center))
-    {
-        Text(text = "Heroes Screen", color = colorResource(R.color.white), fontSize = 40.sp)
-    }
+            .background(Color.Black)
+            .padding(start = 20.dp, end = 20.dp, top = 20.dp),
+        content = {
+
+            items(HeroProfilePictureDataSource.heroImage) { heroProfile ->
+                HeroProfileCard(heroProfile = heroProfile)
+            }
+
+        })
+
 }
 
 @Preview(name = "Heroes Screen", showBackground = true, showSystemUi = true)
@@ -147,11 +154,11 @@ fun HeroesPageScreenPreview() {
     HeroesPageScreen()
 }
 
+//HEROES PAGE SCREEN | END
 
 //ITEMS PAGE SCREEN | START
-
 @Composable
-fun ItemsGrid() {
+fun ItemsPageScreen() {
     LazyVerticalGrid(
         columns = GridCells.Fixed(2),
         modifier = Modifier
@@ -251,7 +258,7 @@ fun ItemsGrid() {
                     letterSpacing = 3.sp
                 )
             }
-            
+
             items(ArmorDataSource.armor) { armorItem ->
                 ArmorItemCard(armorItem = armorItem)
             }
@@ -288,13 +295,6 @@ fun ItemsGrid() {
 
         }
     )
-}
-
-
-
-@Composable
-fun ItemsPageScreen() {
-    ItemsGrid()
 }
 
 
