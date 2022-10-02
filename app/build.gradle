@@ -60,6 +60,10 @@ dependencies {
     androidTestImplementation "androidx.compose.ui:ui-test-junit4:$compose_version"
     debugImplementation "androidx.compose.ui:ui-tooling:$compose_version"
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
+
+    //Pager
+    implementation "com.google.accompanist:accompanist-pager:0.14.0"
+    implementation "com.google.accompanist:accompanist-pager-indicators:0.14.0"
 }
 
 dependencies {
