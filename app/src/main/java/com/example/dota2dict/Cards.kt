@@ -1,10 +1,14 @@
 package com.example.dota2dict
 
+import android.widget.Toast
 import androidx.compose.foundation.BorderStroke
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.*
+import androidx.compose.material.Button
 import androidx.compose.material.Card
+import androidx.compose.material.ExperimentalMaterialApi
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
@@ -18,7 +22,13 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavController
+import androidx.navigation.compose.NavHost
+import androidx.navigation.compose.composable
+import androidx.navigation.compose.rememberNavController
 import com.example.dota2dict.ui.theme.Poppins
+import com.google.accompanist.pager.ExperimentalPagerApi
+import kotlinx.coroutines.launch
 
 //HOME PAGE | GENERAL UPDATE CARD
 
@@ -538,12 +548,13 @@ fun ArtifactItemCard(artifactItem: ItemsArtifactData) {
     }
 }
 
+
 @Composable
 fun HeroProfileCard(heroProfile: HeroesProfilePictureData) {
     Card(
-//        modifier = Modifier.wrapContentWidth(),
         elevation = 4.dp,
-        backgroundColor = Color.Black)
+        backgroundColor = Color.Black
+    )
     {
         Box(
             contentAlignment = Alignment.BottomCenter,
@@ -552,22 +563,22 @@ fun HeroProfileCard(heroProfile: HeroesProfilePictureData) {
             Image(
                 painter = painterResource(heroProfile.heroImage),
                 contentDescription = stringResource(heroProfile.heroName),
-                modifier = Modifier.fillMaxSize())
-
-            /*Text(
-                text = stringResource(heroProfile.heroName),
-                fontFamily = Poppins,
-                fontSize = 10.sp,
-                fontWeight = FontWeight.SemiBold,
-                color = Color.White,
-            )*/
-
+                modifier = Modifier
+                    .fillMaxSize())
         }
     }
 }
 
+
 @Preview (showBackground = true)
 @Composable
 fun HeroProfileCardPreview() {
-    HeroProfileCard(HeroesProfilePictureData(R.drawable.abaddon_1_ ,R.string.abaddon),)
+    HeroProfileCard(HeroesProfilePictureData(R.drawable.abaddon_1_ ,R.string.abaddon))
 }
+
+
+
+
+
+
+

@@ -21,6 +21,9 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.dota2dict.ui.theme.Poppins
 import androidx.compose.foundation.lazy.items
+import androidx.navigation.NavController
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 
 
 //HOME PAGE SCREEN | START
@@ -130,7 +133,6 @@ fun HomePageScreenPreview() {
 
 @Composable
 fun HeroesPageScreen() {
-
     LazyVerticalGrid(
         columns = GridCells.Adaptive(70.dp),
         verticalArrangement = Arrangement.spacedBy(10.dp),

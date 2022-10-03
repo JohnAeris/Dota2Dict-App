@@ -149,5 +149,6 @@ fun Navigation(navController: NavHostController) {
             composable(NavigationItem.Settings.route) {
                 SettingsPageScreen()
             }
-        }
+    }
 }
+
