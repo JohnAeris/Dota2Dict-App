@@ -37,7 +37,6 @@ class MainActivity : ComponentActivity() {
 }
 
 
-
 @Composable
 fun TopBar() {
     TopAppBar (
@@ -141,13 +140,16 @@ fun Navigation(navController: NavHostController) {
                 HomePageScreen()
             }
             composable(NavigationItem.Heroes.route) {
-                HeroesPageScreen()
+                HeroesPageScreen(navController = navController)
             }
             composable(NavigationItem.Items.route) {
                 ItemsPageScreen()
             }
             composable(NavigationItem.Settings.route) {
                 SettingsPageScreen()
+            }
+            composable(NavigationScreen.HeroInformation.route) {
+                HeroTabScreen()
             }
     }
 }

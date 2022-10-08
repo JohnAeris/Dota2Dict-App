@@ -132,7 +132,7 @@ fun HomePageScreenPreview() {
 //HEROES PAGE SCREEN | START
 
 @Composable
-fun HeroesPageScreen() {
+fun HeroesPageScreen(navController: NavController) {
     LazyVerticalGrid(
         columns = GridCells.Adaptive(70.dp),
         verticalArrangement = Arrangement.spacedBy(10.dp),
@@ -167,18 +167,18 @@ fun HeroesPageScreen() {
             }
 
             items(HeroProfilePictureDataSource.heroImage) { heroProfile ->
-                HeroProfileCard(heroProfile = heroProfile)
+                HeroProfileCard(heroProfile = heroProfile, navController = navController)
             }
 
         })
 
 }
 
-@Preview(name = "Heroes Screen", showBackground = true, showSystemUi = true)
+/*@Preview(name = "Heroes Screen", showBackground = true, showSystemUi = true)
 @Composable
 fun HeroesPageScreenPreview() {
     HeroesPageScreen()
-}
+}*/
 
 //HEROES PAGE SCREEN | END
 

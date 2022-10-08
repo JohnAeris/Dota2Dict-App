@@ -550,10 +550,11 @@ fun ArtifactItemCard(artifactItem: ItemsArtifactData) {
 
 
 @Composable
-fun HeroProfileCard(heroProfile: HeroesProfilePictureData) {
+fun HeroProfileCard(heroProfile: HeroesProfilePictureData, navController: NavController) {
     Card(
         elevation = 4.dp,
-        backgroundColor = Color.Black
+        backgroundColor = Color.Black,
+        modifier = Modifier.clickable { navController.navigate(NavigationScreen.HeroInformation.route) }
     )
     {
         Box(
@@ -570,11 +571,11 @@ fun HeroProfileCard(heroProfile: HeroesProfilePictureData) {
 }
 
 
-@Preview (showBackground = true)
+/*@Preview (showBackground = true)
 @Composable
 fun HeroProfileCardPreview() {
     HeroProfileCard(HeroesProfilePictureData(R.drawable.abaddon_1_ ,R.string.abaddon))
-}
+}*/
 
 
 

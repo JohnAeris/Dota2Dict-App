@@ -1,11 +1,11 @@
 <resources>
     <string name="app_name">Dota2Dict</string>
 
-<!--    HOME PAGE | START  -->
+    <!--    HOME PAGE | START  -->
     <string name="heading1">Gameplay Update</string>
     <string name="update_version">7.32b</string>
 
-<!--    GENERAL UPDATE -->
+    <!--    GENERAL UPDATE -->
     <string name="heading2">General Updates</string>
     <string name="text1">Fixed Specialists Array sometimes granting an extra attack target.</string>
     <string name="text2">Fixed Arc Warden\'s Tempest Double gaining the Fountain Invulnerability buff when spawned.</string>
@@ -27,7 +27,7 @@
     <string name="text18">Fixed Venomancer\'s Poison Sting talent applying only to Plague Wards.</string>
     <string name="text19">Fixed Warlock\'s Chaotic Offering missing the 0.5s stun delay on cast.</string>
 
-<!--    ITEMS UPDATE -->
+    <!--    ITEMS UPDATE -->
     <string name="heading3">Item Updates</string>
     <string name="item1">Bracer</string>
     <string name="item_description1">Bonus Attack Damage reduced from 3 to 2</string>
@@ -40,7 +40,7 @@
     <string name="item5">Wraith Band</string>
     <string name="item_description5">Attack Speed increased from 5 to 6</string>
 
-<!--    NEUTRAL ITEMS UPDATE -->
+    <!--    NEUTRAL ITEMS UPDATE -->
     <string name="heading4">Neutral Item Updates</string>
     <string name="neutral_item1">Occult Bracelet</string>
     <string name="neutral_item_description1">All Attributes decreased from +5 to +3</string>
@@ -49,10 +49,10 @@
     <string name="neutral_item3">Specialist/s Array</string>
     <string name="neutral_item_description2">All Attributes decreased from +8 to +5</string>
 
-<!--HOME PAGE | END -->
+    <!--HOME PAGE | END -->
 
 
-<!--    ITEM PAGE | START-->
+    <!--    ITEM PAGE | START-->
     <string name="heading1_items_page">In-Game Items</string>
     <string name="heading2_items_page">Upgraded Items</string>
     <string name="heading3_items_page_description">
@@ -68,7 +68,7 @@
     <string name="heading3_items_weapons">Weapons</string>
     <string name="heading3_items_artifacts">Artifacts</string>
 
-<!--    ACCESSORIES ITEM NAMES-->
+    <!--    ACCESSORIES ITEM NAMES-->
     <string name="accessories_magic_wand">Magic Wand</string>
     <string name="accessories_bracer">Bracer</string>
     <string name="accessories_null_talisman">Null Talisman</string>
@@ -87,7 +87,7 @@
     <string name="accessories_moon_shard">Moon Shard</string>
     <string name="accessories_helm_of_the_overload">Helm of the Overload</string>
 
-<!--    SUPPORT ITEM NAMES-->
+    <!--    SUPPORT ITEM NAMES-->
     <string name="support_buckler">Buckler</string>
     <string name="support_headdress">Headdress</string>
     <string name="support_ring_of_basilius">Ring of Basilius</string>
@@ -105,7 +105,7 @@
     <string name="support_boots_of_bearing">Boots of Bearing</string>
     <string name="support_guardian_greaves">Guardian Greaves</string>
 
-<!--    MAGICAL ITEM NAMES-->
+    <!--    MAGICAL ITEM NAMES-->
     <string name="magical_veil_of_discord">Veil of Discord</string>
     <string name="magical_glimmer_cape">Glimmer Cape</string>
     <string name="magical_force_staff">Force Staff</string>
@@ -125,7 +125,7 @@
     <string name="magical_revenants_brooch">Revenant\s Brooch</string>
     <string name="magical_wind_waker">Wind Waker</string>
 
-<!--    ARMOR ITEM NAMES-->
+    <!--    ARMOR ITEM NAMES-->
     <string name="armor_aeon_disk">Aeon Disk</string>
     <string name="armor_assualt_cuirass">Assault Cuirass</string>
     <string name="armor_black_king_bar">Black King Bar</string>
@@ -143,7 +143,7 @@
     <string name="armor_soul_booster">Soul Booster</string>
     <string name="armor_vanguard">Vanguard</string>
 
-<!--    WEAPON ITEM NAMES-->
+    <!--    WEAPON ITEM NAMES-->
     <string name="weapon_abyssal_blade">Abyssal Blade</string>
     <string name="weapon_armlet_of_mordiggian">Armlet of Mordiggian</string>
     <string name="weapon_battle_fury">Battle Fury</string>
@@ -162,7 +162,7 @@
     <string name="weapon_silver_edge">Silver Edge</string>
     <string name="weapon_skull_basher">Skull Basher</string>
 
-<!--    ARTIFACT ITEM NAMES-->
+    <!--    ARTIFACT ITEM NAMES-->
     <string name="artifact_arcane_blink">Arcan Blink</string>
     <string name="artifact_diffusal_blade">Diffusal Blade</string>
     <string name="artifact_dragon_lance">Dragon Lance</string>
@@ -183,7 +183,7 @@
     <string name="artifact_yasha">Yasha</string>
 
 
-<!--    HEROES INFORMATION-->
+    <!--    HEROES INFORMATION-->
     <string name="heading1_heroes_page">Choose Your Hero</string>
     <string name="heading2_heroes_page">Heroes</string>
 
@@ -310,27 +310,8 @@
     <string name="witch_doctor">WITCH DOCTOR</string>
     <string name="wraith_king">WRAITH KING</string>
     <string name="zeus">ZEUS</string>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 
 
 </resources>
