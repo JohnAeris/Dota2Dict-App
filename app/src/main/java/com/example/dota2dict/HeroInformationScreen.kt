@@ -1,7 +1,6 @@
 package com.example.dota2dict
 
 import androidx.compose.foundation.background
-import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -14,23 +13,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
-import androidx.navigation.NavGraph
-import androidx.navigation.NavHostController
-import androidx.navigation.compose.NavHost
-import androidx.navigation.compose.composable
 import com.google.accompanist.pager.ExperimentalPagerApi
 import com.google.accompanist.pager.HorizontalPager
 import com.google.accompanist.pager.PagerState
 import com.google.accompanist.pager.rememberPagerState
 
-
-
 @OptIn(ExperimentalPagerApi::class)
 @Composable
-fun HeroTabLayout() {
+fun HeroTabScreen() {
     val pagerState= rememberPagerState(pageCount = 4)
-    
+
     Column(
         modifier = Modifier.background(Color.Black))
     {
@@ -43,7 +35,7 @@ fun HeroTabLayout() {
 @Composable
 @Preview
 fun HeroTabLayoutPrev() {
-    HeroTabLayout()
+    HeroTabScreen()
 }
 
 @OptIn(ExperimentalPagerApi::class)
@@ -51,15 +43,15 @@ fun HeroTabLayoutPrev() {
 fun HeroTabContent(pagerState: PagerState) {
 
     HorizontalPager(state = pagerState) {
-        page -> when (page) {
-            0 -> HeroTabScreen(data = "Page 1")
-        
-            1 -> HeroTabScreen(data = "Page 2")
-        
-            2 -> HeroTabScreen(data = "Page 3")
-        
-            3 -> HeroTabScreen(data = "Page 4")
-        }
+            page -> when (page) {
+        0 -> HeroTabScreen(data = "Page 1")
+
+        1 -> HeroTabScreen(data = "Page 2")
+
+        2 -> HeroTabScreen(data = "Page 3")
+
+        3 -> HeroTabScreen(data = "Page 4")
+    }
     }
 }
 
@@ -78,4 +70,3 @@ fun HeroTabScreen(data: String) {
             fontWeight = FontWeight.Bold)
     }
 }
-
