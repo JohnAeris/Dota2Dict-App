@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.util.Log
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.*
@@ -18,15 +19,16 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.NavController
-import androidx.navigation.NavHostController
+import androidx.navigation.*
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.dota2dict.ui.theme.Dota2DictTheme
 import com.example.dota2dict.ui.theme.Poppins
+import com.google.gson.Gson
 
+@ExperimentalFoundationApi
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -113,6 +115,7 @@ fun BottomNavigationBar(navController: NavController) {
     }
 }
 
+@ExperimentalFoundationApi
 @Composable
 fun MainScreen() {
     val navController = rememberNavController()
@@ -127,30 +130,73 @@ fun MainScreen() {
     )
 }
 
+@ExperimentalFoundationApi
 @Preview (name = "Main Screen", showBackground = true, showSystemUi = true)
 @Composable
 fun MainScreenPreview() {
     MainScreen()
 }
 
+@ExperimentalFoundationApi
 @Composable
 fun Navigation(navController: NavHostController) {
     NavHost(navController, startDestination = NavigationItem.Home.route) {
-            composable(NavigationItem.Home.route) {
-                HomePageScreen()
+        composable(NavigationItem.Home.route) {
+            HomePageScreen()
+        }
+        composable(NavigationItem.Heroes.route) {
+            NavigationHero()
+        }
+        composable(NavigationItem.Items.route) {
+            ItemsPageScreen()
+        }
+        composable(NavigationItem.Settings.route) {
+            SettingsPageScreen()
+        }
+        composable(route = NavigationScreen.HeroesPageScreen.route) {
+            HeroesPageScreen(navController = navController)
+        }
+        composable(
+            route = NavigationScreen.HeroDetails.route + "/{item}",
+            arguments = listOf(
+                navArgument("item") {
+                    type = NavType.StringType
+                    nullable = true
+                })
+        ) {     navBackStackEntry ->
+            navBackStackEntry.arguments?.getString("item")?.let { json ->
+                val item = Gson().fromJson(json, HeroInfoData::class.java)
+                HeroDetails(data = item)
             }
-            composable(NavigationItem.Heroes.route) {
-                HeroesPageScreen(navController = navController)
-            }
-            composable(NavigationItem.Items.route) {
-                ItemsPageScreen()
-            }
-            composable(NavigationItem.Settings.route) {
-                SettingsPageScreen()
-            }
-            composable(NavigationScreen.HeroInformation.route) {
-                HeroTabScreen()
-            }
+        }
     }
 }
+
+@ExperimentalFoundationApi
+@Composable
+fun NavigationHero() {
+    val navController = rememberNavController()
+
+    NavHost(navController = navController, startDestination = NavigationScreen.HeroesPageScreen.route) {
+        composable(route = NavigationScreen.HeroesPageScreen.route) {
+            HeroesPageScreen(navController = navController)
+        }
+        composable(route = NavigationScreen.HeroDetails.route + "/{item}",
+            arguments = listOf(
+                navArgument("item") {
+                    type = NavType.StringType
+                    nullable = true
+                })
+            ){
+                navBackStackEntry ->
+            navBackStackEntry.arguments?.getString("item")?.let { json ->
+                val item = Gson().fromJson(json, HeroInfoData::class.java)
+                HeroDetails(data = item)
+            }
+
+        }
+    }
+}
+
+
 
