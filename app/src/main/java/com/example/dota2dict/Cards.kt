@@ -549,35 +549,6 @@ fun ArtifactItemCard(artifactItem: ItemsArtifactData) {
 }
 
 
-@Composable
-fun HeroProfileCard(heroProfile: HeroesProfilePictureData, navController: NavController) {
-    Card(
-        elevation = 4.dp,
-        backgroundColor = Color.Black,
-        modifier = Modifier.clickable { navController.navigate(NavigationScreen.HeroInformation.route) }
-    )
-    {
-        Box(
-            contentAlignment = Alignment.BottomCenter,
-            modifier = Modifier.background(Color.Black))
-        {
-            Image(
-                painter = painterResource(heroProfile.heroImage),
-                contentDescription = stringResource(heroProfile.heroName),
-                modifier = Modifier
-                    .fillMaxSize())
-        }
-    }
-}
-
-
-/*@Preview (showBackground = true)
-@Composable
-fun HeroProfileCardPreview() {
-    HeroProfileCard(HeroesProfilePictureData(R.drawable.abaddon_1_ ,R.string.abaddon))
-}*/
-
-
 
 
 

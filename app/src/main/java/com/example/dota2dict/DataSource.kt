@@ -1,6 +1,7 @@
 package com.example.dota2dict
 
 import android.graphics.Bitmap
+import androidx.annotation.StringRes
 import androidx.compose.ui.graphics.ImageBitmap
 import androidx.compose.ui.res.imageResource
 import androidx.compose.ui.res.painterResource
