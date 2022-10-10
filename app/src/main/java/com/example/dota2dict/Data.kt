@@ -1,5 +1,6 @@
 package com.example.dota2dict
 
+import android.icu.util.MeasureUnit.Complexity
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 
@@ -57,7 +58,17 @@ data class HeroesProfilePictureData(
     @StringRes val heroName: Int
 )
 
-
+data class HeroInfoData(
+    val imageId: Int,
+    val heroName: String,
+    val heroDescription: String,
+    val heroHistory: String,
+    val typeImage: Int,
+    val heroType: String,
+    val attackTypeImage: Int,
+    val attackType: String,
+    val complexityImage: Int
+)
 
 
 
