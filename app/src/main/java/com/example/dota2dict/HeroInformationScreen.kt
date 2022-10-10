@@ -38,12 +38,6 @@ fun HeroTabScreen() {
     }
 }
 
-/*@Composable
-@Preview
-fun HeroTabLayoutPrev() {
-    HeroTabScreen()
-}*/
-
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 fun HeroTabContent(pagerState: PagerState) {

@@ -1,5 +1,7 @@
 package com.example.dota2dict
 
+import android.content.Context
+import android.widget.Space
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.*
@@ -21,9 +23,19 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.dota2dict.ui.theme.Poppins
 import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.Card
+import androidx.compose.runtime.remember
+import androidx.compose.ui.draw.clip
+import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.navigation.NavController
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import javax.sql.DataSource
 
 
 //HOME PAGE SCREEN | START
@@ -131,55 +143,88 @@ fun HomePageScreenPreview() {
 
 //HEROES PAGE SCREEN | START
 
+@ExperimentalFoundationApi
 @Composable
 fun HeroesPageScreen(navController: NavController) {
-    LazyVerticalGrid(
-        columns = GridCells.Adaptive(70.dp),
-        verticalArrangement = Arrangement.spacedBy(10.dp),
-        horizontalArrangement = Arrangement.spacedBy(10.dp),
-        modifier = Modifier
-            .background(Color.Black)
-            .padding(start = 20.dp, end = 20.dp, top = 20.dp),
-        content = {
+    val context = LocalContext.current
+    val dataFileString =getJsonDataFromAsset(context, "HeroInformationList.JSON")
+    val gson = Gson()
+    val gridSampleType = object :TypeToken<List<HeroInfoData>>(){}.type
+    val heroData : List<HeroInfoData> = gson.fromJson(dataFileString,gridSampleType)
 
-            item(span = { GridItemSpan(maxCurrentLineSpan) }) {
-                Column {
-                    Box {
-                        Text(
-                            text = stringResource(R.string.heading1_heroes_page),
-                            fontFamily = Poppins,
-                            fontSize = 24.sp,
-                            fontWeight = FontWeight.Black,
-                            color = Color.White,
-                            letterSpacing = 5.sp,
-                        )
-
-                        Text(
-                            text = stringResource(R.string.heading2_heroes_page),
-                            fontFamily = Poppins,
-                            fontSize = 36.sp,
-                            fontWeight = FontWeight.SemiBold,
-                            color = colorResource(R.color.violet),
-                            modifier = Modifier.padding(top = 18.dp)
-                        )
-                    }
-                }
+    Column(
+        modifier = Modifier.fillMaxSize(),
+        horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        LazyVerticalGrid(columns = GridCells.Fixed(2), modifier = Modifier.padding(10.dp)) {
+            items(heroData) { data ->
+                HeroCardItem(data, navController)
             }
-
-            items(HeroProfilePictureDataSource.heroImage) { heroProfile ->
-                HeroProfileCard(heroProfile = heroProfile, navController = navController)
-            }
-
-        })
-
+        }
+    }
 }
 
-/*@Preview(name = "Heroes Screen", showBackground = true, showSystemUi = true)
 @Composable
-fun HeroesPageScreenPreview() {
-    HeroesPageScreen()
-}*/
+fun HeroCardItem(data: HeroInfoData, navController: NavController) {
+    Card(
+        modifier = Modifier
+            .clickable {
+                val itemId = Gson().toJson(data)
+                navController.navigate(NavigationScreen.HeroDetails.route + "/$itemId")
+            }
+            .padding(10.dp)
+            .fillMaxSize(),
+        elevation = 5.dp,
+        shape = RoundedCornerShape(5.dp)
+    ) {
+        Column(modifier = Modifier, horizontalAlignment = Alignment.CenterHorizontally) {
+            Image(
+                painter = painterResource(
+                    id = when(data.imageId) {
+                        1 -> R.drawable.abaddon_profile
+                        2 -> R.drawable.alchemist_profile
+                        3 -> R.drawable.ancient_apparition_profile
+                        4 -> R.drawable.antimage_profile
+                        5 -> R.drawable.arc_warden_profile
+                        else -> R.drawable.abaddon_profile
+                    }),
+                contentDescription = "Profile Image",
+                modifier = Modifier
+                    .fillMaxSize()
+                    .align(Alignment.CenterHorizontally)
+                    .clip(RoundedCornerShape(5.dp))
+            )
 
+            Spacer(modifier = Modifier.padding(3.dp))
+            
+            Text(
+                text = data.heroName,
+                modifier = Modifier.align(Alignment.CenterHorizontally),
+                fontSize = 12.sp,
+                fontWeight = FontWeight.Bold,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis
+            )
+
+            Spacer(modifier = Modifier.padding(1.dp))
+
+            Text(
+                text = "View Detail",
+                modifier = Modifier
+                    .padding(7.dp,0.dp,0.dp,20.dp),
+                fontSize =  12.sp,
+                fontWeight = FontWeight.Normal,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis,
+            )
+        }
+    }
+}
+
+
+fun getJsonDataFromAsset(context: Context, data: String): String {
+    return context.assets.open(data).bufferedReader().use { it.readText() }
+}
 //HEROES PAGE SCREEN | END
 
 //ITEMS PAGE SCREEN | START
