@@ -310,8 +310,22 @@
     <string name="witch_doctor">WITCH DOCTOR</string>
     <string name="wraith_king">WRAITH KING</string>
     <string name="zeus">ZEUS</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+<!--    HEROES INFORMATION-->
+    <string name="abaddon_type">Strength</string>
+    <string name="abaddon_description">SHIELDS HIS ALLIES OR HIMSELF FROM ATTACKS</string>
+    <string name="abaddon_history">Able to transform enemy attacks into self-healing, Abaddon can survive almost any assault. Shielding allies and launching his double-edged coil at a friend or foe, he is always ready to ride into the thick of battle.</string>
+    <string name="abaddon_attack_type">Melee</string>
+
+    <string name="abyssal_underlord_type">Strength</string>
+    <string name="abyssal_underlord_description">TELEPORTS HIS TEAM IN AND OUT OF BATTLE</string>
+    <string name="abyssal_underlord_history">Conjure waves of abyssal flame to immolate enemies held paralyzed in your spiteful grip. Feast upon the carnage of battle, gaining strength as foes perish around you, their attacks diminished by your very presence. Tear a rift in reality to teleport yourself and your teammates across the map, delivering bloody retribution to any who would defy the will of Vrogros the Underlord.</string>
+    <string name="abyssal_underlord_attack_type">Melee</string>
+
+    <string name="alchemist_type">Strength</string>
+    <string name="alchemist_description">EARNS EXTRA GOLD FROM UNIT KILLS AND BOUNTY RUNES</string>
+    <string name="alchemist_history">Synthesizing extra resources from each and every kill, Alchemist has no trouble gathering the tools needed to destroy his foes. Ambushing enemies with corrosive acid and a host of unstable chemicals, he battles to ensure his greedy escapades can remain uninterrupted.</string>
+    <string name="alchemist_attack_type">Melee</string>
 
 
 </resources>
