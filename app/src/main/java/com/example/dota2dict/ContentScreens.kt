@@ -156,7 +156,10 @@ fun HeroesPageScreen(navController: NavController) {
         modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        LazyVerticalGrid(columns = GridCells.Fixed(2), modifier = Modifier.padding(10.dp)) {
+        LazyVerticalGrid(
+            columns = GridCells.Fixed(3),
+            modifier = Modifier.padding(10.dp)
+        ) {
             items(heroData) { data ->
                 HeroCardItem(data, navController)
             }
@@ -172,21 +175,27 @@ fun HeroCardItem(data: HeroInfoData, navController: NavController) {
                 val itemId = Gson().toJson(data)
                 navController.navigate(NavigationScreen.HeroDetails.route + "/$itemId")
             }
-            .padding(10.dp)
+            .padding(5.dp)
             .fillMaxSize(),
         elevation = 5.dp,
         shape = RoundedCornerShape(5.dp)
     ) {
-        Column(modifier = Modifier, horizontalAlignment = Alignment.CenterHorizontally) {
+        Column(
+            modifier = Modifier.padding(10.dp),
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(5.dp)
+        ) {
             Image(
                 painter = painterResource(
                     id = when(data.imageId) {
-                        1 -> R.drawable.abaddon_profile
-                        2 -> R.drawable.alchemist_profile
-                        3 -> R.drawable.ancient_apparition_profile
-                        4 -> R.drawable.antimage_profile
-                        5 -> R.drawable.arc_warden_profile
-                        else -> R.drawable.abaddon_profile
+                        1 -> R.drawable.abaddon_1_
+                        2 -> R.drawable.alchemist_1_
+                        3 -> R.drawable.ancient_apparition_1_
+                        4 -> R.drawable.antimage_1_
+                        5 -> R.drawable.arc_warden_1_
+                        6 -> R.drawable.axe_1_
+                        7 -> R.drawable.bane_1_
+                        else -> R.drawable.axe_1_
                     }),
                 contentDescription = "Profile Image",
                 modifier = Modifier
@@ -194,24 +203,21 @@ fun HeroCardItem(data: HeroInfoData, navController: NavController) {
                     .align(Alignment.CenterHorizontally)
                     .clip(RoundedCornerShape(5.dp))
             )
-
-            Spacer(modifier = Modifier.padding(3.dp))
             
             Text(
                 text = data.heroName,
                 modifier = Modifier.align(Alignment.CenterHorizontally),
                 fontSize = 12.sp,
                 fontWeight = FontWeight.Bold,
-                maxLines = 1,
-                overflow = TextOverflow.Ellipsis
+                maxLines = 2,
+                textAlign = TextAlign.Center,
+                overflow = TextOverflow.Ellipsis,
             )
 
-            Spacer(modifier = Modifier.padding(1.dp))
-
             Text(
-                text = "View Detail",
+                text = "View Details",
                 modifier = Modifier
-                    .padding(7.dp,0.dp,0.dp,20.dp),
+                    .padding(),
                 fontSize =  12.sp,
                 fontWeight = FontWeight.Normal,
                 maxLines = 1,
