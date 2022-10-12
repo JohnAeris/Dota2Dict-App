@@ -1,11 +1,8 @@
 package com.example.dota2dict
 
-import androidx.compose.foundation.Image
-import androidx.compose.foundation.background
+import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.foundation.verticalScroll
 import androidx.compose.material.Divider
 import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
@@ -17,11 +14,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.dota2dict.ui.theme.Poppins
@@ -35,7 +30,7 @@ fun HeroDetails(data: HeroInfoData) {
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 fun HeroTabScreen(data: HeroInfoData) {
-    val pagerState= rememberPagerState(pageCount = 4)
+    val pagerState= rememberPagerState(pageCount = 3)
 
     Column(
         modifier = Modifier.background(Color.Black))
@@ -56,9 +51,7 @@ fun HeroTabContent(pagerState: PagerState, data: HeroInfoData) {
 
         1 -> HeroTabScreen2(data)
 
-        2 -> HeroTabScreen3(data = "Page 3")
-
-        3 -> HeroTabScreen4(data = "Page 4")
+        2 -> HeroTabScreen3(data)
     }}
 
 }
@@ -818,33 +811,148 @@ fun HeroTabScreen2Prev() {
 }
 
 @Composable
-fun HeroTabScreen3(data: String) {
+fun HeroTabScreen3(data: HeroInfoData) {
     Column(
-        modifier = Modifier.fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center)
-    {
-        Text(
-            text = data,
-            color = Color.White,
-            fontSize = 30.sp,
-            textAlign = TextAlign.Center,
-            fontWeight = FontWeight.Bold)
+        verticalArrangement = Arrangement.Center,
+        modifier = Modifier
+            .background(Color.Black)
+            .padding(20.dp)
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState())
+    ) {
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Start
+        ) {
+            Image(
+                painter = painterResource(
+                    id = when(data.imageId) {
+                        1 -> R.drawable.abaddon_1_
+                        2 -> R.drawable.alchemist_1_
+                        3 -> R.drawable.ancient_apparition_1_
+                        4 -> R.drawable.antimage_1_
+                        5 -> R.drawable.arc_warden_1_
+                        6 -> R.drawable.axe_1_
+                        7 -> R.drawable.bane_1_
+                        else -> R.drawable.axe_1_
+                    }),
+                contentDescription = "Hero Image",
+                modifier = Modifier
+                    .size(100.dp)
+            )
+
+            Spacer(modifier = Modifier.width(25.dp))
+
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Box {
+                    Text(
+                        text = data.heroName,
+                        color = Color.White,
+                        fontSize = 18.sp,
+                        fontFamily = Poppins,
+                        fontWeight = FontWeight.Bold,
+                        maxLines = 2
+                    )
+
+                    Row(
+                        horizontalArrangement = Arrangement.Center,
+                        modifier = Modifier.padding(top = 30.dp)
+                    ) {
+                        Text(
+                            text = "BUILD",
+                            color = Color.White,
+                            fontSize = 14.sp,
+                            fontFamily = Poppins,
+                            fontWeight = FontWeight.Thin,
+                        )
+
+                        Text(
+                            text = "|",
+                            color = Color.White,
+                            fontSize = 14.sp,
+                            fontFamily = Poppins,
+                            fontWeight = FontWeight.Thin,
+                            modifier = Modifier.padding(start = 5.dp, end = 5.dp)
+                        )
+
+                        Text(
+                            text = "COUNTERS",
+                            color = Color.White,
+                            fontSize = 14.sp,
+                            fontFamily = Poppins,
+                            fontWeight = FontWeight.Thin
+                        )
+                    }
+                }
+            }
+        }
+
+        Divider(
+            color = colorResource(id = R.color.platinum),
+            thickness = 1.dp,
+            modifier = Modifier.padding(top = 10.dp, bottom = 20.dp, start = 10.dp, end = 10.dp)
+        )
+
+        Column(
+            horizontalAlignment = Alignment.Start,
+            verticalArrangement = Arrangement.spacedBy(15.dp)
+        ) {
+            Text(
+                text = "BUILD",
+                color = Color.White,
+                fontSize = 18.sp,
+                fontFamily = Poppins,
+                fontWeight = FontWeight.Bold
+            )
+
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier.padding(start = 10.dp)
+            ) {
+                Image(
+                    painter = painterResource(id = R.drawable.bracer_icon),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .size(20.dp)
+                        .border(1.dp, colorResource(id = R.color.violet))
+                )
+
+                Spacer(modifier = Modifier.width(10.dp))
+
+                Image(
+                    painter = painterResource(id = R.drawable.bracer_icon),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .size(20.dp)
+                        .border(1.dp, colorResource(id = R.color.violet))
+                )
+            }
+        }
     }
 }
 
 @Composable
-fun HeroTabScreen4(data: String) {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center)
-    {
-        Text(
-            text = data,
-            color = Color.White,
-            fontSize = 30.sp,
-            textAlign = TextAlign.Center,
-            fontWeight = FontWeight.Bold)
-    }
+@Preview (showBackground = true, showSystemUi = true)
+fun HeroTabScreen3Prev() {
+    HeroTabScreen2(HeroInfoData(
+        1,
+        "ABADDON",
+        "SHIELDS HIS ALLIES OR HIMSELF FROM ATTACKS",
+        "Able to transform enemy attacks into self-healing, Abaddon can survive almost any assault. Shielding allies and launching his double-edged coil at a friend or foe, he is always ready to ride into the thick of battle.",
+        1,
+        "Strength",
+        1,
+        "MELEE",
+        1,
+        25, 75, 0,
+        0, 0, 75,
+        0, 0, 0,
+        "325", "50-60", "1800/800",
+        "1.7", "2.8", "150",
+        "22 +2.6", "23 +1.5", "18 +2.0"
+    )
+    )
 }
+
+
