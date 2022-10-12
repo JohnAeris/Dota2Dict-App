@@ -67,7 +67,25 @@ data class HeroInfoData(
     val heroType: String,
     val attackTypeImage: Int,
     val attackType: String,
-    val complexityImage: Int
+    val complexityImage: Int,
+    val roleCarry: Int,
+    val roleSupport: Int,
+    val roleNuker: Int,
+    val roleDisabler: Int,
+    val roleJungler: Int,
+    val roleDurable: Int,
+    val roleEscape: Int,
+    val rolePusher: Int,
+    val roleInitiator: Int,
+    val statMovementSpeed: String,
+    val statAttackDamage: String,
+    val statVision: String,
+    val statAttackTime: String,
+    val statArmor: String,
+    val statAttackRange: String,
+    val attributeStrength: String,
+    val attributeAgility: String,
+    val attributeIntelligence: String
 )
 
 

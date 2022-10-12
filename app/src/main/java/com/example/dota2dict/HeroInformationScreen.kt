@@ -12,6 +12,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.res.colorResource
@@ -20,6 +21,7 @@ import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.TextUnit
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.dota2dict.ui.theme.Poppins
@@ -123,7 +125,7 @@ fun HeroTabScreen1(data: HeroInfoData) {
                 text = data.heroType,
                 fontSize = 15.sp,
                 fontFamily = Poppins,
-                fontWeight = FontWeight.Normal,
+                fontWeight = FontWeight.Thin,
                 color = Color.White,
                 textAlign = TextAlign.Center
             )
@@ -241,7 +243,14 @@ fun HeroTabScreen1Prev() {
         "Strength",
         1,
         "MELEE",
-        1)
+        1,
+        25, 75, 0,
+        0, 0, 75,
+        0, 0, 0,
+        "325", "50-60", "1800/800",
+        "1.7", "2.8", "150",
+        "22 +2.6", "23 +1.5", "18 +2.0"
+        )
     )
 }
 
@@ -250,11 +259,542 @@ fun HeroTabScreen2(data: HeroInfoData) {
     Column(
         horizontalAlignment = Alignment.CenterHorizontally,
         verticalArrangement = Arrangement.Center,
-        modifier = Modifier.background(Color.Black).fillMaxSize()
+        modifier = Modifier
+            .background(Color.Black)
+            .padding(20.dp)
+            .fillMaxSize()
+            .verticalScroll(rememberScrollState())
     ) {
-        Text(
-            text = "data.heroName",
-            color = Color.White)
+        Row(
+            verticalAlignment = Alignment.CenterVertically,
+            horizontalArrangement = Arrangement.Start
+        ) {
+            Image(
+                painter = painterResource(
+                    id = when(data.imageId) {
+                        1 -> R.drawable.abaddon_1_
+                        2 -> R.drawable.alchemist_1_
+                        3 -> R.drawable.ancient_apparition_1_
+                        4 -> R.drawable.antimage_1_
+                        5 -> R.drawable.arc_warden_1_
+                        6 -> R.drawable.axe_1_
+                        7 -> R.drawable.bane_1_
+                        else -> R.drawable.axe_1_
+                    }),
+                contentDescription = "Hero Image",
+                modifier = Modifier
+                    .size(100.dp)
+            )
+            
+            Spacer(modifier = Modifier.width(25.dp))
+            
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Box() {
+                    Text(
+                        text = data.heroName,
+                        color = Color.White,
+                        fontSize = 18.sp,
+                        fontFamily = Poppins,
+                        fontWeight = FontWeight.Bold,
+                        maxLines = 2,
+                    )
+
+                    Row(
+                        horizontalArrangement = Arrangement.Center,
+                        modifier = Modifier.padding(top = 30.dp)
+                    ) {
+                        Text(
+                            text = "ROLES",
+                            color = Color.White,
+                            fontSize = 14.sp,
+                            fontFamily = Poppins,
+                            fontWeight = FontWeight.Thin,
+                        )
+
+                        Spacer(modifier = Modifier.width(5.dp))
+
+                        Divider(
+                            color = colorResource(id = R.color.platinum),
+                            modifier = Modifier
+                                .fillMaxHeight(0.04f)
+                                .width(1.dp)
+                        )
+
+                        Spacer(modifier = Modifier.width(5.dp))
+
+                        Text(
+                            text = "STATS",
+                            color = Color.White,
+                            fontSize = 14.sp,
+                            fontFamily = Poppins,
+                            fontWeight = FontWeight.Thin
+                        )
+
+                        Spacer(modifier = Modifier.width(5.dp))
+
+                        Divider(
+                            color = colorResource(id = R.color.platinum),
+                            modifier = Modifier
+                                .fillMaxHeight(0.04f)
+                                .width(1.dp)
+                        )
+
+                        Spacer(modifier = Modifier.width(5.dp))
+
+                        Text(
+                            text = "ATTRIBUTES",
+                            color = Color.White,
+                            fontSize = 14.sp,
+                            fontFamily = Poppins,
+                            fontWeight = FontWeight.Thin
+                        )
+                    }
+                }
+            }
+        }
+
+        Divider(
+            color = colorResource(id = R.color.platinum),
+            thickness = 1.dp,
+            modifier = Modifier.padding(top = 10.dp, bottom = 20.dp, start = 10.dp, end = 10.dp)
+        )
+
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(10.dp)
+        ) {
+            Text(
+                text = "ROLES",
+                color = Color.White,
+                fontSize = 18.sp,
+                fontFamily = Poppins,
+                fontWeight = FontWeight.Bold
+            )
+            
+            Row(horizontalArrangement = Arrangement.Start) {
+
+                Column(horizontalAlignment = Alignment.Start) {
+                    Text(
+                        text = "Carry",
+                        color = Color.White,
+                        fontSize = 14.sp,
+                        fontFamily = Poppins,
+                        fontWeight = FontWeight.Thin
+                    )
+
+                    Spacer(modifier = Modifier.height(5.dp))
+
+                    CustomProgressBar(data.roleCarry)
+                }
+
+                Spacer(modifier = Modifier.width(10.dp))
+
+                Column(horizontalAlignment = Alignment.Start) {
+                    Text(
+                        text = "Support",
+                        color = Color.White,
+                        fontSize = 14.sp,
+                        fontFamily = Poppins,
+                        fontWeight = FontWeight.Thin
+                    )
+
+                    Spacer(modifier = Modifier.height(5.dp))
+
+                    CustomProgressBar(data.roleSupport)
+                }
+
+                Spacer(modifier = Modifier.width(10.dp))
+
+                Column(horizontalAlignment = Alignment.Start) {
+                    Text(
+                        text = "Nuker",
+                        color = Color.White,
+                        fontSize = 14.sp,
+                        fontFamily = Poppins,
+                        fontWeight = FontWeight.Thin
+                    )
+
+                    Spacer(modifier = Modifier.height(5.dp))
+
+                    CustomProgressBar(data.roleNuker)
+                }
+            }
+
+            Row(horizontalArrangement = Arrangement.Start) {
+
+                Column(horizontalAlignment = Alignment.Start) {
+                    Text(
+                        text = "Disabler",
+                        color = Color.White,
+                        fontSize = 14.sp,
+                        fontFamily = Poppins,
+                        fontWeight = FontWeight.Thin
+                    )
+
+                    Spacer(modifier = Modifier.height(5.dp))
+
+                    CustomProgressBar(data.roleDisabler)
+                }
+
+                Spacer(modifier = Modifier.width(10.dp))
+
+                Column(horizontalAlignment = Alignment.Start) {
+                    Text(
+                        text = "Jungler",
+                        color = Color.White,
+                        fontSize = 14.sp,
+                        fontFamily = Poppins,
+                        fontWeight = FontWeight.Thin
+                    )
+
+                    Spacer(modifier = Modifier.height(5.dp))
+
+                    CustomProgressBar(data.roleJungler)
+                }
+
+                Spacer(modifier = Modifier.width(10.dp))
+
+                Column(horizontalAlignment = Alignment.Start) {
+                    Text(
+                        text = "Durable",
+                        color = Color.White,
+                        fontSize = 14.sp,
+                        fontFamily = Poppins,
+                        fontWeight = FontWeight.Thin
+                    )
+
+                    Spacer(modifier = Modifier.height(5.dp))
+
+                    CustomProgressBar(data.roleDurable)
+                }
+            }
+
+            Row(horizontalArrangement = Arrangement.Start) {
+
+                Column(horizontalAlignment = Alignment.Start) {
+                    Text(
+                        text = "Escape",
+                        color = Color.White,
+                        fontSize = 14.sp,
+                        fontFamily = Poppins,
+                        fontWeight = FontWeight.Thin
+                    )
+
+                    Spacer(modifier = Modifier.height(5.dp))
+
+                    CustomProgressBar(data.roleEscape)
+                }
+
+                Spacer(modifier = Modifier.width(10.dp))
+
+                Column(horizontalAlignment = Alignment.Start) {
+                    Text(
+                        text = "Pusher",
+                        color = Color.White,
+                        fontSize = 14.sp,
+                        fontFamily = Poppins,
+                        fontWeight = FontWeight.Thin
+                    )
+
+                    Spacer(modifier = Modifier.height(5.dp))
+
+                    CustomProgressBar(data.rolePusher)
+                }
+
+                Spacer(modifier = Modifier.width(10.dp))
+
+                Column(horizontalAlignment = Alignment.Start) {
+                    Text(
+                        text = "Initiator",
+                        color = Color.White,
+                        fontSize = 14.sp,
+                        fontFamily = Poppins,
+                        fontWeight = FontWeight.Thin
+                    )
+
+                    Spacer(modifier = Modifier.height(5.dp))
+
+                    CustomProgressBar(data.roleInitiator)
+                }
+            }
+        }
+
+        Divider(
+            color = colorResource(id = R.color.platinum),
+            thickness = 1.dp,
+            modifier = Modifier.padding(top = 20.dp, bottom = 20.dp, start = 10.dp, end = 10.dp)
+        )
+        
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(10.dp),
+            modifier = Modifier.padding(start = 10.dp, end = 10.dp)
+        ) {
+            Text(
+                text = "STATS",
+                color = Color.White,
+                fontSize = 18.sp,
+                fontFamily = Poppins,
+                fontWeight = FontWeight.Bold
+            )
+
+            Row(
+                horizontalArrangement = Arrangement.Start,
+                verticalAlignment = Alignment.CenterVertically
+            ) {
+                Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                    Row(horizontalArrangement = Arrangement.Start, verticalAlignment = Alignment.CenterVertically) {
+                        Image(
+                            painter = painterResource(id = R.drawable.icon_movement_speed),
+                            contentDescription = null,
+                            modifier = Modifier.size(30.dp)
+                        )
+
+                        Spacer(modifier = Modifier.width(20.dp))
+
+                        Text(
+                            text = data.statMovementSpeed,
+                            fontSize = 14.sp,
+                            fontFamily = Poppins,
+                            fontWeight = FontWeight.Normal,
+                            color = Color.White
+                        )
+                    }
+
+                    Row(horizontalArrangement = Arrangement.Start, verticalAlignment = Alignment.CenterVertically) {
+                        Image(
+                            painter = painterResource(id = R.drawable.icon_vision),
+                            contentDescription = null,
+                            modifier = Modifier.size(30.dp)
+                        )
+
+                        Spacer(modifier = Modifier.width(20.dp))
+
+                        Text(
+                            text = data.statVision,
+                            fontSize = 14.sp,
+                            fontFamily = Poppins,
+                            fontWeight = FontWeight.Normal,
+                            color = Color.White
+                        )
+                    }
+
+                    Row(horizontalArrangement = Arrangement.Start, verticalAlignment = Alignment.CenterVertically) {
+                        Image(
+                            painter = painterResource(id = R.drawable.icon_armor),
+                            contentDescription = null,
+                            modifier = Modifier.size(30.dp)
+                        )
+
+                        Spacer(modifier = Modifier.width(20.dp))
+
+                        Text(
+                            text = data.statArmor,
+                            fontSize = 14.sp,
+                            fontFamily = Poppins,
+                            fontWeight = FontWeight.Normal,
+                            color = Color.White
+                        )
+                    }
+                }
+
+                Spacer(modifier = Modifier.width(50.dp))
+
+                Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
+                    Row(horizontalArrangement = Arrangement.Start, verticalAlignment = Alignment.CenterVertically) {
+                        Image(
+                            painter = painterResource(id = R.drawable.icon_damage),
+                            contentDescription = null,
+                            modifier = Modifier.size(30.dp)
+                        )
+
+                        Spacer(modifier = Modifier.width(20.dp))
+
+                        Text(
+                            text = data.statAttackDamage,
+                            fontSize = 14.sp,
+                            fontFamily = Poppins,
+                            fontWeight = FontWeight.Normal,
+                            color = Color.White
+                        )
+                    }
+
+                    Row(horizontalArrangement = Arrangement.Start, verticalAlignment = Alignment.CenterVertically) {
+                        Image(
+                            painter = painterResource(id = R.drawable.icon_attack_time),
+                            contentDescription = null,
+                            modifier = Modifier.size(30.dp)
+                        )
+
+                        Spacer(modifier = Modifier.width(20.dp))
+
+                        Text(
+                            text = data.statAttackTime,
+                            fontSize = 14.sp,
+                            fontFamily = Poppins,
+                            fontWeight = FontWeight.Normal,
+                            color = Color.White
+                        )
+                    }
+
+                    Row(horizontalArrangement = Arrangement.Start, verticalAlignment = Alignment.CenterVertically) {
+                        Image(
+                            painter = painterResource(id = R.drawable.icon_attack_range),
+                            contentDescription = null,
+                            modifier = Modifier.size(30.dp)
+                        )
+
+                        Spacer(modifier = Modifier.width(20.dp))
+
+                        Text(
+                            text = data.statArmor,
+                            fontSize = 14.sp,
+                            fontFamily = Poppins,
+                            fontWeight = FontWeight.Normal,
+                            color = Color.White
+                        )
+                    }
+                }
+            }
+
+
+
+
+        }
+
+        Divider(
+            color = colorResource(id = R.color.platinum),
+            thickness = 1.dp,
+            modifier = Modifier.padding(top = 20.dp, bottom = 20.dp, start = 10.dp, end = 10.dp)
+        )
+
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            verticalArrangement = Arrangement.spacedBy(10.dp),
+            modifier = Modifier.padding(start = 10.dp, end = 10.dp)
+        ) {
+            Text(
+                text = "ATTRIBUTES",
+                color = Color.White,
+                fontSize = 18.sp,
+                fontFamily = Poppins,
+                fontWeight = FontWeight.Bold
+            )
+
+            Box(contentAlignment = Alignment.Center) {
+                Image(
+                    painter = painterResource(id = R.drawable.hero_strength_ic),
+                    contentDescription = null,
+                    modifier =Modifier.size(40.dp)
+                )
+
+                Text(
+                    text = "Strength",
+                    color = Color.White,
+                    fontSize = 14.sp,
+                    fontFamily = Poppins,
+                    fontWeight = FontWeight.SemiBold,
+                    textAlign = TextAlign.End,
+                    modifier =Modifier.padding(end = 165.dp)
+                )
+
+                Text(
+                    text = data.attributeStrength,
+                    color = Color.White,
+                    fontSize = 14.sp,
+                    fontFamily = Poppins,
+                    fontWeight = FontWeight.SemiBold,
+                    textAlign = TextAlign.Start,
+                    modifier =Modifier.padding(start = 150.dp)
+                )
+            }
+
+            Box(contentAlignment = Alignment.Center) {
+                Image(
+                    painter = painterResource(id = R.drawable.hero_agility_ic),
+                    contentDescription = null,
+                    modifier =Modifier.size(40.dp)
+                )
+
+                Text(
+                    text = "Agility",
+                    color = Color.White,
+                    fontSize = 14.sp,
+                    fontFamily = Poppins,
+                    fontWeight = FontWeight.SemiBold,
+                    textAlign = TextAlign.End,
+                    modifier =Modifier.padding(end = 150.dp)
+                )
+
+                Text(
+                    text = data.attributeAgility,
+                    color = Color.White,
+                    fontSize = 14.sp,
+                    fontFamily = Poppins,
+                    fontWeight = FontWeight.SemiBold,
+                    textAlign = TextAlign.Start,
+                    modifier =Modifier.padding(start = 150.dp)
+                )
+            }
+
+            Box(contentAlignment = Alignment.Center) {
+                Image(
+                    painter = painterResource(id = R.drawable.hero_intelligence_ic),
+                    contentDescription = null,
+                    modifier =Modifier.size(40.dp)
+                )
+
+                Text(
+                    text = "Intelligence",
+                    color = Color.White,
+                    fontSize = 14.sp,
+                    fontFamily = Poppins,
+                    fontWeight = FontWeight.SemiBold,
+                    textAlign = TextAlign.End,
+                    modifier =Modifier.padding(end = 185.dp)
+                )
+
+                Text(
+                    text = data.attributeIntelligence,
+                    color = Color.White,
+                    fontSize = 14.sp,
+                    fontFamily = Poppins,
+                    fontWeight = FontWeight.SemiBold,
+                    textAlign = TextAlign.Start,
+                    modifier =Modifier.padding(start = 150.dp)
+                )
+            }
+
+        }
+    } 
+}
+
+@Composable
+fun CustomProgressBar(per: Int) {
+    Column(verticalArrangement = Arrangement.Center, horizontalAlignment = Alignment.CenterHorizontally
+    ) {
+        val percentage: Int = per
+        
+        Box(modifier = Modifier
+            .clip(RectangleShape)
+            .height(15.dp)
+            .background(
+                Color.White
+            )
+            .width(100.dp)
+        ) {
+            Box(
+                modifier = Modifier
+                    .clip(RectangleShape)
+                    .height(15.dp)
+                    .background(
+                        Brush.horizontalGradient(
+                            listOf(Color(0xFFFFCD38), Color.Yellow)
+                        )
+                    )
+                    .width(100.dp * percentage / 100)
+            )
+        }
     }
 }
 
@@ -270,7 +810,14 @@ fun HeroTabScreen2Prev() {
         "Strength",
         1,
         "MELEE",
-        1)
+        1,
+        25, 75, 0,
+        0, 0, 75,
+        0, 0, 0,
+        "325", "50-60", "1800/800",
+        "1.7", "2.8", "150",
+        "22 +2.6", "23 +1.5", "18 +2.0"
+        )
     )
 }
 

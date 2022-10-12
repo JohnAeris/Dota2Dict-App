@@ -173,7 +173,7 @@ fun HeroCardItem(data: HeroInfoData, navController: NavController) {
         modifier = Modifier
             .clickable {
                 val itemId = Gson().toJson(data)
-                navController.navigate(NavigationScreen.HeroDetails.route + "/$itemId")
+                navController.navigate(NavigationScreen.HeroDetails.route + "?item=$itemId")
             }
             .padding(5.dp)
             .fillMaxSize(),

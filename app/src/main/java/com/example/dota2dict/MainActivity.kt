@@ -153,22 +153,6 @@ fun Navigation(navController: NavHostController) {
         composable(NavigationItem.Settings.route) {
             SettingsPageScreen()
         }
-        composable(route = NavigationScreen.HeroesPageScreen.route) {
-            HeroesPageScreen(navController = navController)
-        }
-        composable(
-            route = NavigationScreen.HeroDetails.route + "/{item}",
-            arguments = listOf(
-                navArgument("item") {
-                    type = NavType.StringType
-                    nullable = true
-                })
-        ) {     navBackStackEntry ->
-            navBackStackEntry.arguments?.getString("item")?.let { json ->
-                val item = Gson().fromJson(json, HeroInfoData::class.java)
-                HeroDetails(data = item)
-            }
-        }
     }
 }
 
@@ -181,12 +165,13 @@ fun NavigationHero() {
         composable(route = NavigationScreen.HeroesPageScreen.route) {
             HeroesPageScreen(navController = navController)
         }
-        composable(route = NavigationScreen.HeroDetails.route + "/{item}",
+        composable(route = NavigationScreen.HeroDetails.route + "?item={item}",
             arguments = listOf(
                 navArgument("item") {
                     type = NavType.StringType
                     nullable = true
                 })
+
             ){
                 navBackStackEntry ->
             navBackStackEntry.arguments?.getString("item")?.let { json ->
