@@ -80,7 +80,6 @@ fun BottomNavigationBar(navController: NavController) {
         NavigationItem.Home,
         NavigationItem.Heroes,
         NavigationItem.Items,
-        NavigationItem.Settings
     )
     BottomNavigation(
         backgroundColor = colorResource(R.color.black)
@@ -149,9 +148,6 @@ fun Navigation(navController: NavHostController) {
         }
         composable(NavigationItem.Items.route) {
             ItemsPageScreen()
-        }
-        composable(NavigationItem.Settings.route) {
-            SettingsPageScreen()
         }
     }
 }
