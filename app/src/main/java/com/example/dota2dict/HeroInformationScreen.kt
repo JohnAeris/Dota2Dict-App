@@ -311,16 +311,14 @@ fun HeroTabScreen2(data: HeroInfoData) {
                             fontWeight = FontWeight.Thin,
                         )
 
-                        Spacer(modifier = Modifier.width(5.dp))
-
-                        Divider(
-                            color = colorResource(id = R.color.platinum),
-                            modifier = Modifier
-                                .fillMaxHeight(0.04f)
-                                .width(1.dp)
+                        Text(
+                            text = "|",
+                            color = Color.White,
+                            fontSize = 14.sp,
+                            fontFamily = Poppins,
+                            fontWeight = FontWeight.Thin,
+                            modifier = Modifier.padding(start = 5.dp, end = 5.dp)
                         )
-
-                        Spacer(modifier = Modifier.width(5.dp))
 
                         Text(
                             text = "STATS",
@@ -330,16 +328,14 @@ fun HeroTabScreen2(data: HeroInfoData) {
                             fontWeight = FontWeight.Thin
                         )
 
-                        Spacer(modifier = Modifier.width(5.dp))
-
-                        Divider(
-                            color = colorResource(id = R.color.platinum),
-                            modifier = Modifier
-                                .fillMaxHeight(0.04f)
-                                .width(1.dp)
+                        Text(
+                            text = "|",
+                            color = Color.White,
+                            fontSize = 14.sp,
+                            fontFamily = Poppins,
+                            fontWeight = FontWeight.Thin,
+                            modifier = Modifier.padding(start = 5.dp, end = 5.dp)
                         )
-
-                        Spacer(modifier = Modifier.width(5.dp))
 
                         Text(
                             text = "ATTRIBUTES",
