@@ -141,6 +141,7 @@ fun HomePageScreenPreview() {
 
 //HOME PAGE SCREEN | END
 
+
 //HEROES PAGE SCREEN | START
 
 @ExperimentalFoundationApi
@@ -227,13 +228,15 @@ fun HeroCardItem(data: HeroInfoData, navController: NavController) {
     }
 }
 
-
 fun getJsonDataFromAsset(context: Context, data: String): String {
     return context.assets.open(data).bufferedReader().use { it.readText() }
 }
+
 //HEROES PAGE SCREEN | END
 
+
 //ITEMS PAGE SCREEN | START
+
 @Composable
 fun ItemsPageScreen() {
     LazyVerticalGrid(
@@ -374,8 +377,6 @@ fun ItemsPageScreen() {
     )
 }
 
-
-
 @Preview(name = "Items Screen", showBackground = true, showSystemUi = true)
 @Composable
 fun ItemsPageScreenPreview() {
@@ -383,23 +384,3 @@ fun ItemsPageScreenPreview() {
 }
 
 //ITEMS PAGE SCREEN | END
-
-@Composable
-fun SettingsPageScreen() {
-    Column(
-        horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Center,
-        modifier = Modifier
-            .fillMaxSize()
-            .background(colorResource(R.color.black))
-            .wrapContentSize(Alignment.Center))
-    {
-        Text(text = "Settings Screen", color = colorResource(R.color.white), fontSize = 40.sp)
-    }
-}
-
-@Preview(name = "Settings Screen", showBackground = true, showSystemUi = true)
-@Composable
-fun SettingsPageScreenPreview() {
-    SettingsPageScreen()
-}
