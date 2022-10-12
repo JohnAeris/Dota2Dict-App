@@ -888,46 +888,314 @@ fun HeroTabScreen3(data: HeroInfoData) {
             }
         }
 
+        //INSERT SKILLS
+
         Divider(
             color = colorResource(id = R.color.platinum),
             thickness = 1.dp,
             modifier = Modifier.padding(top = 10.dp, bottom = 20.dp, start = 10.dp, end = 10.dp)
         )
 
+        Text(
+            text = "BUILD",
+            color = Color.White,
+            fontSize = 18.sp,
+            fontFamily = Poppins,
+            fontWeight = FontWeight.Bold
+        )
+
         Column(
             horizontalAlignment = Alignment.Start,
-            verticalArrangement = Arrangement.spacedBy(15.dp)
-        ) {
-            Text(
-                text = "BUILD",
-                color = Color.White,
-                fontSize = 18.sp,
-                fontFamily = Poppins,
-                fontWeight = FontWeight.Bold
-            )
+            verticalArrangement = Arrangement.spacedBy(10.dp),
+            modifier = Modifier.padding(end = 100.dp)
+        )  {
 
-            Row(
-                verticalAlignment = Alignment.CenterVertically,
-                modifier = Modifier.padding(start = 10.dp)
+            Column(
+                verticalArrangement = Arrangement.spacedBy(5.dp),
+                horizontalAlignment = Alignment.Start
             ) {
-                Image(
-                    painter = painterResource(id = R.drawable.bracer_icon),
-                    contentDescription = null,
-                    modifier = Modifier
-                        .size(20.dp)
-                        .border(1.dp, colorResource(id = R.color.violet))
+                Text(
+                    text = "Starting Game",
+                    fontSize = 14.sp,
+                    fontFamily = Poppins,
+                    fontWeight = FontWeight.Thin,
+                    color = Color.White,
                 )
 
-                Spacer(modifier = Modifier.width(10.dp))
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Start,
+                    modifier = Modifier.padding(start = 10.dp)
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.bracer_icon),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(20.dp)
+                            .border(1.dp, colorResource(id = R.color.yellow))
+                    )
 
-                Image(
-                    painter = painterResource(id = R.drawable.bracer_icon),
-                    contentDescription = null,
-                    modifier = Modifier
-                        .size(20.dp)
-                        .border(1.dp, colorResource(id = R.color.violet))
-                )
+                    Spacer(modifier = Modifier.width(10.dp))
+
+                    Image(
+                        painter = painterResource(id = R.drawable.bracer_icon),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(20.dp)
+                            .border(1.dp, colorResource(id = R.color.yellow))
+                    )
+                }
             }
+
+            Column(
+                verticalArrangement = Arrangement.spacedBy(5.dp),
+                horizontalAlignment = Alignment.Start
+            ) {
+                Text(
+                    text = "Early Game",
+                    fontSize = 14.sp,
+                    fontFamily = Poppins,
+                    fontWeight = FontWeight.Thin,
+                    color = Color.White,
+                )
+
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Start,
+                    modifier = Modifier.padding(start = 10.dp)
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.bracer_icon),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(20.dp)
+                            .border(1.dp, colorResource(id = R.color.yellow))
+                    )
+
+                    Spacer(modifier = Modifier.width(10.dp))
+
+                    Image(
+                        painter = painterResource(id = R.drawable.bracer_icon),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(20.dp)
+                            .border(1.dp, colorResource(id = R.color.yellow))
+                    )
+
+                    Spacer(modifier = Modifier.width(10.dp))
+
+                    Image(
+                        painter = painterResource(id = R.drawable.bracer_icon),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(20.dp)
+                            .border(1.dp, colorResource(id = R.color.yellow))
+                    )
+                }
+            }
+
+            Column(
+                verticalArrangement = Arrangement.spacedBy(5.dp),
+                horizontalAlignment = Alignment.Start
+            ) {
+                Text(
+                    text = "Mid Game",
+                    fontSize = 14.sp,
+                    fontFamily = Poppins,
+                    fontWeight = FontWeight.Thin,
+                    color = Color.White,
+                )
+
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Start,
+                    modifier = Modifier.padding(start = 10.dp)
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.bracer_icon),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(20.dp)
+                            .border(1.dp, colorResource(id = R.color.yellow))
+                    )
+
+                    Spacer(modifier = Modifier.width(10.dp))
+
+                    Image(
+                        painter = painterResource(id = R.drawable.bracer_icon),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(20.dp)
+                            .border(1.dp, colorResource(id = R.color.yellow))
+                    )
+
+                    Spacer(modifier = Modifier.width(10.dp))
+
+                    Image(
+                        painter = painterResource(id = R.drawable.bracer_icon),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(20.dp)
+                            .border(1.dp, colorResource(id = R.color.yellow))
+                    )
+
+                    Spacer(modifier = Modifier.width(10.dp))
+
+                    Image(
+                        painter = painterResource(id = R.drawable.bracer_icon),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(20.dp)
+                            .border(1.dp, colorResource(id = R.color.yellow))
+                    )
+                }
+            }
+
+            Column(
+                verticalArrangement = Arrangement.spacedBy(5.dp),
+                horizontalAlignment = Alignment.Start
+            ) {
+                Text(
+                    text = "Late Game",
+                    fontSize = 14.sp,
+                    fontFamily = Poppins,
+                    fontWeight = FontWeight.Thin,
+                    color = Color.White,
+                )
+
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Start,
+                    modifier = Modifier.padding(start = 10.dp)
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.bracer_icon),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(20.dp)
+                            .border(1.dp, colorResource(id = R.color.yellow))
+                    )
+
+                    Spacer(modifier = Modifier.width(10.dp))
+
+                    Image(
+                        painter = painterResource(id = R.drawable.bracer_icon),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(20.dp)
+                            .border(1.dp, colorResource(id = R.color.yellow))
+                    )
+
+                    Spacer(modifier = Modifier.width(10.dp))
+
+                    Image(
+                        painter = painterResource(id = R.drawable.bracer_icon),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(20.dp)
+                            .border(1.dp, colorResource(id = R.color.yellow))
+                    )
+
+                    Spacer(modifier = Modifier.width(10.dp))
+
+                    Image(
+                        painter = painterResource(id = R.drawable.bracer_icon),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(20.dp)
+                            .border(1.dp, colorResource(id = R.color.yellow))
+                    )
+
+                    Spacer(modifier = Modifier.width(10.dp))
+
+                    Image(
+                        painter = painterResource(id = R.drawable.bracer_icon),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(20.dp)
+                            .border(1.dp, colorResource(id = R.color.yellow))
+                    )
+                }
+            }
+
+            Column(
+                verticalArrangement = Arrangement.spacedBy(5.dp),
+                horizontalAlignment = Alignment.Start
+            ) {
+                Text(
+                    text = "Situational Items",
+                    fontSize = 14.sp,
+                    fontFamily = Poppins,
+                    fontWeight = FontWeight.Thin,
+                    color = Color.White,
+                )
+
+                Row(
+                    verticalAlignment = Alignment.CenterVertically,
+                    horizontalArrangement = Arrangement.Start,
+                    modifier = Modifier.padding(start = 10.dp)
+                ) {
+                    Image(
+                        painter = painterResource(id = R.drawable.bracer_icon),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(20.dp)
+                            .border(1.dp, colorResource(id = R.color.yellow))
+                    )
+
+                    Spacer(modifier = Modifier.width(10.dp))
+
+                    Image(
+                        painter = painterResource(id = R.drawable.bracer_icon),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(20.dp)
+                            .border(1.dp, colorResource(id = R.color.yellow))
+                    )
+
+                    Spacer(modifier = Modifier.width(10.dp))
+
+                    Image(
+                        painter = painterResource(id = R.drawable.bracer_icon),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(20.dp)
+                            .border(1.dp, colorResource(id = R.color.yellow))
+                    )
+
+                    Spacer(modifier = Modifier.width(10.dp))
+
+                    Image(
+                        painter = painterResource(id = R.drawable.bracer_icon),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(20.dp)
+                            .border(1.dp, colorResource(id = R.color.yellow))
+                    )
+
+                    Spacer(modifier = Modifier.width(10.dp))
+
+                    Image(
+                        painter = painterResource(id = R.drawable.bracer_icon),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(20.dp)
+                            .border(1.dp, colorResource(id = R.color.yellow))
+                    )
+
+                    Spacer(modifier = Modifier.width(10.dp))
+
+                    Image(
+                        painter = painterResource(id = R.drawable.bracer_icon),
+                        contentDescription = null,
+                        modifier = Modifier
+                            .size(20.dp)
+                            .border(1.dp, colorResource(id = R.color.yellow))
+                    )
+                }
+            }
+
+
         }
     }
 }
@@ -935,7 +1203,7 @@ fun HeroTabScreen3(data: HeroInfoData) {
 @Composable
 @Preview (showBackground = true, showSystemUi = true)
 fun HeroTabScreen3Prev() {
-    HeroTabScreen2(HeroInfoData(
+    HeroTabScreen3(HeroInfoData(
         1,
         "ABADDON",
         "SHIELDS HIS ALLIES OR HIMSELF FROM ATTACKS",
