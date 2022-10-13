@@ -26,7 +26,27 @@
     "statAttackRange": "150",
     "attributeStrength": "22 +2.6",
     "attributeAgility": "23 +1.5",
-    "attributeIntelligence": "18 +2.0"
+    "attributeIntelligence": "18 +2.0",
+    "skillName1": "MIST COIL",
+    "skillName1Cd": "5.5",
+    "skillName1Mana": "50",
+    "skillName1Description": "Abaddon releases a coil of deathly mist that can damage an enemy unit or heal a friendly unit at the cost of some of Abaddon's health.",
+    "skillName2": "APHOTIC SHIELD",
+    "skillName2Cd": "12/10/8/6",
+    "skillName2Mana": "85/100/115/130",
+    "skillName2Description": "Summons dark energies around an ally unit, creating a shield that absorbs a set amount of damage before expiring. When the shield is destroyed it will burst and deal damage equal to the amount it could absorb to an area around it. Removes certain types of negative buffs and stuns on cast.",
+    "skillName3": "CURSE OF AVERNUS",
+    "skillName3Cd": "0",
+    "skillName3Mana": "0",
+    "skillName3Description": "Abaddon strikes an enemy, slowing the target's movement speed. If the target gets hit 4.0 times, they become affected by a chilling curse causing them to be silenced and slowed, and all attacks against them gain an attack speed boost.",
+    "skillNameExtra": "",
+    "skillNameExtraCd":  "",
+    "skillNameExtraMana": "",
+    "skillNameExtraDescription": "",
+    "skillName4": "BORROWED TIME",
+    "skillName4Cd": "60/50/40",
+    "skillName4Mana": "0/0/0",
+    "skillName4Description": "When activated, all damage dealt to you will heal instead of harm. Most negative buffs will also be removed. If the ability is not on cooldown, it will automatically activate if your health falls below 400.0."
   },
 
   {
@@ -56,7 +76,23 @@
     "statAttackRange": "150",
     "attributeStrength": "23 +2.7",
     "attributeAgility": "22 +1.5",
-    "attributeIntelligence": "25 +1.8"
+    "attributeIntelligence": "25 +1.8",
+    "skillName1": "ACID SPRAY",
+    "skillName1Cd": "22",
+    "skillName1Mana": "130/140/150/160",
+    "skillName1Description": "Sprays high-pressure acid across a target area. Enemy units who step across the contaminated terrain take damage per second and have their armor reduced.",
+    "skillName2": "UNSTABLE CONCOCTION",
+    "skillName2Cd": "13",
+    "skillName2Mana": "100",
+    "skillName2Description": "Alchemist brews up an unstable concoction that he can throw at an enemy hero, to stun and deal damage in an area around the explosion. The longer the concoction brews, the more damage it deals and the longer the stun. Alchemist is faster while charging the concoction. After 5.0 seconds, the brew reaches its maximum damage and stun time. However, after 5.5 seconds, the concoction will explode on Alchemist himself if not thrown.",
+    "skillName3": "GREEVIL'S GREED",
+    "skillName3Cd": "0",
+    "skillName3Mana": "0",
+    "skillName3Description": "Alchemist synthesizes additional gold from his enemies and bounty runes. With each kill, Alchemist earns base bonus gold and extra bonus gold. If Alchemist kills another unit which yields gold within the next 36.0 seconds, an additional instance of Extra Bonus Gold is added to the total. Additionally, causes bounty runes to yield more gold.",
+    "skillName4": "CHEMICAL RAGE",
+    "skillName4Cd": "60",
+    "skillName4Mana": "50/75/100",
+    "skillName4Description": "Alchemist causes his Ogre to enter a chemically induced rage, reducing base attack cooldown and increasing movement speed and health regeneration."
   },
 
   {
@@ -86,7 +122,23 @@
     "statAttackRange": "675",
     "attributeStrength": "20 +1.9",
     "attributeAgility": "20 +2.2",
-    "attributeIntelligence": "23 +3.4"
+    "attributeIntelligence": "23 +3.4",
+    "skillName1": "COLD FEET",
+    "skillName1Cd": "12/11/10/9",
+    "skillName1Mana": "125",
+    "skillName1Description": "Places a frozen hex on an enemy unit that deals damage over time, but can be dispelled by moving away from the initial cast point.  If the enemy unit doesn't move outside of the given range, it will be stunned and frozen in place after 4 seconds.",
+    "skillName2": "ICE VORTEX",
+    "skillName2Cd": "7/6/5/4",
+    "skillName2Mana": "40/50/60/70",
+    "skillName2Description": "Creates a vortex of icy energy that slows and increases magic damage done to enemies in its range.",
+    "skillName3": "CHILLING TOUCH",
+    "skillName3Cd": "12/9/6/3",
+    "skillName3Mana": "30/40/50/60",
+    "skillName3Description": "Enhances Ancient Apparition's attack with increased range, heavy magic damage, and movement slow.",
+    "skillName4": "ICE BLAST",
+    "skillName4Cd": "60/50/40",
+    "skillName4Mana": "175",
+    "skillName4Description": "Launches a tracer toward any location on the battlefield, which must be triggered again to mark the area to be blasted by a damaging explosion of hail. The further the tracer travels, the larger the explosion will be. Enemies caught in the explosion, or who touch the icy ball of hail as it travels, are Frostbitten, taking damage and prevented from regenerating or healing. If a Frostbitten unit's health drops below a certain percentage, they will instantly shatter."
   },
 
   {
@@ -116,7 +168,23 @@
     "statAttackRange": "150",
     "attributeStrength": "21 +1.6",
     "attributeAgility": "24 +2.8",
-    "attributeIntelligence": "12 +1.8"
+    "attributeIntelligence": "12 +1.8",
+    "skillName1": "MANA BREAK",
+    "skillName1Cd": "0",
+    "skillName1Mana": "0",
+    "skillName1Description": "Burns an opponent's mana on each attack and deals damage equal to a percentage of the mana burnt. Enemies with no mana left are temporarily slowed.",
+    "skillName2": "BLINK",
+    "skillName2Cd": "12/10/8/6",
+    "skillName2Mana": "45",
+    "skillName2Description": "Short distance teleportation that allows Anti-Mage to move in and out of combat.",
+    "skillName3": "COUNTERSPELL",
+    "skillName3Cd": "15/11/7/3",
+    "skillName3Mana": "45",
+    "skillName3Description": "Passively grants magic resistance. Counterspell may be activated to create an anti-magic shell around Anti-Mage that blocks and sends any targeted spells back towards enemies instead.",
+    "skillName4": "MANA VOID",
+    "skillName4Cd": "70",
+    "skillName4Mana": "100/200/300",
+    "skillName4Description": "For each point of mana missing by the target unit, damage is dealt to it and surrounding enemies.  The main target is also mini-stunned."
   },
 
   {
@@ -146,7 +214,23 @@
     "statAttackRange": "625",
     "attributeStrength": "22 +2.6",
     "attributeAgility": "20 +3.0",
-    "attributeIntelligence": "24 +2.6"
+    "attributeIntelligence": "24 +2.6",
+    "skillName1": "FLUX",
+    "skillName1Cd": "16",
+    "skillName1Mana": "75",
+    "skillName1Description": "Infuses a lone enemy unit with swirling, volatile energy, slowing its movement speed and dealing damage over time. The damage is not applied if another enemy unit is near the target.",
+    "skillName2": "MAGNETIC FIELD",
+    "skillName2Cd": "20",
+    "skillName2Mana": "50/70/90/110",
+    "skillName2Description": "Generates a circular distortion field of magnetic energy that grants bonus attack speed and protects allied heroes and buildings within it by evading attacks coming from outside the field.",
+    "skillName3": "SPARK WRAITH",
+    "skillName3Cd": "4/4/4/4",
+    "skillName3Mana": "80",
+    "skillName3Description": "Summons a Spark Wraith that slowly materializes and patrols a targeted area until an enemy comes within its range. Once a target has been found the wraith fuses with them, dealing magical damage and slowing the unit.",
+    "skillName4": "TEMPEST DOUBLE",
+    "skillName4Cd": "60/50/40",
+    "skillName4Mana": "0",
+    "skillName4Description": "Briefly refocusing its fractured elements into a single form, the Arc Warden is able to create a perfect electrical duplication of itself. The duplicate can use all of Arc Warden's current items and spells, except most consumables and items that drop on death. The duplicate has separate item and ability cooldowns.  The Tempest Double gives bounty gold to enemies when killed. The Tempest Double loses its sense of self if he is too far away from Arc Warden and deals less attack damage."
   },
 
   {
@@ -176,7 +260,23 @@
     "statAttackRange": "150",
     "attributeStrength": "25 +2.8",
     "attributeAgility": "20 +2.0",
-    "attributeIntelligence": "18 +1.6"
+    "attributeIntelligence": "18 +1.6",
+    "skillName1": "BERSERKER'S CALL",
+    "skillName1Cd": "17/15/13/11",
+    "skillName1Mana": "80/90/100/110",
+    "skillName1Description": "Axe taunts nearby enemy units, forcing them to attack him, while he gains bonus armor during the duration.",
+    "skillName2": "BATTLE HUNGER",
+    "skillName2Cd": "20/15/10/5",
+    "skillName2Mana": "50/60/70/80",
+    "skillName2Description": "Enrages an enemy unit, causing it to take damage over time until it kills another unit or the duration ends. The damage is increased by a factor of Axe's armor. The enemy is also slowed as long as they are facing away from Axe.",
+    "skillName3": "COUNTER HELIX",
+    "skillName3Cd": "0.3",
+    "skillName3Mana": "0",
+    "skillName3Description": "When attacked, Axe has a chance to perform a helix counter attack, dealing pure damage to all nearby enemies.",
+    "skillName4": "CULLING BLADE",
+    "skillName4Cd": "100/85/70",
+    "skillName4Mana": "100/125/150",
+    "skillName4Description": "Axe spots a weakness and strikes, dealing pure damage. When an enemy hero is killed with Culling Blade, its cooldown is reset, Axe gains bonus armor permanently and all nearby allied units gain bonus movement speed. "
   },
 
   {
@@ -206,6 +306,22 @@
     "statAttackRange": "400",
     "attributeStrength": "22 +2.5",
     "attributeAgility": "22 +2.5",
-    "attributeIntelligence": "22 +2.5"
+    "attributeIntelligence": "22 +2.5",
+    "skillName1": "ENFEEBLE",
+    "skillName1Cd": "28/21/14/7",
+    "skillName1Mana": "40/50/60/70",
+    "skillName1Description": "Lowers the enemy's total attack damage, cast range, and regeneration.",
+    "skillName2": "BRAIN SAP",
+    "skillName2Cd": "17/15/13/11",
+    "skillName2Mana": "100/120/140/160",
+    "skillName2Description": "Feasts on the vital energies of an enemy unit, healing Bane and dealing damage.",
+    "skillName3": "NIGHTMARE",
+    "skillName3Cd": "24/21/18/15",
+    "skillName3Mana": "165",
+    "skillName3Description": "Puts the target enemy or friendly Hero to sleep. Sleeping units are awakened when damaged. If the target was directly attacked, the Nightmare passes to the attacking unit. Bane can attack nightmared targets freely. Enemy Units take Pure Damage Per Second while in Nightmare.",
+    "skillName4": "FIEND'S GRIP",
+    "skillName4Cd": "120/110/100",
+    "skillName4Mana": "200/300/400",
+    "skillName4Description": "CHANNELED - Grips an enemy unit, disabling it and causing heavy damage over time, while stealing mana every 0.5 seconds based on the unit's maximum mana."
   }
 ]
