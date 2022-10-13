@@ -62,8 +62,8 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-test-manifest:$compose_version"
 
     //Pager
-    implementation "com.google.accompanist:accompanist-pager:0.14.0"
-    implementation "com.google.accompanist:accompanist-pager-indicators:0.14.0"
+    implementation "com.google.accompanist:accompanist-pager:0.23.1"
+    implementation "com.google.accompanist:accompanist-pager-indicators:0.23.1"
 
     //Navigation
     def nav_version = "2.5.2"
