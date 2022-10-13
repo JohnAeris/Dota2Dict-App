@@ -2,6 +2,8 @@ package com.example.dota2dict
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.lazy.LazyRow
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Divider
 import androidx.compose.material.Text
@@ -12,6 +14,7 @@ import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
@@ -30,14 +33,13 @@ fun HeroDetails(data: HeroInfoData) {
 @OptIn(ExperimentalPagerApi::class)
 @Composable
 fun HeroTabScreen(data: HeroInfoData) {
-    val pagerState= rememberPagerState(pageCount = 3)
+    val pagerState= rememberPagerState(0)
 
     Column(
         modifier = Modifier.background(Color.Black))
     {
 
         HeroTabContent(pagerState = pagerState, data = data)
-
     }
 }
 
@@ -45,15 +47,16 @@ fun HeroTabScreen(data: HeroInfoData) {
 @Composable
 fun HeroTabContent(pagerState: PagerState, data: HeroInfoData) {
 
-    HorizontalPager(state = pagerState) {
-            page -> when (page) {
-        0 -> HeroTabScreen1(data)
+    HorizontalPager(count = 3, state = pagerState) { page ->
+        when (page) {
+            0 -> HeroTabScreen1(data)
 
-        1 -> HeroTabScreen2(data)
+            1 -> HeroTabScreen2(data)
 
-        2 -> HeroTabScreen3(data)
-    }}
 
+            2 -> HeroTabScreen3(data)
+        }
+    }
 }
 
 @Composable
@@ -224,7 +227,7 @@ fun HeroTabScreen1(data: HeroInfoData) {
     }
 }
 
-@Composable
+/*@Composable
 @Preview (showBackground = true, showSystemUi = true)
 fun HeroTabScreen1Prev() {
     HeroTabScreen1(HeroInfoData(
@@ -242,10 +245,19 @@ fun HeroTabScreen1Prev() {
         0, 0, 0,
         "325", "50-60", "1800/800",
         "1.7", "2.8", "150",
-        "22 +2.6", "23 +1.5", "18 +2.0"
-        )
+        "22 +2.6", "23 +1.5", "18 +2.0",
+        "MIST COIL", "5.5", "50",
+        "Abaddon releases a coil of deathly mist that can damage an enemy unit or heal a friendly unit at the cost of some of Abaddon's health.",
+        "APHOTIC SHIELD", "12/10/8/6", "85/100/115/130",
+        "Summons dark energies around an ally unit, creating a shield that absorbs a set amount of damage before expiring. When the shield is destroyed it will burst and deal damage equal to the amount it could absorb to an area around it. Removes certain types of negative buffs and stuns on cast.",
+        "CURSE OF AVERNUS", "0", "0",
+        "Abaddon strikes an enemy, slowing the target's movement speed. If the target gets hit 4.0 times, they become affected by a chilling curse causing them to be silenced and slowed, and all attacks against them gain an attack speed boost.",
+        "BORROWED TIME", "60/50/40", "0/0/0",
+        "When activated, all damage dealt to you will heal instead of harm. Most negative buffs will also be removed. If the ability is not on cooldown, it will automatically activate if your health falls below 400.0."
+
     )
-}
+    )
+}*/
 
 @Composable
 fun HeroTabScreen2(data: HeroInfoData) {
@@ -345,7 +357,7 @@ fun HeroTabScreen2(data: HeroInfoData) {
         Divider(
             color = colorResource(id = R.color.platinum),
             thickness = 1.dp,
-            modifier = Modifier.padding(top = 10.dp, bottom = 20.dp, start = 10.dp, end = 10.dp)
+            modifier = Modifier.padding(top = 10.dp, bottom = 20.dp)
         )
 
         Column(
@@ -511,7 +523,7 @@ fun HeroTabScreen2(data: HeroInfoData) {
         Divider(
             color = colorResource(id = R.color.platinum),
             thickness = 1.dp,
-            modifier = Modifier.padding(top = 20.dp, bottom = 20.dp, start = 10.dp, end = 10.dp)
+            modifier = Modifier.padding(top = 20.dp, bottom = 20.dp)
         )
         
         Column(
@@ -654,7 +666,7 @@ fun HeroTabScreen2(data: HeroInfoData) {
         Divider(
             color = colorResource(id = R.color.platinum),
             thickness = 1.dp,
-            modifier = Modifier.padding(top = 20.dp, bottom = 20.dp, start = 10.dp, end = 10.dp)
+            modifier = Modifier.padding(top = 20.dp, bottom = 20.dp)
         )
 
         Column(
@@ -787,7 +799,7 @@ fun CustomProgressBar(per: Int) {
     }
 }
 
-@Composable
+/*@Composable
 @Preview (showBackground = true, showSystemUi = true)
 fun HeroTabScreen2Prev() {
     HeroTabScreen2(HeroInfoData(
@@ -805,10 +817,19 @@ fun HeroTabScreen2Prev() {
         0, 0, 0,
         "325", "50-60", "1800/800",
         "1.7", "2.8", "150",
-        "22 +2.6", "23 +1.5", "18 +2.0"
-        )
+        "22 +2.6", "23 +1.5", "18 +2.0",
+        "MIST COIL", "5.5", "50",
+        "Abaddon releases a coil of deathly mist that can damage an enemy unit or heal a friendly unit at the cost of some of Abaddon's health.",
+        "APHOTIC SHIELD", "12/10/8/6", "85/100/115/130",
+        "Summons dark energies around an ally unit, creating a shield that absorbs a set amount of damage before expiring. When the shield is destroyed it will burst and deal damage equal to the amount it could absorb to an area around it. Removes certain types of negative buffs and stuns on cast.",
+        "CURSE OF AVERNUS", "0", "0",
+        "Abaddon strikes an enemy, slowing the target's movement speed. If the target gets hit 4.0 times, they become affected by a chilling curse causing them to be silenced and slowed, and all attacks against them gain an attack speed boost.",
+        "BORROWED TIME", "60/50/40", "0/0/0",
+        "When activated, all damage dealt to you will heal instead of harm. Most negative buffs will also be removed. If the ability is not on cooldown, it will automatically activate if your health falls below 400.0."
+
     )
-}
+    )
+}*/
 
 @Composable
 fun HeroTabScreen3(data: HeroInfoData) {
@@ -838,8 +859,10 @@ fun HeroTabScreen3(data: HeroInfoData) {
                         else -> R.drawable.axe_1_
                     }),
                 contentDescription = "Hero Image",
+                contentScale = ContentScale.Crop,
                 modifier = Modifier
                     .size(100.dp)
+                    .clip(RoundedCornerShape(16.dp))
             )
 
             Spacer(modifier = Modifier.width(25.dp))
@@ -860,44 +883,25 @@ fun HeroTabScreen3(data: HeroInfoData) {
                         modifier = Modifier.padding(top = 30.dp)
                     ) {
                         Text(
-                            text = "BUILD",
+                            text = "ABILITIES",
                             color = Color.White,
                             fontSize = 14.sp,
                             fontFamily = Poppins,
                             fontWeight = FontWeight.Thin,
-                        )
-
-                        Text(
-                            text = "|",
-                            color = Color.White,
-                            fontSize = 14.sp,
-                            fontFamily = Poppins,
-                            fontWeight = FontWeight.Thin,
-                            modifier = Modifier.padding(start = 5.dp, end = 5.dp)
-                        )
-
-                        Text(
-                            text = "COUNTERS",
-                            color = Color.White,
-                            fontSize = 14.sp,
-                            fontFamily = Poppins,
-                            fontWeight = FontWeight.Thin
                         )
                     }
                 }
             }
         }
 
-        //INSERT SKILLS
-
         Divider(
             color = colorResource(id = R.color.platinum),
-            thickness = 1.dp,
-            modifier = Modifier.padding(top = 10.dp, bottom = 20.dp, start = 10.dp, end = 10.dp)
+            thickness =  1.dp,
+            modifier = Modifier.padding(top = 10.dp, bottom = 20.dp)
         )
 
         Text(
-            text = "BUILD",
+            text = "ABILITIES",
             color = Color.White,
             fontSize = 18.sp,
             fontFamily = Poppins,
@@ -906,295 +910,381 @@ fun HeroTabScreen3(data: HeroInfoData) {
 
         Column(
             horizontalAlignment = Alignment.Start,
-            verticalArrangement = Arrangement.spacedBy(10.dp),
-            modifier = Modifier.padding(end = 100.dp)
-        )  {
-
-            Column(
-                verticalArrangement = Arrangement.spacedBy(5.dp),
-                horizontalAlignment = Alignment.Start
+            verticalArrangement = Arrangement.spacedBy(10.dp)
+        ) {
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Start,
             ) {
-                Text(
-                    text = "Starting Game",
-                    fontSize = 14.sp,
-                    fontFamily = Poppins,
-                    fontWeight = FontWeight.Thin,
-                    color = Color.White,
+                Image(
+                    painter = painterResource(
+                        id = when(data.imageId) {
+                            1 -> R.drawable.abaddon_skill_1
+                            2 -> R.drawable.alchemist_skill_1
+                            3 -> R.drawable.ancient_skill_1
+                            4 -> R.drawable.antimage_skill_1
+                            5 -> R.drawable.arc_skill_1
+                            6 -> R.drawable.axe_skill_1
+                            7 -> R.drawable.bane_skill_1
+                            else -> R.drawable.dota2_logo_ic
+                        }),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .size(80.dp)
+                        .border(
+                            BorderStroke(1.dp, colorResource(id = R.color.yellow)),
+                            shape = CircleShape
+                        )
+                        .clip(CircleShape)
                 )
 
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Start,
-                    modifier = Modifier.padding(start = 10.dp)
+                Spacer(modifier = Modifier.width(20.dp))
+
+                Column(
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.Start
                 ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.bracer_icon),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(20.dp)
-                            .border(1.dp, colorResource(id = R.color.yellow))
+                    Text(
+                        text = data.skillName1,
+                        color = Color.White,
+                        fontSize = 18.sp,
+                        fontFamily = Poppins,
+                        fontWeight = FontWeight.Medium,
+                        maxLines = 1
                     )
 
-                    Spacer(modifier = Modifier.width(10.dp))
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Start
+                    ) {
+                        Image(
+                            painter = painterResource(id = R.drawable.attack_cd_icon),
+                            contentDescription = null,
+                            modifier = Modifier.size(10.dp)
+                        )
 
-                    Image(
-                        painter = painterResource(id = R.drawable.bracer_icon),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(20.dp)
-                            .border(1.dp, colorResource(id = R.color.yellow))
-                    )
+                        Spacer(modifier = Modifier.width(5.dp))
+
+                        Text(
+                            text = data.skillName1Cd,
+                            color = Color.White,
+                            fontSize = 10.sp,
+                            fontFamily = Poppins,
+                            fontWeight = FontWeight.Thin
+                        )
+
+                        Spacer(modifier = Modifier.width(20.dp))
+
+                        Image(
+                            painter = painterResource(id = R.drawable.mana_cost_icon),
+                            contentDescription = null,
+                            modifier = Modifier.size(10.dp)
+                        )
+
+                        Spacer(modifier = Modifier.width(5.dp))
+
+                        Text(
+                            text = data.skillName1Mana,
+                            color = Color.White,
+                            fontSize = 10.sp,
+                            fontFamily = Poppins,
+                            fontWeight = FontWeight.Thin
+                        )
+                    }
                 }
             }
 
-            Column(
-                verticalArrangement = Arrangement.spacedBy(5.dp),
-                horizontalAlignment = Alignment.Start
+            Text(
+                text = data.skillName1Description,
+                color = Color.White,
+                fontSize = 12.sp,
+                fontFamily = Poppins,
+                fontWeight = FontWeight.Normal,
+                textAlign = TextAlign.Justify,
+                modifier = Modifier.padding(start = 10.dp, end = 10.dp)
+            )
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Start
             ) {
-                Text(
-                    text = "Early Game",
-                    fontSize = 14.sp,
-                    fontFamily = Poppins,
-                    fontWeight = FontWeight.Thin,
-                    color = Color.White,
+                Image(
+                    painter = painterResource(
+                        id = when(data.imageId) {
+                            1 -> R.drawable.abaddon_skill_2
+                            2 -> R.drawable.alchemist_skill_2
+                            3 -> R.drawable.ancient_skill_2
+                            4 -> R.drawable.antimage_skill_2
+                            5 -> R.drawable.arc_skill_2
+                            6 -> R.drawable.axe_skill_2
+                            7 -> R.drawable.bane_skill_2
+                            else -> R.drawable.dota2_logo_ic
+                        }),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .size(80.dp)
+                        .border(
+                            BorderStroke(1.dp, colorResource(id = R.color.yellow)),
+                            shape = CircleShape
+                        )
+                        .clip(CircleShape)
                 )
 
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Start,
-                    modifier = Modifier.padding(start = 10.dp)
+                Spacer(modifier = Modifier.width(20.dp))
+
+                Column(
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.Start
                 ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.bracer_icon),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(20.dp)
-                            .border(1.dp, colorResource(id = R.color.yellow))
+                    Text(
+                        text = data.skillName2,
+                        color = Color.White,
+                        fontSize = 18.sp,
+                        fontFamily = Poppins,
+                        fontWeight = FontWeight.Medium,
+                        maxLines = 1
                     )
 
-                    Spacer(modifier = Modifier.width(10.dp))
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Start
+                    ) {
+                        Image(
+                            painter = painterResource(id = R.drawable.attack_cd_icon),
+                            contentDescription = null,
+                            modifier = Modifier.size(10.dp)
+                        )
 
-                    Image(
-                        painter = painterResource(id = R.drawable.bracer_icon),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(20.dp)
-                            .border(1.dp, colorResource(id = R.color.yellow))
-                    )
+                        Spacer(modifier = Modifier.width(5.dp))
 
-                    Spacer(modifier = Modifier.width(10.dp))
+                        Text(
+                            text = data.skillName2Cd,
+                            color = Color.White,
+                            fontSize = 10.sp,
+                            fontFamily = Poppins,
+                            fontWeight = FontWeight.Thin
+                        )
 
-                    Image(
-                        painter = painterResource(id = R.drawable.bracer_icon),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(20.dp)
-                            .border(1.dp, colorResource(id = R.color.yellow))
-                    )
+                        Spacer(modifier = Modifier.width(20.dp))
+
+                        Image(
+                            painter = painterResource(id = R.drawable.mana_cost_icon),
+                            contentDescription = null,
+                            modifier = Modifier.size(10.dp)
+                        )
+
+                        Spacer(modifier = Modifier.width(5.dp))
+
+                        Text(
+                            text = data.skillName2Mana,
+                            color = Color.White,
+                            fontSize = 10.sp,
+                            fontFamily = Poppins,
+                            fontWeight = FontWeight.Thin
+                        )
+                    }
                 }
             }
 
-            Column(
-                verticalArrangement = Arrangement.spacedBy(5.dp),
-                horizontalAlignment = Alignment.Start
+            Text(
+                text = data.skillName2Description,
+                color = Color.White,
+                fontSize = 12.sp,
+                fontFamily = Poppins,
+                fontWeight = FontWeight.Normal,
+                textAlign = TextAlign.Justify,
+                modifier = Modifier.padding(start = 10.dp, end = 10.dp)
+            )
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Start
             ) {
-                Text(
-                    text = "Mid Game",
-                    fontSize = 14.sp,
-                    fontFamily = Poppins,
-                    fontWeight = FontWeight.Thin,
-                    color = Color.White,
+                Image(
+                    painter = painterResource(
+                        id = when(data.imageId) {
+                            1 -> R.drawable.abaddon_skill_3
+                            2 -> R.drawable.alchemist_skill_3
+                            3 -> R.drawable.ancient_skill_3
+                            4 -> R.drawable.antimage_skill_3
+                            5 -> R.drawable.arc_skill_3
+                            6 -> R.drawable.axe_skill_3
+                            7 -> R.drawable.bane_skill_3
+                            else -> R.drawable.dota2_logo_ic
+                        }),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .size(80.dp)
+                        .border(
+                            BorderStroke(1.dp, colorResource(id = R.color.yellow)),
+                            shape = CircleShape
+                        )
+                        .clip(CircleShape)
                 )
 
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Start,
-                    modifier = Modifier.padding(start = 10.dp)
+                Spacer(modifier = Modifier.width(20.dp))
+
+                Column(
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.Start
                 ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.bracer_icon),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(20.dp)
-                            .border(1.dp, colorResource(id = R.color.yellow))
+                    Text(
+                        text = data.skillName3,
+                        color = Color.White,
+                        fontSize = 18.sp,
+                        fontFamily = Poppins,
+                        fontWeight = FontWeight.Medium,
+                        maxLines = 1
                     )
 
-                    Spacer(modifier = Modifier.width(10.dp))
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Start
+                    ) {
+                        Image(
+                            painter = painterResource(id = R.drawable.attack_cd_icon),
+                            contentDescription = null,
+                            modifier = Modifier.size(10.dp)
+                        )
 
-                    Image(
-                        painter = painterResource(id = R.drawable.bracer_icon),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(20.dp)
-                            .border(1.dp, colorResource(id = R.color.yellow))
-                    )
+                        Spacer(modifier = Modifier.width(5.dp))
 
-                    Spacer(modifier = Modifier.width(10.dp))
+                        Text(
+                            text = data.skillName3Cd,
+                            color = Color.White,
+                            fontSize = 10.sp,
+                            fontFamily = Poppins,
+                            fontWeight = FontWeight.Thin
+                        )
 
-                    Image(
-                        painter = painterResource(id = R.drawable.bracer_icon),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(20.dp)
-                            .border(1.dp, colorResource(id = R.color.yellow))
-                    )
+                        Spacer(modifier = Modifier.width(20.dp))
 
-                    Spacer(modifier = Modifier.width(10.dp))
+                        Image(
+                            painter = painterResource(id = R.drawable.mana_cost_icon),
+                            contentDescription = null,
+                            modifier = Modifier.size(10.dp)
+                        )
 
-                    Image(
-                        painter = painterResource(id = R.drawable.bracer_icon),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(20.dp)
-                            .border(1.dp, colorResource(id = R.color.yellow))
-                    )
+                        Spacer(modifier = Modifier.width(5.dp))
+
+                        Text(
+                            text = data.skillName3Mana,
+                            color = Color.White,
+                            fontSize = 10.sp,
+                            fontFamily = Poppins,
+                            fontWeight = FontWeight.Thin
+                        )
+                    }
                 }
             }
 
-            Column(
-                verticalArrangement = Arrangement.spacedBy(5.dp),
-                horizontalAlignment = Alignment.Start
+            Text(
+                text = data.skillName3Description,
+                color = Color.White,
+                fontSize = 12.sp,
+                fontFamily = Poppins,
+                fontWeight = FontWeight.Normal,
+                textAlign = TextAlign.Justify,
+                modifier = Modifier.padding(start = 10.dp, end = 10.dp)
+            )
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            Row(
+                verticalAlignment = Alignment.CenterVertically,
+                horizontalArrangement = Arrangement.Start
             ) {
-                Text(
-                    text = "Late Game",
-                    fontSize = 14.sp,
-                    fontFamily = Poppins,
-                    fontWeight = FontWeight.Thin,
-                    color = Color.White,
+                Image(
+                    painter = painterResource(
+                        id = when(data.imageId) {
+                            1 -> R.drawable.abaddon_skill_4
+                            2 -> R.drawable.alchemist_skill_4
+                            3 -> R.drawable.ancient_skill_4
+                            4 -> R.drawable.antimage_skill_4
+                            5 -> R.drawable.arc_skill_4
+                            6 -> R.drawable.axe_skill_4
+                            7 -> R.drawable.bane_skill_4
+                            else -> R.drawable.dota2_logo_ic
+                        }),
+                    contentDescription = null,
+                    modifier = Modifier
+                        .size(80.dp)
+                        .border(
+                            BorderStroke(1.dp, colorResource(id = R.color.yellow)),
+                            shape = CircleShape
+                        )
+                        .clip(CircleShape)
                 )
 
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Start,
-                    modifier = Modifier.padding(start = 10.dp)
+                Spacer(modifier = Modifier.width(20.dp))
+
+                Column(
+                    verticalArrangement = Arrangement.Center,
+                    horizontalAlignment = Alignment.Start
                 ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.bracer_icon),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(20.dp)
-                            .border(1.dp, colorResource(id = R.color.yellow))
+                    Text(
+                        text = data.skillName4,
+                        color = Color.White,
+                        fontSize = 18.sp,
+                        fontFamily = Poppins,
+                        fontWeight = FontWeight.Medium,
+                        maxLines = 1
                     )
 
-                    Spacer(modifier = Modifier.width(10.dp))
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically,
+                        horizontalArrangement = Arrangement.Start
+                    ) {
+                        Image(
+                            painter = painterResource(id = R.drawable.attack_cd_icon),
+                            contentDescription = null,
+                            modifier = Modifier.size(10.dp)
+                        )
 
-                    Image(
-                        painter = painterResource(id = R.drawable.bracer_icon),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(20.dp)
-                            .border(1.dp, colorResource(id = R.color.yellow))
-                    )
+                        Spacer(modifier = Modifier.width(5.dp))
 
-                    Spacer(modifier = Modifier.width(10.dp))
+                        Text(
+                            text = data.skillName4Cd,
+                            color = Color.White,
+                            fontSize = 10.sp,
+                            fontFamily = Poppins,
+                            fontWeight = FontWeight.Thin
+                        )
 
-                    Image(
-                        painter = painterResource(id = R.drawable.bracer_icon),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(20.dp)
-                            .border(1.dp, colorResource(id = R.color.yellow))
-                    )
+                        Spacer(modifier = Modifier.width(20.dp))
 
-                    Spacer(modifier = Modifier.width(10.dp))
+                        Image(
+                            painter = painterResource(id = R.drawable.mana_cost_icon),
+                            contentDescription = null,
+                            modifier = Modifier.size(10.dp)
+                        )
 
-                    Image(
-                        painter = painterResource(id = R.drawable.bracer_icon),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(20.dp)
-                            .border(1.dp, colorResource(id = R.color.yellow))
-                    )
+                        Spacer(modifier = Modifier.width(5.dp))
 
-                    Spacer(modifier = Modifier.width(10.dp))
-
-                    Image(
-                        painter = painterResource(id = R.drawable.bracer_icon),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(20.dp)
-                            .border(1.dp, colorResource(id = R.color.yellow))
-                    )
+                        Text(
+                            text = data.skillName4Mana,
+                            color = Color.White,
+                            fontSize = 10.sp,
+                            fontFamily = Poppins,
+                            fontWeight = FontWeight.Thin
+                        )
+                    }
                 }
             }
 
-            Column(
-                verticalArrangement = Arrangement.spacedBy(5.dp),
-                horizontalAlignment = Alignment.Start
-            ) {
-                Text(
-                    text = "Situational Items",
-                    fontSize = 14.sp,
-                    fontFamily = Poppins,
-                    fontWeight = FontWeight.Thin,
-                    color = Color.White,
-                )
-
-                Row(
-                    verticalAlignment = Alignment.CenterVertically,
-                    horizontalArrangement = Arrangement.Start,
-                    modifier = Modifier.padding(start = 10.dp)
-                ) {
-                    Image(
-                        painter = painterResource(id = R.drawable.bracer_icon),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(20.dp)
-                            .border(1.dp, colorResource(id = R.color.yellow))
-                    )
-
-                    Spacer(modifier = Modifier.width(10.dp))
-
-                    Image(
-                        painter = painterResource(id = R.drawable.bracer_icon),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(20.dp)
-                            .border(1.dp, colorResource(id = R.color.yellow))
-                    )
-
-                    Spacer(modifier = Modifier.width(10.dp))
-
-                    Image(
-                        painter = painterResource(id = R.drawable.bracer_icon),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(20.dp)
-                            .border(1.dp, colorResource(id = R.color.yellow))
-                    )
-
-                    Spacer(modifier = Modifier.width(10.dp))
-
-                    Image(
-                        painter = painterResource(id = R.drawable.bracer_icon),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(20.dp)
-                            .border(1.dp, colorResource(id = R.color.yellow))
-                    )
-
-                    Spacer(modifier = Modifier.width(10.dp))
-
-                    Image(
-                        painter = painterResource(id = R.drawable.bracer_icon),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(20.dp)
-                            .border(1.dp, colorResource(id = R.color.yellow))
-                    )
-
-                    Spacer(modifier = Modifier.width(10.dp))
-
-                    Image(
-                        painter = painterResource(id = R.drawable.bracer_icon),
-                        contentDescription = null,
-                        modifier = Modifier
-                            .size(20.dp)
-                            .border(1.dp, colorResource(id = R.color.yellow))
-                    )
-                }
-            }
-
+            Text(
+                text = data.skillName4Description,
+                color = Color.White,
+                fontSize = 12.sp,
+                fontFamily = Poppins,
+                fontWeight = FontWeight.Normal,
+                textAlign = TextAlign.Justify,
+                modifier = Modifier.padding(start = 10.dp, end = 10.dp)
+            )
 
         }
     }
@@ -1218,7 +1308,15 @@ fun HeroTabScreen3Prev() {
         0, 0, 0,
         "325", "50-60", "1800/800",
         "1.7", "2.8", "150",
-        "22 +2.6", "23 +1.5", "18 +2.0"
+        "22 +2.6", "23 +1.5", "18 +2.0",
+        "MIST COIL", "5.5", "50",
+        "Abaddon releases a coil of deathly mist that can damage an enemy unit or heal a friendly unit at the cost of some of Abaddon's health.",
+        "APHOTIC SHIELD", "12/10/8/6", "85/100/115/130",
+        "Summons dark energies around an ally unit, creating a shield that absorbs a set amount of damage before expiring. When the shield is destroyed it will burst and deal damage equal to the amount it could absorb to an area around it. Removes certain types of negative buffs and stuns on cast.",
+        "CURSE OF AVERNUS", "0", "0",
+        "Abaddon strikes an enemy, slowing the target's movement speed. If the target gets hit 4.0 times, they become affected by a chilling curse causing them to be silenced and slowed, and all attacks against them gain an attack speed boost.",
+        "BORROWED TIME", "60/50/40", "0/0/0",
+        "When activated, all damage dealt to you will heal instead of harm. Most negative buffs will also be removed. If the ability is not on cooldown, it will automatically activate if your health falls below 400.0.",
     )
     )
 }

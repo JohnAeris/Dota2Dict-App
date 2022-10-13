@@ -244,7 +244,7 @@ fun ItemsPageScreen() {
         modifier = Modifier
             .background(Color.Black)
             .padding(start = 20.dp, end = 20.dp, top = 20.dp),
-        verticalArrangement = Arrangement.spacedBy(20.dp),
+        verticalArrangement = Arrangement.spacedBy(10.dp),
         horizontalArrangement = Arrangement.spacedBy(20.dp),
         content = {
 
