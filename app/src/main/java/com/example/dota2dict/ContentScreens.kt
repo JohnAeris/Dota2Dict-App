@@ -196,7 +196,15 @@ fun HeroCardItem(data: HeroInfoData, navController: NavController) {
                         5 -> R.drawable.arc_warden_1_
                         6 -> R.drawable.axe_1_
                         7 -> R.drawable.bane_1_
-                        else -> R.drawable.axe_1_
+                        8 -> R.drawable.batrider_1_
+                        9 -> R.drawable.bloodseeker_1_
+                        10 -> R.drawable.bounty_hunter_1_
+                        11 -> R.drawable.brewmaster_1_
+                        12 -> R.drawable.bristleback_1_
+                        13 -> R.drawable.broodmother_1_
+                        14 -> R.drawable.centaur_1_
+                        15 -> R.drawable.chaos_knight_1_
+                        else -> R.drawable.abaddon_1_
                     }),
                 contentDescription = "Profile Image",
                 modifier = Modifier

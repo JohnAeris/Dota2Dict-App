@@ -80,6 +80,14 @@ fun HeroTabScreen1(data: HeroInfoData) {
                         5 -> R.drawable.arc_warden_profile
                         6 -> R.drawable.axe_profile
                         7 -> R.drawable.bane_profile
+                        8 -> R.drawable.batrider_profile
+                        9 -> R.drawable.bloodseeker_profile
+                        10 -> R.drawable.bounty_hunter_profile
+                        11 -> R.drawable.brewmaster_profile
+                        12 -> R.drawable.bristleback_profile
+                        13 -> R.drawable.broodmother_profile
+                        14 -> R.drawable.centaur_profile
+                        15 -> R.drawable.chaos_knight_profile
                         else -> R.drawable.abaddon_profile
                     }),
                 alignment = Alignment.Center,
@@ -211,7 +219,7 @@ fun HeroTabScreen1(data: HeroInfoData) {
 
                 Image(
                     painter = painterResource(
-                        id = when(data.attackTypeImage){
+                        id = when(data.complexityImage){
                             1 -> R.drawable.complexity1_ic
                             2 -> R.drawable.complexity2_ic
                             3 -> R.drawable.complexity3_ic
@@ -284,6 +292,14 @@ fun HeroTabScreen2(data: HeroInfoData) {
                         5 -> R.drawable.arc_warden_1_
                         6 -> R.drawable.axe_1_
                         7 -> R.drawable.bane_1_
+                        8 -> R.drawable.batrider_1_
+                        9 -> R.drawable.bloodseeker_1_
+                        10 -> R.drawable.bounty_hunter_1_
+                        11 -> R.drawable.brewmaster_1_
+                        12 -> R.drawable.bristleback_1_
+                        13 -> R.drawable.broodmother_1_
+                        14 -> R.drawable.centaur_1_
+                        15 -> R.drawable.chaos_knight_1_
                         else -> R.drawable.axe_1_
                     }),
                 contentDescription = "Hero Image",
@@ -298,7 +314,7 @@ fun HeroTabScreen2(data: HeroInfoData) {
                     Text(
                         text = data.heroName,
                         color = Color.White,
-                        fontSize = 18.sp,
+                        fontSize = 16.sp,
                         fontFamily = Poppins,
                         fontWeight = FontWeight.Bold,
                         maxLines = 2,
@@ -648,7 +664,7 @@ fun HeroTabScreen2(data: HeroInfoData) {
                         Spacer(modifier = Modifier.width(20.dp))
 
                         Text(
-                            text = data.statArmor,
+                            text = data.statAttackRange,
                             fontSize = 14.sp,
                             fontFamily = Poppins,
                             fontWeight = FontWeight.Normal,
@@ -856,7 +872,15 @@ fun HeroTabScreen3(data: HeroInfoData) {
                         5 -> R.drawable.arc_warden_1_
                         6 -> R.drawable.axe_1_
                         7 -> R.drawable.bane_1_
-                        else -> R.drawable.axe_1_
+                        8 -> R.drawable.batrider_1_
+                        9 -> R.drawable.bloodseeker_1_
+                        10 -> R.drawable.bounty_hunter_1_
+                        11 -> R.drawable.brewmaster_1_
+                        12 -> R.drawable.bristleback_1_
+                        13 -> R.drawable.broodmother_1_
+                        14 -> R.drawable.centaur_1_
+                        15 -> R.drawable.chaos_knight_1_
+                        else -> R.drawable.abaddon_1_
                     }),
                 contentDescription = "Hero Image",
                 contentScale = ContentScale.Crop,
@@ -872,7 +896,7 @@ fun HeroTabScreen3(data: HeroInfoData) {
                     Text(
                         text = data.heroName,
                         color = Color.White,
-                        fontSize = 18.sp,
+                        fontSize = 16.sp,
                         fontFamily = Poppins,
                         fontWeight = FontWeight.Bold,
                         maxLines = 2
@@ -926,6 +950,14 @@ fun HeroTabScreen3(data: HeroInfoData) {
                             5 -> R.drawable.arc_skill_1
                             6 -> R.drawable.axe_skill_1
                             7 -> R.drawable.bane_skill_1
+                            8 -> R.drawable.batrider_skill_1
+                            9 -> R.drawable.bloodseeker_skill_1
+                            10 -> R.drawable.bounty_hunter_skill_1
+                            11 -> R.drawable.brewmaster_skill_1
+                            12 -> R.drawable.bristleback_skill_1
+                            13 -> R.drawable.broodmother_skill_1
+                            14 -> R.drawable.centaur_skill_1
+                            15 -> R.drawable.chaos_knight_skill_1
                             else -> R.drawable.dota2_logo_ic
                         }),
                     contentDescription = null,
@@ -1020,6 +1052,14 @@ fun HeroTabScreen3(data: HeroInfoData) {
                             5 -> R.drawable.arc_skill_2
                             6 -> R.drawable.axe_skill_2
                             7 -> R.drawable.bane_skill_2
+                            8 -> R.drawable.batrider_skill_2
+                            9 -> R.drawable.bloodseeker_skill_2
+                            10 -> R.drawable.bounty_hunter_skill_2
+                            11 -> R.drawable.brewmaster_skill_2
+                            12 -> R.drawable.bristleback_skill_2
+                            13 -> R.drawable.broodmother_skill_2
+                            14 -> R.drawable.centaur_skill_2
+                            15 -> R.drawable.chaos_knight_skill_2
                             else -> R.drawable.dota2_logo_ic
                         }),
                     contentDescription = null,
@@ -1114,6 +1154,14 @@ fun HeroTabScreen3(data: HeroInfoData) {
                             5 -> R.drawable.arc_skill_3
                             6 -> R.drawable.axe_skill_3
                             7 -> R.drawable.bane_skill_3
+                            8 -> R.drawable.batrider_skill_3
+                            9 -> R.drawable.bloodseeker_skill_3
+                            10 -> R.drawable.bounty_hunter_skill_3
+                            11 -> R.drawable.brewmaster_skill_3
+                            12 -> R.drawable.bristleback_skill_3
+                            13 -> R.drawable.broodmother_skill_3
+                            14 -> R.drawable.centaur_skill_3
+                            15 -> R.drawable.chaos_knight_skill_3
                             else -> R.drawable.dota2_logo_ic
                         }),
                     contentDescription = null,
@@ -1208,6 +1256,14 @@ fun HeroTabScreen3(data: HeroInfoData) {
                             5 -> R.drawable.arc_skill_4
                             6 -> R.drawable.axe_skill_4
                             7 -> R.drawable.bane_skill_4
+                            8 -> R.drawable.batrider_skill_4
+                            9 -> R.drawable.bloodseeker_skill_4
+                            10 -> R.drawable.bounty_hunter_skill_4
+                            11 -> R.drawable.brewmaster_skill_4
+                            12 -> R.drawable.bristleback_skill_4
+                            13 -> R.drawable.broodmother_skill_4
+                            14 -> R.drawable.centaur_skill_4
+                            15 -> R.drawable.chaos_knight_skill_4
                             else -> R.drawable.dota2_logo_ic
                         }),
                     contentDescription = null,
