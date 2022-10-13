@@ -85,7 +85,23 @@ data class HeroInfoData(
     val statAttackRange: String,
     val attributeStrength: String,
     val attributeAgility: String,
-    val attributeIntelligence: String
+    val attributeIntelligence: String,
+    val skillName1: String,
+    val skillName1Cd: String,
+    val skillName1Mana: String,
+    val skillName1Description: String,
+    val skillName2: String,
+    val skillName2Cd: String,
+    val skillName2Mana: String,
+    val skillName2Description: String,
+    val skillName3: String,
+    val skillName3Cd: String,
+    val skillName3Mana: String,
+    val skillName3Description: String,
+    val skillName4: String,
+    val skillName4Cd: String,
+    val skillName4Mana: String,
+    val skillName4Description: String
 )
 
 
