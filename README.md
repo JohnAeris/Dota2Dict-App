@@ -16,7 +16,7 @@
 
 <h3>FEATURES</h3>
 
-<p align="justify"> Dota2Dict Application is a user-friendly and has responsive interface. It also has a bottom navigation bar wherein it can navigate the user from three different screen. Home screen contains the dota 2 game updates. Heroes screen contains the list of heroes and its information such as name, history, roles, and many more. Last, Item screen contains the list of upgraded items, its name, and its cost.</p>
+<p align="justify"> Dota2Dict Application is a user-friendly and has responsive interface. It also has a bottom navigation bar wherein it can navigate the user from three different screen. Home screen contains the dota 2 game updates. Heroes screen contains the list of heroes and its information such as name, history, skills, roles, and many more. Last, Item screen contains the list of upgraded items, its name, and its cost.</p>
 
 
 <div align="center">
