@@ -9,14 +9,5 @@ sealed class NavigationItem(var route: String, var icon: Int, var title: String)
 sealed class NavigationScreen(val route: String) {
     object HeroesPageScreen: NavigationScreen("hero_information_screen")
     object HeroDetails: NavigationScreen("hero_details_screen")
-
-    fun withArgs(vararg args: String): String {
-        return buildString {
-            append(route)
-            args.forEach { arg ->
-                append("/$arg")
-            }
-        }
-    }
 }
 

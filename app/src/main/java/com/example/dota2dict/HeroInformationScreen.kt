@@ -2,7 +2,6 @@ package com.example.dota2dict
 
 import androidx.compose.foundation.*
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyRow
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.Divider
@@ -136,7 +135,7 @@ fun HeroTabScreen1(data: HeroInfoData) {
         }
 
 
-        Box() {
+        Box {
             Text(
                 text = data.heroName,
                 color = Color.White,
@@ -181,7 +180,7 @@ fun HeroTabScreen1(data: HeroInfoData) {
                 textAlign = TextAlign.Start
             )
             
-            Row() {
+            Row {
                 Image(
                     painter = painterResource(
                         id = when(data.attackTypeImage){
@@ -235,7 +234,7 @@ fun HeroTabScreen1(data: HeroInfoData) {
     }
 }
 
-/*@Composable
+@Composable
 @Preview (showBackground = true, showSystemUi = true)
 fun HeroTabScreen1Prev() {
     HeroTabScreen1(HeroInfoData(
@@ -265,7 +264,7 @@ fun HeroTabScreen1Prev() {
 
     )
     )
-}*/
+}
 
 @Composable
 fun HeroTabScreen2(data: HeroInfoData) {
@@ -310,7 +309,7 @@ fun HeroTabScreen2(data: HeroInfoData) {
             Spacer(modifier = Modifier.width(25.dp))
             
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
-                Box() {
+                Box {
                     Text(
                         text = data.heroName,
                         color = Color.White,
@@ -815,7 +814,7 @@ fun CustomProgressBar(per: Int) {
     }
 }
 
-/*@Composable
+@Composable
 @Preview (showBackground = true, showSystemUi = true)
 fun HeroTabScreen2Prev() {
     HeroTabScreen2(HeroInfoData(
@@ -845,7 +844,7 @@ fun HeroTabScreen2Prev() {
 
     )
     )
-}*/
+}
 
 @Composable
 fun HeroTabScreen3(data: HeroInfoData) {

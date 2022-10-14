@@ -1,14 +1,8 @@
 package com.example.dota2dict
 
-import android.graphics.Bitmap
-import androidx.annotation.StringRes
-import androidx.compose.ui.graphics.ImageBitmap
-import androidx.compose.ui.res.imageResource
-import androidx.compose.ui.res.painterResource
-
 class GeneralUpdateDataSource {
     fun loadGeneralUpdates(): List<GeneralUpdatesData> {
-        return listOf<GeneralUpdatesData>(
+        return listOf(
             GeneralUpdatesData(R.string.text1),
             GeneralUpdatesData(R.string.text2),
             GeneralUpdatesData(R.string.text3),
@@ -34,7 +28,7 @@ class GeneralUpdateDataSource {
 
 class ItemUpdateDataSource {
     fun loadItemUpdates(): List<ItemUpdatesData> {
-        return listOf<ItemUpdatesData> (
+        return listOf(
             ItemUpdatesData(R.string.item1, R.string.item_description1, R.drawable.bracer_icon),
             ItemUpdatesData(R.string.item2, R.string.item_description2, R.drawable.soul_ring_icon),
             ItemUpdatesData(R.string.item3, R.string.item_description3, R.drawable.spirit_vessel_icon),
@@ -46,7 +40,7 @@ class ItemUpdateDataSource {
 
 class NeutralItemUpdateDataSource {
     fun loadNeutralItemUpdates(): List<NeutralItemUpdatesData> {
-        return  listOf<NeutralItemUpdatesData> (
+        return  listOf(
             NeutralItemUpdatesData(R.string.neutral_item1, R.string.neutral_item_description1, R.drawable.occult_bracelet_icon),
             NeutralItemUpdatesData(R.string.neutral_item2, R.string.neutral_item_description2, R.drawable.specialists_array_icon),
             NeutralItemUpdatesData(R.string.neutral_item3, R.string.neutral_item_description3, R.drawable.ogre_seal_totem_icon)
@@ -183,133 +177,5 @@ object ArtifactDataSource {
         ItemsArtifactData(R.string.artifact_swift_blink, "6,800", R.drawable.swift_blink_icon),
         ItemsArtifactData(R.string.artifact_yasha_and_kaya, "4,100", R.drawable.yasha_and_kaya_icon),
         ItemsArtifactData(R.string.artifact_yasha, "2,050", R.drawable.yasha_icon)
-            )
-}
-
-object HeroProfilePictureDataSource {
-    val heroImage = listOf (
-        HeroesProfilePictureData(R.drawable.abaddon_1_ ,R.string.abaddon),
-        HeroesProfilePictureData(R.drawable.abyssal_underlord_1_ ,R.string.abyssal_underlord),
-        HeroesProfilePictureData(R.drawable.alchemist_1_ ,R.string.alchemist),
-        HeroesProfilePictureData(R.drawable.ancient_apparition_1_ ,R.string.ancient_apparition),
-        HeroesProfilePictureData(R.drawable.antimage_1_ ,R.string.antimage),
-        HeroesProfilePictureData(R.drawable.arc_warden_1_ ,R.string.arc_warden),
-        HeroesProfilePictureData(R.drawable.axe_1_ ,R.string.axe),
-        HeroesProfilePictureData(R.drawable.bane_1_ ,R.string.bane),
-        HeroesProfilePictureData(R.drawable.batrider_1_ ,R.string.batrider),
-        HeroesProfilePictureData(R.drawable.beastmaster_1_ ,R.string.beastmaster),
-        HeroesProfilePictureData(R.drawable.bloodseeker_1_ ,R.string.bloodseeker),
-        HeroesProfilePictureData(R.drawable.bounty_hunter_1_ ,R.string.bounty_hunter),
-        HeroesProfilePictureData(R.drawable.brewmaster_1_ ,R.string.brewmaster),
-        HeroesProfilePictureData(R.drawable.bristleback_1_ ,R.string.bristleback),
-        HeroesProfilePictureData(R.drawable.broodmother_1_ ,R.string.broodmother),
-        HeroesProfilePictureData(R.drawable.centaur_1_ ,R.string.centaur),
-        HeroesProfilePictureData(R.drawable.chaos_knight_1_ ,R.string.chaos_knight),
-        HeroesProfilePictureData(R.drawable.chen_1_ ,R.string.chen),
-        HeroesProfilePictureData(R.drawable.clinkz_1_ ,R.string.clinkz),
-        HeroesProfilePictureData(R.drawable.clockwerk_1_ ,R.string.clockwerk),
-        HeroesProfilePictureData(R.drawable.crystal_maiden_1_ ,R.string.crystal_maiden),
-        HeroesProfilePictureData(R.drawable.dark_seer_1_ ,R.string.dark_seer),
-        HeroesProfilePictureData(R.drawable.dark_willow_1_ ,R.string.dark_willow),
-        HeroesProfilePictureData(R.drawable.dawnbreaker_1_ ,R.string.dawnbreaker),
-        HeroesProfilePictureData(R.drawable.dazzle_1_ ,R.string.dazzle),
-        HeroesProfilePictureData(R.drawable.death_prophet_1_ ,R.string.death_prophet),
-        HeroesProfilePictureData(R.drawable.disruptor_1_ ,R.string.disruptor),
-        HeroesProfilePictureData(R.drawable.doom_bringer_1_ ,R.string.doom_bringer),
-        HeroesProfilePictureData(R.drawable.dragon_knight_1_ ,R.string.dragon_knight),
-        HeroesProfilePictureData(R.drawable.drow_ranger_1_ ,R.string.drow_ranger),
-        HeroesProfilePictureData(R.drawable.earth_spirit_1_ ,R.string.earth_spirit),
-        HeroesProfilePictureData(R.drawable.earthshaker_1_ ,R.string.earthshaker),
-        HeroesProfilePictureData(R.drawable.elder_titan_1_ ,R.string.elder_titan),
-        HeroesProfilePictureData(R.drawable.ember_spirit_1_ ,R.string.ember_spirit),
-        HeroesProfilePictureData(R.drawable.enchantress_1_ ,R.string.enchantress),
-        HeroesProfilePictureData(R.drawable.enigma_1_ ,R.string.enigma),
-        HeroesProfilePictureData(R.drawable.faceless_void_1_ ,R.string.faceless_void),
-        HeroesProfilePictureData(R.drawable.grimstroke_1_ ,R.string.grimstroke),
-        HeroesProfilePictureData(R.drawable.gyrocopter_1_ ,R.string.gyrocopter),
-        HeroesProfilePictureData(R.drawable.hoodwink_1_ ,R.string.hoodwink),
-        HeroesProfilePictureData(R.drawable.huskar_1_ ,R.string.huskar),
-        HeroesProfilePictureData(R.drawable.invoker_1_ ,R.string.invoker),
-        HeroesProfilePictureData(R.drawable.io_1_ ,R.string.io),
-        HeroesProfilePictureData(R.drawable.jakiro_1_ ,R.string.jakiro),
-        HeroesProfilePictureData(R.drawable.juggernaut_1_ ,R.string.juggernut),
-        HeroesProfilePictureData(R.drawable.keeper_of_the_light_1_ ,R.string.keeper_of_the_light),
-        HeroesProfilePictureData(R.drawable.kunkka_1_ ,R.string.kunkka),
-        HeroesProfilePictureData(R.drawable.legion_commander_1_ ,R.string.legion_commander),
-        HeroesProfilePictureData(R.drawable.leshrac_1_ ,R.string.leshrac),
-        HeroesProfilePictureData(R.drawable.lich_1_ ,R.string.lich),
-        HeroesProfilePictureData(R.drawable.life_stealer_1_ ,R.string.life_stealer),
-        HeroesProfilePictureData(R.drawable.lina_1_ ,R.string.lina),
-        HeroesProfilePictureData(R.drawable.lion_1_ ,R.string.lion),
-        HeroesProfilePictureData(R.drawable.lone_druid_1_ ,R.string.lone_druid),
-        HeroesProfilePictureData(R.drawable.luna_1_ ,R.string.luna),
-        HeroesProfilePictureData(R.drawable.lycan_1_ ,R.string.lycan),
-        HeroesProfilePictureData(R.drawable.magnataur_1_ ,R.string.magnataur),
-        HeroesProfilePictureData(R.drawable.marci_1_ ,R.string.marci),
-        HeroesProfilePictureData(R.drawable.mars_1_ ,R.string.mars),
-        HeroesProfilePictureData(R.drawable.medusa_1_ ,R.string.medusa),
-        HeroesProfilePictureData(R.drawable.meepo_1_ ,R.string.meepo),
-        HeroesProfilePictureData(R.drawable.mirana_1_ ,R.string.mirana),
-        HeroesProfilePictureData(R.drawable.monkey_king_1_ ,R.string.monkey_king),
-        HeroesProfilePictureData(R.drawable.morphling_1_ ,R.string.morphling),
-        HeroesProfilePictureData(R.drawable.naga_siren_1_ ,R.string.naga_siren),
-        HeroesProfilePictureData(R.drawable.nature_prophet_1_ ,R.string.nature_prophet),
-        HeroesProfilePictureData(R.drawable.necrolyte_1_ ,R.string.necrolyte),
-        HeroesProfilePictureData(R.drawable.night_stalker_1_ ,R.string.night_stalker),
-        HeroesProfilePictureData(R.drawable.nyx_assassin_1_ ,R.string.nyx_assassin),
-        HeroesProfilePictureData(R.drawable.ogre_magi_1_ ,R.string.ogre_magi),
-        HeroesProfilePictureData(R.drawable.omniknight_1_ ,R.string.omniknight),
-        HeroesProfilePictureData(R.drawable.oracle_1_ ,R.string.oracle),
-        HeroesProfilePictureData(R.drawable.obsidian_destroyer_1_ ,R.string.outworld_destroyer),
-        HeroesProfilePictureData(R.drawable.pangolier_1_ ,R.string.pangoiler),
-        HeroesProfilePictureData(R.drawable.phantom_assassin_1_ ,R.string.phantom_assassin),
-        HeroesProfilePictureData(R.drawable.phantom_lancer_1_ ,R.string.phantom_lancer),
-        HeroesProfilePictureData(R.drawable.phoenix_1_ ,R.string.phoenix),
-        HeroesProfilePictureData(R.drawable.primal_beast_1_ ,R.string.primal_beast),
-        HeroesProfilePictureData(R.drawable.puck_1_ ,R.string.puck),
-        HeroesProfilePictureData(R.drawable.pudge_1_ ,R.string.pudge),
-        HeroesProfilePictureData(R.drawable.pugna_1_ ,R.string.pugna),
-        HeroesProfilePictureData(R.drawable.queenofpain_1_ ,R.string.queen_of_pain),
-        HeroesProfilePictureData(R.drawable.razor_1_ ,R.string.razor),
-        HeroesProfilePictureData(R.drawable.riki_1_ ,R.string.riki),
-        HeroesProfilePictureData(R.drawable.rubick_1_ ,R.string.rubick),
-        HeroesProfilePictureData(R.drawable.sand_king_1_ ,R.string.sandking),
-        HeroesProfilePictureData(R.drawable.shadow_demon_1_ ,R.string.shadow_demon),
-        HeroesProfilePictureData(R.drawable.nevermore_1_ ,R.string.shadow_fiend),
-        HeroesProfilePictureData(R.drawable.shadow_shaman_1_ ,R.string.shadow_shaman),
-        HeroesProfilePictureData(R.drawable.silencer_1_ ,R.string.silencer),
-        HeroesProfilePictureData(R.drawable.skywrath_mage_1_ ,R.string.skywrath_mage),
-        HeroesProfilePictureData(R.drawable.slardar_1_ ,R.string.slardar),
-        HeroesProfilePictureData(R.drawable.slark_1_ ,R.string.slark),
-        HeroesProfilePictureData(R.drawable.snapfire_1_ ,R.string.snapfire),
-        HeroesProfilePictureData(R.drawable.sniper_1_ ,R.string.sniper),
-        HeroesProfilePictureData(R.drawable.spectre_1_ ,R.string.spectre),
-        HeroesProfilePictureData(R.drawable.spirit_breaker_1_ ,R.string.spirit_breaker),
-        HeroesProfilePictureData(R.drawable.storm_spirit_1_ ,R.string.storm_spirit),
-        HeroesProfilePictureData(R.drawable.sven_1_ ,R.string.sven),
-        HeroesProfilePictureData(R.drawable.techies_1_ ,R.string.techies),
-        HeroesProfilePictureData(R.drawable.templar_assassin_1_ ,R.string.templar_assassin),
-        HeroesProfilePictureData(R.drawable.terrorblade_1_ ,R.string.terrorblade),
-        HeroesProfilePictureData(R.drawable.tidehunter_1_ ,R.string.tidehunter),
-        HeroesProfilePictureData(R.drawable.timbersaw__1_ ,R.string.timbersaw),
-        HeroesProfilePictureData(R.drawable.tinker_1_ ,R.string.tinker),
-        HeroesProfilePictureData(R.drawable.tiny_1_ ,R.string.tiny),
-        HeroesProfilePictureData(R.drawable.treant_1_ ,R.string.treant),
-        HeroesProfilePictureData(R.drawable.troll_warlord_1_ ,R.string.troll_warlord),
-        HeroesProfilePictureData(R.drawable.tusk_1_ ,R.string.tusk),
-        HeroesProfilePictureData(R.drawable.undying_1_ ,R.string.undying),
-        HeroesProfilePictureData(R.drawable.ursa_1_ ,R.string.ursa),
-        HeroesProfilePictureData(R.drawable.vengefulspirit_1_ ,R.string.vengeful_spirit),
-        HeroesProfilePictureData(R.drawable.venomancer_1_ ,R.string.venomancer),
-        HeroesProfilePictureData(R.drawable.viper_1_ ,R.string.viper),
-        HeroesProfilePictureData(R.drawable.visage_1_ ,R.string.visage),
-        HeroesProfilePictureData(R.drawable.void_spirit_1_ ,R.string.void_spirit),
-        HeroesProfilePictureData(R.drawable.warlock_1_ ,R.string.warlock),
-        HeroesProfilePictureData(R.drawable.weaver_1_ ,R.string.weaver),
-        HeroesProfilePictureData(R.drawable.windranger_1_ ,R.string.windranger),
-        HeroesProfilePictureData(R.drawable.winter_wyvern_1_ ,R.string.winter_wyvern),
-        HeroesProfilePictureData(R.drawable.witch_doctor_1_ ,R.string.witch_doctor),
-        HeroesProfilePictureData(R.drawable.wraith_king_1_ ,R.string.wraith_king),
-        HeroesProfilePictureData(R.drawable.zeus_1_ ,R.string.zeus)
             )
 }

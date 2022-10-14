@@ -1,6 +1,5 @@
 package com.example.dota2dict
 
-import android.icu.util.MeasureUnit.Complexity
 import androidx.annotation.DrawableRes
 import androidx.annotation.StringRes
 
