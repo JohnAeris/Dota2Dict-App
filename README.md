@@ -14,8 +14,7 @@ Valve in 2013. A simple application that will make it easier for players especia
 
 <h3>BUILD STATUS</h3>
 
-<p align="justify"> Currently, the heroes and items that I have put in the application are limited, and it still has a few bugs that I cannot solve. However, I will fix it once my 
-knowledge expands android development and debugging. </p>
+<p align="justify"> Currently, the heroes and items that I have put in the application are limited, and it still has a few bugs that I cannot solve. However, I will fix it once my knowledge expands about android development and debugging. </p>
 
 <h3>FEATURES</h3>
 
