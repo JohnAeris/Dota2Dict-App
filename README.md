@@ -8,9 +8,7 @@
 
 <h3>MOTIVATION</h3>
 
-<p align="justify"> As a beginner in Android Development, this application is created to apply what I learned from Android Basics with Compose course offered by Google developers. 
-The first thing I thought to develop while learning Jetpack Compose was related to Dota 2, a multiplayer online battle arena video game developed and published by 
-Valve in 2013. A simple application that will make it easier for players especially beginners to know the game updates and information about heroes and items.</p>
+<p align="justify"> As a beginner in Android Development, this application is created to apply what I learned from Android Basics with Compose course offered by Google developers. The first thing I thought to develop while learning Jetpack Compose was related to Dota 2, a multiplayer online battle arena video game developed and published by Valve in 2013. A simple application that will make it easier for players especially beginners to know the game updates and information about heroes and items.</p>
 
 <h3>BUILD STATUS</h3>
 
@@ -18,7 +16,7 @@ Valve in 2013. A simple application that will make it easier for players especia
 
 <h3>FEATURES</h3>
 
-<p align="justify"> Dota2Dict Application is a user-friendly and has responsive interface. It also has a bottom navigation bar wherein it can navigate the user from three different screen. </p>
+<p align="justify"> Dota2Dict Application is a user-friendly and has responsive interface. It also has a bottom navigation bar wherein it can navigate the user from three different screen. Home screen contains the dota 2 game updates. Heroes screen contains the list of heroes and its information such as name, history, roles, and many more. Last, Item screen contains the list of upgraded items, its name, and its cost.</p>
 
 
 <div align="center">
