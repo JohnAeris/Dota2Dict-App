@@ -4,7 +4,7 @@
 <h5>V1.0.0</h5>
 
 <h3>ABOUT</h3>
-<p>This application is like a dictionary that provides information about dota 2 heroes, items, and game updates.</p>
+<p>This application is a dictionary that provides information about dota 2 heroes, items, and game updates.</p>
 
 <h3>MOTIVATION</h3>
 
